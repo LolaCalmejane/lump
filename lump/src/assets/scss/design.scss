@@ -28,26 +28,26 @@ body {
 // Fonts Class
 .big-title {
 	font-family : 'gotham-bold', sans-serif;
-	font-size : 50px;
+	font-size : 60px;
 	color : white;
 }
 
 .title {
 	font-family : 'gotham-bold', sans-serif;
-	font-size : 12px;
+	font-size : 1em;
 	color : white;
 }
 
 .subtitle-gold {
 	font-family : 'gotham-medium';
-	font-size : 12px;
+	font-size : 0.9em;
 	color : $gold;
 	text-transform : uppercase;
 }
 
 .subtitle-white {
 	font-family : 'gotham-book', sans-serif;
-	font-size : 12px;
+	font-size : 0.9em;
 	color : $white;
 	text-transform : uppercase;
 }
@@ -55,21 +55,21 @@ body {
 .bold-body-text {
 	font-family : 'Open Sans', sans-serif;
 	font-weight : 700;
-	font-size : 12px;
+	font-size : 1em;
 	color : $white;
 }
 
 .body-text {
 	font-family : 'Open Sans', sans-serif;
 	font-weight : 400;
-	font-size : 12px;
+	font-size : 1em;
 	color : $white;
 }
 
 .detail {
 	font-family : 'Open Sans', sans-serif;
 	font-weight : 300;
-	font-size : 12px;
+	font-size : 1em;
 	color : $white;
 }
 

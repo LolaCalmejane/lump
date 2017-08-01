@@ -10,8 +10,7 @@
       <div class="infos-profil">
         <h1 class="big-title">{{name}}</h1>
         <div class="img-profil">
-
-          <img v-bind:src="imageSrc"> alt="Jude Ademilo">
+          <img src="../../assets/images/profil-img.png" alt="Jude Ademilo">
         </div>
         <div class="datas-profil">
           <p class="subtitle-gold">Description</p>
@@ -28,8 +27,8 @@
         <a class="subtitle-white" href="">Playlists</a>
         <a class="subtitle-white" href="">Agenda</a>
       </nav>
-    </div> <!-- end header profil -->
-  </div> <!-- end content -->
+    </div> <!-- end content -->
+  </div> <!-- end header profil -->
   </div> <!-- end profil -->
 </template>
 
@@ -45,11 +44,7 @@ export default {
       description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Lorem ipsum dolor sit amet, consectetur adipiscing.',
       numberEvents : '12',
       numberFriends : '33',
-      imageSrc :'../../assets/images/profil-img'
     }
   }
 }
-
-
-
 </script>

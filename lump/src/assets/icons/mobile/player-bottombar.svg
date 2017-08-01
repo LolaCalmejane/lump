@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43 (38999) - http://www.bohemiancoding.com/sketch -->
+    <title>Player</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+        <g id="Créer-un-évéenment" transform="translate(-66.000000, -440.000000)" stroke-width="2" stroke="#FFFFFF">
+            <g id="Bottom-Bar/Tab-Bar" transform="translate(66.000000, 438.000000)">
+                <g id="Player" transform="translate(0.071429, 2.000000)">
+                    <g id="Playing-icon">
+                        <path d="M1,5.47077922 L1,16.4123377" id="Line"></path>
+                        <path d="M5,1.09415584 L5,18.6006494" id="Line"></path>
+                        <path d="M9,5.47077922 L9,16.4123377" id="Line"></path>
+                        <path d="M14,1.09415584 L14,18.6006494" id="Line"></path>
+                        <path d="M18,5.47077922 L18,16.4123377" id="Line"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

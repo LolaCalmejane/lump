@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43 (38999) - http://www.bohemiancoding.com/sketch -->
+    <title>like</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Créer-un-évéenment" transform="translate(-205.000000, -404.000000)" fill-rule="nonzero" fill="#ED1829">
+            <g id="like" transform="translate(205.000000, 404.000000)">
+                <path d="M15.9726154,4.93668016 C15.7390769,2.23093117 13.9196923,0.267854251 11.6427692,0.267854251 C10.1258462,0.267854251 8.73692308,1.12712551 7.95538462,2.5042915 C7.18092308,1.10931174 5.84892308,0.267530364 4.35630769,0.267530364 C2.07969231,0.267530364 0.26,2.23060729 0.0267692308,4.93635628 C0.00830769231,5.05587045 -0.0673846154,5.6848583 0.162769231,6.71060729 C0.494461538,8.19012146 1.26061538,9.53587045 2.37784615,10.6014575 L7.95169231,15.92583 L13.6212308,10.6017814 C14.7384615,9.53587045 15.5046154,8.19044534 15.8363077,6.71060729 C16.0664615,5.68518219 15.9907692,5.05619433 15.9726154,4.93668016 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

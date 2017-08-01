@@ -1,0 +1,14 @@
+// Import bootstrap
+@import "./bootstrap/bootstrap-custom";
+
+// Import variables
+@import "variables-perso.scss";
+
+// Import CSS global
+@import "design.scss";
+
+// Import CSS pages/components 
+@import "src/components/Profil/Profil.scss";
+@import "src/components/Create/Create.scss";
+@import "src/components/Events/Events.scss";
+@import "src/components/Search/Search.scss";

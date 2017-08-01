@@ -1,0 +1,65 @@
+.circles-red{
+	position : absolute; 
+	top : 20px;
+	left : 10%;
+	width : 20%;
+	height : 300px;
+	background-color : $red;
+	z-index : -20;
+}
+
+.infos-profil {
+	margin-left : 20%;
+	margin-top : 10%;
+}
+
+.img-profil {
+	display : inline-block;
+	width : 20%;
+	height : 140px;
+	background-color : white;
+	vertical-align : top;
+}
+
+.datas-profil {
+	display : inline-block;
+	margin-left : 5%;
+	width : 70%;
+	vertical-align : top;
+}
+
+.datas-profil div{
+	display : inline-block;
+	text-align : center; 
+	margin-right : 40px;
+	margin-top: 5%;
+	cursor : pointer;
+}
+
+
+button {
+	background: rgba(255,255,255,0.10);
+	border-radius: 3px;
+	border-color : transparent;
+} 
+
+button img {
+	display : inline-block;
+}
+
+button p {
+	display : inline-block;
+}
+
+
+// subnav
+.subnav {
+	text-align : left;
+	margin-top : 30px;
+	margin-bottom: 30px;
+}
+
+.subnav a{
+	margin-right : 30px;
+
+}

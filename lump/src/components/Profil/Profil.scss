@@ -1,47 +1,97 @@
-.circles-red{
-	position : absolute; 
-	top : 20px;
-	left : 10%;
-	width : 20%;
-	height : 300px;
+.header-profil {
+	background-color : $black-blue;
+	height : 420px;
+}
+.header-profil .big-title {
+	font-size : 60px;
+}
+.header-profil .content {
+	padding-left : 10%;
+	padding-right : 10%;
+	position : relative;
+}
+
+.header-profil .circles-red {
+	position : absolute;
+	left : 12%;
+	top : 40px;
+	height : 320px;
+	width : 180px;
 	background-color : $red;
-	z-index : -20;
+	z-index : -3;
 }
 
-.infos-profil {
-	margin-left : 20%;
-	margin-top : 10%;
+.header-profil .infos-profil {
+	width : 80%;
+	margin-left : 10%;
+	margin-top : 90px;
 }
 
-.img-profil {
+.header-profil .img-profil {
+	width : 160px;
+	height : 160px;
 	display : inline-block;
-	width : 20%;
-	height : 140px;
-	background-color : white;
+	vertical-align : top;
+	border-radius : 3px;
+}
+
+.header-profil .img-profil img {
+	width: 100%;
+	height: 100%;
+}
+
+
+
+.header-profil .datas-profil{
+	display : inline-block;
+	width: calc(100% - 185px);
+	margin-left : 20px;
+	margin-top : 20px;
 	vertical-align : top;
 }
-
-.datas-profil {
-	display : inline-block;
-	margin-left : 5%;
-	width : 70%;
-	vertical-align : top;
+.header-profil .body-text {
+	font-size : 14px;
+	font-weight : 100;
 }
 
-.datas-profil div{
-	display : inline-block;
-	text-align : center; 
-	margin-right : 40px;
-	margin-top: 5%;
-	cursor : pointer;
+.header-profil .subtitle-gold {
+	margin : 0;
+	font-size : 12px;
 }
 
+.header-profil .title {
+	font-size : 14px;
+}
 
-button {
+.header-profil .datas-profil div {
+	display : inline-block;
+	margin-right : 60px;
+	text-align : center;
+	margin-top : 10px;
+}
+
+.header-profil .subnav {
+	text-align : left;
+	margin-bottom : 20px;
+	margin-top : 20px;
+}
+
+.header-profil .subnav a {
+	margin-right : 50px;
+	font-size : 14px;
+}
+
+.header-profil .datas-profil button {
 	background: rgba(255,255,255,0.10);
 	border-radius: 3px;
 	border-color : transparent;
+	vertical-align: text-bottom;
 } 
+
+
+
+
+
 
 button img {
 	display : inline-block;
@@ -52,14 +102,58 @@ button p {
 }
 
 
-// subnav
-.subnav {
-	text-align : left;
-	margin-top : 30px;
-	margin-bottom: 30px;
-}
 
-.subnav a{
-	margin-right : 30px;
 
-}
+// .circles-red{
+// 	position : absolute; 
+// 	top : 20px;
+// 	left : 10%;
+// 	width : 20%;
+// 	height : 300px;
+// 	background-color : $red;
+// 	z-index : -20;
+// }
+
+// .infos-profil {
+// 	margin-left : 20%;
+// 	margin-top : 10%;
+// }
+
+// .img-profil {
+// 	display : inline-block;
+// 	width : 20%;
+// 	height : 140px;
+// 	background-color : white;
+// 	vertical-align : top;
+// }
+
+// .datas-profil {
+// 	display : inline-block;
+// 	margin-left : 5%;
+// 	width : 70%;
+// 	vertical-align : top;
+// }
+
+// .datas-profil div{
+// 	display : inline-block;
+// 	text-align : center; 
+// 	margin-right : 40px;
+// 	margin-top: 5%;
+// 	cursor : pointer;
+// }
+
+
+
+
+
+// // subnav
+// .subnav {
+// 	text-align : left;
+// 	margin-top : 30px;
+// 	margin-bottom: 30px;
+// }
+
+// .subnav a{
+// 	margin-right : 30px;
+
+// }

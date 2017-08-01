@@ -12,17 +12,17 @@ body {
 
 @font-face {
 	font-family:'gotham-bold';
-	src:url(/src/assets/font-gotham/Gotham-Bold.otf);
+	src:url(/src/assets/font-gotham/Gotham-Bold.otf) format ('otf');
 }
 
 @font-face {
 	font-family:'gotham-medium';
-	src:url(/src/assets/font-gotham/Gotham-Medium.otf);
+	src:url(/src/assets/font-gotham/Gotham-Medium.otf) format ('otf');
 }
 
 @font-face {
 	font-family:'gotham-book';
-	src:url(/src/assets/font-gotham/Gotham-Book.otf);
+	src:url(/src/assets/font-gotham/Gotham-Book.otf) format ('otf');
 }
 
 // Fonts Class

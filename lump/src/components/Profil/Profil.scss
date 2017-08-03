@@ -1,10 +1,9 @@
 .header-profil {
 	background-color : $black-blue;
+	z-index : 0;
 	box-shadow: -2px 2px 3px 0 rgba(0,0,0,0.50);
 }
-.header-profil .big-title {
-	font-size : 60px;
-}
+
 .header-profil .content {
 	padding-left : 10%;
 	padding-right : 10%;
@@ -48,10 +47,6 @@
 	margin-top : 20px;
 	vertical-align : top;
 }
-.header-profil .body-text {
-	font-size : 1em;
-	font-weight : 100;
-}
 
 .header-profil .subtitle-gold {
 	margin : 0;
@@ -94,4 +89,74 @@ button img {
 button p {
 	display : inline-block;
 	color : $red;
+}
+
+// CONTENU MES EVENEMENTS
+
+
+#profil {
+	padding-bottom: 60px;
+}
+
+
+.events {
+	display : block;
+}
+
+#profil .event{
+	display : inline-block;
+	width : 160px;
+	vertical-align : top;
+	cursor : pointer;
+}
+
+#profil .detail{
+	color : grey;
+	font-size : 0.8em;
+	display : inline-block;
+	cursor : pointer;
+}
+
+#profil .body-text {
+	font-weight : 100;
+}
+
+#profil .mini-image{
+	display : inline-block;
+	width : 30px;
+	height : 30px; 
+	border-radius : 30px;
+	background-color : white;
+	margin-right : 0;
+}
+
+#profil .event-context{
+	margin-right : 0;
+	display : inline-block;
+}
+
+#profil .title {
+	font-family : 'Gotham-Medium', sans-serif;
+	font-weight : medium;
+	display : block;
+}
+
+#profil h2{
+	display : inline-block;
+}
+
+#profil .img-event {
+	width: 160px ;
+	height : 160px;
+	background-color : $white;
+	border-radius : 3px;
+	margin-bottom : 5px;
+}
+
+.top-events {
+	margin-top : 30px;
+}
+
+.events-coming div:nth-child(-n+3){
+	margin-right : 70px;
 }

@@ -15,6 +15,15 @@ import VueRouter from 'vue-router'
 // On importe les composants Vue
 import App from './App.vue'
 
+// Importer Font-Awesome
+// import all icons if you don't care about bundle size
+import 'vue-awesome/icons'
+/* Register component */
+import Icon from 'vue-awesome/components/Icon'
+require('font-awesome/css/font-awesome.css');
+// globally (in your main .js file)
+Vue.component('icon', Icon)
+
 Vue.config.productionTip = false
 
 
@@ -72,6 +81,6 @@ new Vue({
   el: '#app',
   template: '<App/>',
   components: { App },
-  router,
+  router, 
 })
 

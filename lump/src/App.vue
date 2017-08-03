@@ -27,7 +27,9 @@
       </nav>
     </div>
 
-    <div class="sidebar"></div>
+    <div class="sidebar">
+      
+    </div>
 
     <router-view></router-view>
 

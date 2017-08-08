@@ -36,6 +36,8 @@ import Search from './components/Search/Search.vue'
 
 
 
+
+
 // On utilise Vue Router
 Vue.use(VueRouter);
 
@@ -73,8 +75,6 @@ const routes = [
 const router = new VueRouter({
   routes
 })
-
-
 
 // On initialise l'application
 new Vue({

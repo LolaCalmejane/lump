@@ -27,24 +27,24 @@
       </nav>
     </div>
 
-    <div class="sidebar">
-      
-    </div>
+    <sidebar></sidebar>
 
     <router-view></router-view>
 
   </div> <!-- fin app -->
+
 </template>
+
+  
 
 <!-- SCRIPT -->
 <script>
+import Sidebar from './components/Sidebar/Sidebar.vue'
 
 export default {
-  name: 'app',
-  data() {
-    return {
-       msg: ''
-    }
+  name: 'app', 
+  components: {
+    'sidebar': Sidebar
   }
 }
 

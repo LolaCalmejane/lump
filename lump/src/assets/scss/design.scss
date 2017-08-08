@@ -212,22 +212,7 @@ input[type=text]:focus {
     border-bottom : 1px solid white;
 }
 
- .sidebar {
-     position: fixed;
-     top: 0;
-     right: 0;
-     width: 250px;
-     height: 100%;
-     background: #171B2E;
- }
 
- .content {
-     margin-right: 250px;
-     padding-left : 85px;
-     padding-right : 85px;
-     width: auto;
-     position: relative;
-     overflow: auto;
-     z-index: 1;
- }
+
+
 

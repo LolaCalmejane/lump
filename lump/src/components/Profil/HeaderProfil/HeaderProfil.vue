@@ -4,9 +4,8 @@
 <!-- HTML -->
 
 <template>
-<div id ="header-profil" class="header-profil">
+  <div id ="header-profil" class="header-profil">
     <div class="content">
-      
       <div class="infos-profil">
         <h1 class="big-title">{{name}}</h1>
         <div class="img-profil">
@@ -20,19 +19,18 @@
           <div><span class="title">{{numberFriends}}</span><p class="body-text">Amis</p></div>
           <button><img src="" alt=""><p class="subtitle-white">Modifier le profil</p></button>
         </div>
-      <nav class="subnav">
-      <ul>
-        <li><router-link to ="/profil" class="subtitle-white">Evenements</router-link></li>
-        <li><router-link to="musics" class="subtitle-white">Musiques</router-link></li>
-        <li><router-link to ="/" class="subtitle-white">Etoiles</router-link></li>
-        <li><a class="subtitle-white" href="">Playlists</a></li>
-        <li><a class="subtitle-white" href="">Agenda</a></li>
-        </ul>
-      </nav>
+        <nav class="subnav">
+        <ul>
+          <li><router-link to ="/profil" class="subtitle-white">Evenements</router-link></li>
+          <li><router-link to="musics" class="subtitle-white">Musiques</router-link></li>
+          <li><router-link to ="/" class="subtitle-white">Etoiles</router-link></li>
+          <li><a class="subtitle-white" href="">Playlists</a></li>
+          <li><a class="subtitle-white" href="">Agenda</a></li>
+          </ul>
+        </nav>
       </div>
     </div> <!-- end content -->
-</div>
-
+  </div>
 </template>
 
 <!-- SCRIPT -->

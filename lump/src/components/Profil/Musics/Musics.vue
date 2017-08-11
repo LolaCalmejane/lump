@@ -8,7 +8,6 @@
 		<div class="content">
 			<h1>Bonjour</h1>
 		</div>
-		
 	</div>
 </template>
 
@@ -17,10 +16,10 @@
 import HeaderProfil from '../HeaderProfil/HeaderProfil.vue'
 
 export default {
-  name: 'musics', 
-  components: {
-    'header-profil': HeaderProfil
-  }
+	name: 'musics', 
+	components: {
+    	'header-profil': HeaderProfil
+  	}
 }
 
 </script>

@@ -1,3 +1,13 @@
+.content {
+     margin-right: 250px;
+     padding-left : 85px;
+     padding-right : 85px;
+     width: auto;
+     position: relative;
+     overflow: auto;
+     z-index: 1;
+ }
+
 ////////
 // Sidebar
 ///////
@@ -11,26 +21,378 @@
      background: #171B2E;
  }
 
- .content {
-     margin-right: 250px;
-     padding-left : 85px;
-     padding-right : 85px;
-     width: auto;
-     position: relative;
-     overflow: auto;
-     z-index: 1;
+ .sidebar-content
+ {
+     padding-left: 10%;
+     padding-right: 10%;
  }
-#sidebar .container .navbar-sidebar div:nth-child(-n+3) {
-	margin: 20px 0px 0px 40px;
+
+.scroll {
+
+     overflow: scroll;
+     width: 100%;
+     height: 100%;
+}
+
+// SIDEBAR - NAVBAR CONTENT
+
+#sidebar .scroll .sidebar-content .navbar-sidebar {
+     width: 100%;
+     margin-top: 20px;
+     text-align: center;
+}
+
+#sidebar .scroll .sidebar-content .navbar-sidebar div:nth-child(-n+3) {
+     cursor: pointer;
+     display: inline-block;
+     color: $white;
+     font-size: 1.4em;
+     font-family: FontAwesome;
+}
+
+#sidebar .scroll .sidebar-content .navbar-sidebar div:nth-child(-n+3):hover {
+     color : $red;
+     cursor: pointer;
+}
+
+#sidebar .scroll .sidebar-content .navbar-sidebar .playerIcon:before { 
+     content: "\f037";
+     font-family: FontAwesome;
+}
+
+
+#sidebar .scroll .sidebar-content .navbar-sidebar .notificationsIcon:before { 
+     content: "\f0f3";
+     margin-left: 40px;
+     margin-right: 40px;
+     position: relative;
+}
+
+#sidebar .scroll .sidebar-content .navbar-sidebar .chatIcon:before { 
+     content: "\f075";
+}
+
+// SIDEBAR - NAVBAR CONTENT - LINE
+
+#sidebar .scroll .sidebar-content .navbar-sidebar .line {
+     width: 100%;
+     height: 2px;
+     background-color: #393D4F;
+     margin-top: 25px;
+}
+
+//--------------------------------------------------------------
+
+// SIDEBAR - PLAYER CONTENT 
+
+// SIDEBAR - PLAYER CONTENT - TITLE PLAYER
+
+#sidebar .scroll .player-content .inListening {
+     margin-top: 20px;
+}
+
+#sidebar .scroll .player-content .inListening .inListeningIconPlay:before {
+     content: "\f01d";
+     font-size: 1.2em;
+     font-family: FontAwesome;
+     color: $gold;
+}
+
+#sidebar .scroll .player-content .inListening .inListeningIconPlay,p {
+     display: inline-block;   
+}
+
+
+// SIDEBAR - PLAYER CONTENT - VIDEO-PLAYER
+
+#sidebar .scroll .video-player {
+     margin-top: 6px;
+     width: 100%;
+     height: 175px;
+     background-color: #D8D8D8;
+}
+
+// SIDEBAR - PLAYER CONTENT - SONG-INFORMATIONS - MUSIC-PLACE
+
+#sidebar .scroll .sidebar-content .player-content .songInfos {
+     text-align:center;
+     margin-top: 20px;
+     line-height: 0.9em;
+}
+
+#sidebar .scroll .sidebar-content .player-content .songInfos .songTitle {
+     width: 100%;    
+}
+
+#sidebar .scroll .sidebar-content .player-content .songInfos .musicPlace {
+     width: 100%;
+     color: grey;
+     cursor: pointer;
+}
+
+#sidebar .scroll .sidebar-content .player-content .songInfos .musicPlace:hover {
+     font-weight: 400;
+     cursor: pointer;
+}
+
+// SIDEBAR - PLAYER CONTENT - LIKE/OTHER/STARS
+
+#sidebar .scroll .sidebar-content .player-content .interaction {
+     margin-top: 10px;
+     text-align: center;    
+}
+
+#sidebar .scroll .sidebar-content .player-content .interaction div:nth-child(-n+3) {
+     display: inline-block; 
+     cursor: pointer;
+     color: $white; 
+     font-size: 1.2em;
+     font-family: FontAwesome;
+}
+
+#sidebar .scroll .sidebar-content .player-content .interaction div:nth-child(-n+3):hover {
+     color: $red;
+     cursor: pointer; 
+}
+
+#sidebar .scroll .sidebar-content .player-content .interaction .likeIcon:before { 
+     content: "\f004";
+}
+
+#sidebar .scroll .sidebar-content .player-content .interaction .otherIcon:before { 
+     content: "\f141";
+     margin-right: 25px;
+     margin-left: 25px;
+}
+
+#sidebar .scroll .sidebar-content .player-content .interaction .starsIcon:before { 
+     content: "\f006";
+}
+
+// SIDEBAR - PLAYER CONTENT - WAITING LIST
+
+#sidebar .scroll .sidebar-content .player-content .waitingList .waitingListIconWait:before {
+     content: "\f017";
+     font-size: 1.2em;
+     font-family: FontAwesome;
+     color: $gold;
+}
+
+#sidebar .scroll .player-content .waitingList {
+     margin-top: 20px;
+}
+
+#sidebar .scroll .player-content .waitingList .waitingListIconWait,p {
+     display: inline-block;   
+}
+
+// SIDEBAR - PLAYER CONTENT - WAITING LIST - CONTENT
+
+#sidebar .scroll .waitingListContent {
+     margin-top: 6px;
+     width: 100%;
+     height: 200px;
+     background: rgba(255,255,255,0.03);
+     overflow: scroll;
+}
+
+// SIDEBAR - PLAYER CONTENT - WAITING LIST - CONTENT - MUSIC IN WAIT
+
+#sidebar .scroll .waitingListContent .listMusicInWait .musicInWait {
+     margin-bottom: 10px;
+}
+
+#sidebar .scroll .waitingListContent .listMusicInWait .musicInWait:hover {
+     background: rgba(255,255,255,0.10);
+     cursor: pointer;
+}
+
+#sidebar .scroll .waitingListContent .listMusicInWait .musicInWait .imgMusicInWait,.musicTitleInWait,.deleteIcon {
+     display: inline-block;
+}
+
+#sidebar .scroll .waitingListContent .listMusicInWait .musicInWait .imgMusicInWait {
+     width: 20%;
+     position: relative;
+}
+
+#sidebar .scroll .waitingListContent .listMusicInWait .musicInWait .imgMusicInWait img {
+     width: 45px;
+     height: 45px;
+     border-radius: 3px;
+     margin-left: 10px;
+}
+
+#sidebar .scroll .waitingListContent .listMusicInWait .musicInWait .musicInWaitIconPlay:before {
+     content: "\f144";
+     font-size: 1.6em;
+     font-family: FontAwesome;
+     color: $white;
+     opacity: 0.55;
+}
+
+#sidebar .scroll .waitingListContent .listMusicInWait .musicInWait .musicInWaitIconPlay:hover {
+     font-size: 1.1em;
+}
+
+#sidebar .scroll .waitingListContent .listMusicInWait .musicInWait .musicInWaitIconPlay {
+    position: absolute;
+    top: 17%;
+    left: 46%;
+}
+
+#sidebar .scroll .waitingListContent .listMusicInWait .musicInWait .musicTitleInWait {
+     margin-left: 8px;
+     width: 60%;
+}
+
+#sidebar .scroll .waitingListContent .listMusicInWait .musicInWait .deleteIcon:before {
+     content: "\f00d";
+     font-size: 1.2em;
+     font-family: FontAwesome;
+     color: white;
+     cursor: pointer;
+}
+
+#sidebar .scroll .waitingListContent .listMusicInWait .musicInWait .deleteIcon:hover {  
+     font-size: 1.1em;
+}
+
+#sidebar .scroll .waitingListContent .listMusicInWait .musicInWait .deleteIcon {
+    text-align: right;
+    width: 10%;
+}
+
+// SIDEBAR - PLAYER CONTENT - BOTTOM SIDEBAR
+
+#sidebar .scroll .player-content .bottom-sidebar {
+     position: absolute;
+     bottom: 0;
+     width: 100%;
+     background: #171B2E;     
+}
+
+// SIDEBAR - PLAYER CONTENT - WAITING LIST - CONTENT - BUTTON
+
+#sidebar .scroll .player-content .bottom-sidebar .sidebar-content .waitingListButton {
+     margin-top: 20px;
+     margin-bottom: 20px;
+     width: 100%;
+     height: 32px;
+     border-radius: 3px;
+     border: none; 
+     background: rgba(255, 255, 255, 0.1); 
+     outline:none;
+}
+
+#sidebar .scroll .player-content .bottom-sidebar .sidebar-content .waitingListButton:hover {
+     outline:none;
+}
+
+//--------------------------------------------------------------
+
+// SIDEBAR - NOTIFICATIONS CONTENT
+
+#sidebar .scroll .notifications-content .listNotifications .notification .dataNotification .notificationSenderName {
+     line-height: 0.2;
+}
+#sidebar .scroll .notifications-content .listNotifications {
+    overflow: scroll;
+}
+
+#sidebar .scroll .notifications-content .listNotifications .notification {
+     margin-top: 10px;
+     cursor: pointer;
+     width: 100%
 
 }
 
-#sidebar .container div:nth-child(-n+3) {
-	display: inline-block;
-	
+#sidebar .scroll .notifications-content .listNotifications .notification:hover {
+     background: rgba(255,255,255,0.10);
+     cursor: pointer;
 }
-#sidebar .container .navbar-sidebar div:hover {
-	color : $red;
-	//padding-bottom: 3px; //pour baisser la border
+
+#sidebar .scroll .notifications-content .listNotifications .notification .imgNotification,.dataNotification {
+     display: inline-block;
+}
+
+#sidebar .scroll .notifications-content .listNotifications .notification .dataNotification {
+     vertical-align: top;
+     width: 70%;
+     margin-left: 5px;
 
 }
+
+// SIDEBAR - NOTIFICATIONS CONTENT - IMG NOTIFICATIONS
+
+#sidebar .scroll .notifications-content .listNotifications .notification .imgNotification img {
+     border-radius: 30px;
+     width: 50px;
+     height: 50px;
+     margin-left: 7px;
+     margin-top: 3px;
+}
+
+#sidebar .scroll .notifications-content {
+     overflow: scroll;
+}
+
+#sidebar .scroll .notifications-content .listNotifications .notification .dataNotification,.imgNotification {
+   margin-top: 3px;
+}
+
+// SIDEBAR - NOTIFICATIONS CONTENT - BOTTOM SIDEBAR - PLAYER 
+
+#sidebar .scroll  .notification-bottom-sidebar {
+     position: absolute;
+     bottom: 0;
+     width: 100%;
+     background: #171B2E; 
+}
+
+#sidebar .scroll .notification-bottom-sidebar .notification-video-player {
+     width: 100%;
+     height: 175px;
+     background-color: #D8D8D8;
+}
+
+#sidebar .scroll .notification-bottom-sidebar .sidebar-content .notification-interaction .notificationlikeIcon,.notification-otherIcon {
+     color: $white; 
+     font-size: 1.2em;
+     font-family: FontAwesome;    
+}
+
+#sidebar .scroll .notification-bottom-sidebar .sidebar-content .notification-interaction div:nth-child(2n-1):hover {
+     color: $red;    
+}
+
+#sidebar .scroll .notification-bottom-sidebar .sidebar-content .notification-interaction {
+     margin-top: 12px;
+     margin-bottom: 10px; 
+}
+
+#sidebar .scroll .notification-bottom-sidebar .sidebar-content .notification-interaction div {
+     text-align: center;
+     display: inline-block; 
+     cursor: pointer;
+     color: $white;    
+}
+
+#sidebar .scroll .notification-bottom-sidebar .sidebar-content .notification-interaction div p {
+     margin-left: 10px;
+     margin-right: 10px;
+}
+
+
+#sidebar .scroll .notification-bottom-sidebar .sidebar-content .notification-interaction .notificationlikeIcon:before {
+     content: "\f004";
+}
+
+#sidebar .scroll .notification-bottom-sidebar .sidebar-content .notification-interaction .notification-otherIcon:before {
+     content: "\f141";
+}
+//--------------------------------------------------------------
+
+// SIDEBAR - CHAT CONTENT
+
+// SIDEBAR - CHAT CONTENT - TITLE CHAT

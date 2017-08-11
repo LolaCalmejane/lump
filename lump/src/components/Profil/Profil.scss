@@ -1,162 +1,236 @@
-.header-profil {
-	background-color : $black-blue;
-	z-index : 0;
-	box-shadow: -2px 2px 3px 0 rgba(0,0,0,0.50);
-}
-
-.header-profil .content {
-	padding-left : 10%;
-	padding-right : 10%;
-	position : relative;
-}
-
-.header-profil .circles-red {
-	position : absolute;
-	left : 12%;
-	top : 40px;
-	height : 320px;
-	width : 180px;
-	background-color : $red;
-	z-index : -3;
-}
-
-.header-profil .infos-profil {
-	width : 80%;
-	margin-left : 10%;
-	margin-top : 90px;
-}
-
-.header-profil .img-profil {
-	max-width : 160px;
-	display : inline-block;
-	vertical-align : top;
-	border-radius : 3px;
-}
-
-.header-profil .img-profil img {
-	width: 100%;
-	height: 100%;
-}
-
-
-
-.header-profil .datas-profil{
-	display : inline-block;
-	width: calc(100% - 185px);
-	margin-left : 20px;
-	margin-top : 20px;
-	vertical-align : top;
-}
-
-.header-profil .subtitle-gold {
-	margin : 0;
-	font-size : 0.9em;
-}
-
-.header-profil .title {
-	font-size : 1em;
-}
-
-.header-profil .datas-profil div {
-	display : inline-block;
-	margin-right : 60px;
-	text-align : center;
-	margin-top : 10px;
-}
-
-.header-profil .subnav {
-	text-align : left;
-	margin-bottom : 20px;
-	margin-top : 60px;
-}
-
-.header-profil .subnav a {
-	margin-right : 50px;
-	font-size : 1em;
-}
-
-.header-profil .datas-profil button {
-	background: rgba(255,255,255,0.10);
-	border-radius: 3px;
-	border-color : transparent;
-	vertical-align: text-bottom;
-} 
-
-button img {
-	display : inline-block;
-}
-
-button p {
-	display : inline-block;
-	color : $red;
-}
-
 // CONTENU MES EVENEMENTS
 
-
-#profil {
+.profil {
 	padding-bottom: 60px;
 }
 
-
-.events {
-	display : block;
-}
-
-#profil .event{
-	display : inline-block;
-	width : 160px;
-	vertical-align : top;
+.profil .event{
 	cursor : pointer;
+	width: 20%;
+	margin: 0 2% 0 2%;
+	float : left;
 }
 
-#profil .detail{
+.profil .top-events .detail{
 	color : grey;
 	font-size : 0.8em;
 	display : inline-block;
 	cursor : pointer;
 }
 
-#profil .body-text {
+.profil .top-events .detail:hover {
+	font-weight : 400;
+}
+
+.profil .body-text {
 	font-weight : 100;
+	line-height: 1.2;
+	margin-top : 5px;
 }
 
-#profil .mini-image{
+.profil .top-events {
+	margin-top : 30px;
+	margin-bottom: 20px;
+}
+
+.profil .block-mini-image {
+	width: 18%;
 	display : inline-block;
-	width : 30px;
-	height : 30px; 
+	vertical-align : top;
+}
+
+.profil .mini-image{
+	display : inline-block;
+	width : 1.8em;
 	border-radius : 30px;
-	background-color : white;
 	margin-right : 0;
 }
 
-#profil .event-context{
+.profil .mini-image:after {
+	content: "";
+	display: block;
+	padding-bottom: 100%;
+}
+
+.profil .event-context{
 	margin-right : 0;
 	display : inline-block;
+	max-width : 70%;
+	vertical-align : top;
 }
 
-#profil .title {
+
+.profil .event span {
+	width: 100%;
+	white-space: nowrap;
+	overflow : hidden;
+	text-overflow: ellipsis;
+}
+
+.profil .event span:hover {
+	font-weight : 600;
+}
+
+.profil .title {
 	font-family : 'Gotham-Medium', sans-serif;
 	font-weight : medium;
 	display : block;
 }
 
-#profil h2{
+.profil h2{
 	display : inline-block;
 }
 
-#profil .img-event {
-	width: 160px ;
-	height : 160px;
-	background-color : $white;
+.profil .img-event {
+	width : 100%;
 	border-radius : 3px;
 	margin-bottom : 5px;
+	position : relative;
+	background-color: $black-blue;
 }
 
-.top-events {
-	margin-top : 30px;
+.profil .img-event:after {
+	content: "";
+	display: block;
 }
 
-.events-coming div:nth-child(-n+3){
-	margin-right : 70px;
+.profil .img-event img {
+	width : 100%;
+	height : auto;
 }
+
+//EVENTS COMING
+.profil .events-coming .img-event span {
+	position :absolute;
+	top : 50%;
+	left : 50%;
+	transform: translate(-50%, -50%);
+	display : none;
+	font-size : 2em;
+	width : auto;
+}
+
+.profil .img-event:hover span{
+	display : block;
+}
+
+
+//EVENTS PASSED
+
+// Icon play
+.profil .events-passed .img-event .icon-play:before { 
+	content: "\f144";	 
+	font-family : FontAwesome;
+	font-style: normal;
+    font-weight: normal;
+    font-size : 2em;
+	display : none;
+	position : absolute;
+	top : 0px;
+	right :10px;
+	
+}
+
+.profil  .events-passed .img-event .icon-pause:before {
+	content : "\f28b";
+	font-family: FontAwesome;
+	position : absolute;
+	top : 0px;
+	right :10px;
+	font-size : 2em;
+}
+
+.profil .events-passed .img-event:hover .icon-play:before{
+	display : block;
+}
+
+.profil .events-passed .img-event:hover .icon-play:hover:before{
+	font-size: 2.2em;
+}
+
+.profil .img-event:hover img {
+	opacity: 0.2;
+}
+
+//Icon other
+.profil  .events-passed .img-event .icon-other:before {
+	content: "\f141";	 
+	font-family : FontAwesome;
+	font-style: normal;
+    font-weight: normal;
+    font-size : 2em;
+	position : inherit;
+	top : 0px;
+	right :10px;
+}
+
+.img-event ul {
+	position : absolute;
+	top : 2px;
+	right: 40px;
+	list-style-type: none;
+	}
+
+.img-event ul li a {
+	position : relative;
+	text-decoration: none;
+}
+
+.img-event ul li a:hover {
+	text-decoration: none;
+}
+
+.img-event button {
+	background-color : transparent;
+	border : none;
+	display : none;
+}
+
+.img-event .dropdown {
+	position: absolute;
+	right: 40px;
+	top: 0px;
+}
+
+.profil .img-event:hover button{
+	display : block;
+}
+
+
+.img-event .dropdown-menu {
+	position: absolute;
+	left: 0;
+	top: 50px;
+	width : 100%;
+}
+
+//stars ranking
+.profil .events-passed .img-event .rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  position : absolute;
+  width : 55%;
+  top : 50%;
+  left : 50%;
+  transform: translate(-50%, -50%);
+  display : none;
+}
+
+.profil .img-event:hover .rating{
+	display : block;
+	color : white;
+}
+
+.profil .events-passed .img-event .rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.2em;
+  font-size : 1.2em;
+}
+.profil .events-passed .img-event .rating > span:hover:before,
+.profil .events-passed .img-event .rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+   color : $red;
+}
+

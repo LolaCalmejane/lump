@@ -1,0 +1,122 @@
+// HEADER PROFIL 
+.header-profil {
+	background-color : $black-blue;
+	z-index : 0;
+	box-shadow: -2px 2px 3px 0 rgba(0,0,0,0.50);
+}
+
+.header-profil .content {
+	position : relative;
+}
+
+.header-profil .infos-profil {
+	width: 80%;
+    margin: auto;
+    padding-top: 40px;
+}
+
+@media only screen and (max-width: 1100px) {
+    .header-profil .infos-profil {
+        width : 100%;
+    }
+
+    .header-profil .datas-profil {
+    	margin-top : 20px;
+    }
+
+    .header-profil .datas-profil div {
+		margin-top: 10px;
+    }
+}
+
+ @media only screen and (max-width: 970px) {
+    .content {
+    padding-left : 60px;
+    padding-right : 60px;
+	}
+}
+
+.header-profil .img-profil {
+	max-width : 50%;
+	display : inline-block;
+	vertical-align : top;
+	border-radius : 3px;
+	position : relative;
+}
+
+.header-profil .img-profil:after {
+	content: "";
+	display: block;
+}
+
+.header-profil .img-profil img{
+	width : 100%;
+	height : auto;
+}
+
+.header-profil .img-profil .circles-red {
+	position : absolute;
+	left : -15px;
+	bottom : -15px;
+	width : 100%;
+	background-color : $red;
+	z-index : -3;
+}
+
+.header-profil .img-profil .circles-red:after {
+	content: "";
+	display: block;
+	padding-bottom: 100%;
+}
+
+.header-profil .datas-profil{
+	display : inline-block;
+	width: 70%;
+	margin-left : 20px;
+	margin-top : 30px;
+	vertical-align : top;
+}
+
+.header-profil .subtitle-gold {
+	margin : 0;
+	font-size : 0.9em;
+}
+
+.header-profil .title {
+	font-size : 1.2em;
+}
+
+.header-profil .datas-profil div {
+	display : inline-block;
+	margin-right : 10%;
+	text-align : center;
+	margin-top : 20px;
+}
+
+.header-profil .subnav {
+	text-align : left;
+	margin-bottom : 20px;
+	margin-top : 30px;
+}
+
+.header-profil .subnav a {
+	margin-right: 7%;
+	font-size : 1em;
+}
+
+.header-profil .datas-profil button {
+	background: rgba(255,255,255,0.10);
+	border-radius: 3px;
+	border-color : transparent;
+	vertical-align: text-bottom;
+} 
+
+button img {
+	display : inline-block;
+}
+
+button p {
+	display : inline-block;
+	color : $red;
+	margin : 5px 15px 5px 15px;
+}

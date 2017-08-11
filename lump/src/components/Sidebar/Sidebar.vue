@@ -159,7 +159,7 @@ export default {
 				notificationSenderName: 'Louise Marrain',
 				notificationType: 'Vous invite à sa soirée',
 				notificationEventConcerned: '« Come on »',
-				imgNotificationSender: require('images/profil-img-2.png')
+				imgNotificationSender: require('images/profil-img-2bis.png')
 			},
 			{
 				id: 2,
@@ -173,7 +173,7 @@ export default {
 				notificationSenderName: 'Avril Asnières',
 				notificationType: 'Vous invite à son apéritif',
 				notificationEventConcerned: '« Come on »',
-				imgNotificationSender: require('images/profil-img-2.png')
+				imgNotificationSender: require('images/profil-img-2bis.png')
 			},
 			{
 				id: 4,

@@ -33,10 +33,7 @@ import Events from './components/Events/Events.vue'
 import Login from './components/Login/Login.vue'
 import Profil from './components/Profil/Profil.vue'
 import Search from './components/Search/Search.vue'
-
-
-
-
+import Musics from './components/Profil/Musics/Musics.vue'
 
 // On utilise Vue Router
 Vue.use(VueRouter);
@@ -47,7 +44,7 @@ const routes = [
   {
     path: '/Create/',
     component: Create,
-    name: 'create'
+    name: 'create',
   },
   {
     path: '/Events/',
@@ -63,6 +60,11 @@ const routes = [
     path: '/Profil/',
     component: Profil,
     name: 'profil',
+  },
+  {
+    path: '/Musics/',
+    component: Musics,
+    name: 'musics',
   },
     {
     path: '/Search/',

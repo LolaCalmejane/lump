@@ -41,7 +41,7 @@
 
 .profil .mini-image{
 	display : inline-block;
-	width : 1.8em;
+	width: 2.3em;
 	border-radius : 30px;
 	margin-right : 0;
 }
@@ -87,6 +87,7 @@
 	margin-bottom : 5px;
 	position : relative;
 	background-color: $black-blue;
+	box-shadow: -2px 2px 3px 0 rgba(0, 0, 0, 0.5);
 }
 
 .profil .img-event:after {

@@ -14,19 +14,19 @@
                     <p class="detail"> | Voir tout</p>
                 </div>
                 <div class="events-coming">
-                    <div class="event" v-for='event in events'>
-                        <div class="block-mini-image"><img class="mini-image" v-bind:src="event.imgProfil" alt=""></div>
+                    <div class="event" v-for='comingEvent in comingEvents'>
+                        <div class="block-mini-image"><img class="mini-image" v-bind:src="comingEvent.imgProfil" alt=""></div>
                         <div class="event-context">
-                            <span class="title ">{{event.organizer}}</span>
+                            <span class="title ">{{comingEvent.organizer}}</span>
                             <p class="detail">organise</p>
                         </div>
                         <div class="img-event">
-                            <img v-bind:src="event.imgEvent" alt="">
+                            <img v-bind:src="comingEvent.imgEvent" alt="">
                             <span>J-12</span>
                         </div>
-                        <span class="title">{{event.title}}</span>
+                        <span class="title">{{comingEvent.title}}</span>
                         <span class="bottom-context detail">
-                        {{event.guestsNumber}} invités | {{event.date}}</span>
+                        {{comingEvent.guestsNumber}} invités | {{comingEvent.date}}</span>
                     </div>
                 </div>
             </div>
@@ -38,14 +38,14 @@
                     <p class="detail"> | Voir tout</p>
                 </div>
                 <div class="events-passed">
-                    <div class="event" v-for='event in events'>
-                        <div class="block-mini-image"><img class="mini-image" v-bind:src="event.imgProfil" alt=""></div>
+                    <div class="event" v-for='passedEvent in passedEvents'>
+                        <div class="block-mini-image"><img class="mini-image" v-bind:src="passedEvent.imgProfil" alt=""></div>
                         <div class="event-context">
-                            <span class="title ">{{event.organizer}}</span>
+                            <span class="title ">{{passedEvent.organizer}}</span>
                             <p class="detail">organise</p>
                         </div>
                         <div class="img-event"> <!-- carré d'un événement -->
-                            <img v-bind:src="event.imgEvent" alt="">
+                            <img v-bind:src="passedEvent.imgEvent" alt="">
                             <div class="dropdown"> <!-- icon other on hover -->
                                 <button data-toggle="dropdown" class="icon-other dropdown-toggle" type="button"></button>
                                 <ul role="menu" class="dropdown-menu dropdown-menu-right">
@@ -60,9 +60,9 @@
                                 <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
                             </div>
                         </div>
-                        <span class="title">{{event.title}}</span>
+                        <span class="title">{{passedEvent.title}}</span>
                         <span class="bottom-context detail">
-                    {{event.guestsNumber}} invités | {{event.date}}</span>
+                    {{passedEvent.guestsNumber}} invités | {{passedEvent.date}}</span>
                     </div>
                 </div>
             </div>
@@ -83,7 +83,7 @@ export default {
     data() {
         return {
             pauseShow: false,
-            events: [
+            comingEvents: [
                 {
                 id: 1,
                 title: 'Why not dancing',
@@ -102,7 +102,7 @@ export default {
                 timer: 'J-9',
                 date : '03/06/2017',
                 imgEvent: require('images/event-img-2.png'),
-                imgProfil: require('images/profil-img-2.png')
+                imgProfil: require('images/profil-img-2bis.png')
                 },
                 {
                 id: 3,
@@ -122,6 +122,49 @@ export default {
                 timer: 'Dans 1 mois',
                 date : '06/07/2017',
                 imgEvent: require('images/event-img-4.png'),
+                imgProfil: require('images/profil-img-4.png')
+                }
+            ],
+
+            passedEvents: [
+                {
+                id: 1,
+                title: 'Why not dancing',
+                guestsNumber: '23',
+                organizer: 'Christine Pemba Kingala',
+                timer: 'J-5',
+                date : '17/08/2017',
+                imgEvent: require('images/event-img-5.png'),
+                imgProfil: require('images/profil-img-1.png')
+                },
+                {
+                id: 2,
+                title: 'Aperoo',
+                guestsNumber: '6',
+                organizer: 'Noemie Neda',
+                timer: 'J-9',
+                date : '03/06/2017',
+                imgEvent: require('images/event-img-6.png'),
+                imgProfil: require('images/profil-img-2bis.png')
+                },
+                {
+                id: 3,
+                title: 'Champagne, tomates cerises',
+                guestsNumber: '31',
+                organizer: 'Kyriam Nacim',
+                timer: 'J-12',
+                date : '08/07/2017',
+                imgEvent: require('images/event-img-7.png'),
+                imgProfil: require('images/profil-img-3.png')
+                },
+                {
+                id: 4,
+                title: 'Et pourquoi pas',
+                guestsNumber: '8',
+                organizer: 'Hendi Siam',
+                timer: 'Dans 1 mois',
+                date : '06/07/2017',
+                imgEvent: require('images/event-img-8.png'),
                 imgProfil: require('images/profil-img-4.png')
                 }
             ]

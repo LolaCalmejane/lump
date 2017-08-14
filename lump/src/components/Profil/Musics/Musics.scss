@@ -1,3 +1,38 @@
-#profil-musics h1 {
-	color : red;
+.musics-content {
+     margin-right: 250px;
+     padding-left : 50px;
+     padding-right : 50px;
+     width: auto;
+     position: relative;
+     overflow: auto;
+     z-index: 0;
+ }
+
+ ////////
+// Search bar 
+///////
+
+#search {
+    margin: 20px 0px;
+}
+
+#search input.bar {
+    margin-top: 6px;
+    padding-left : 30px;
+    width: 100%;
+    background-color : transparent;
+    color : white;
+    border : none;
+    text-transform: lowercase;
+    border-bottom : 1px solid #393D4F;
+    outline : none;
+    position: relative;
+}
+
+#search .iconSearch:before {
+    content: "\f002";
+    font-size: 1.2em;
+    font-family: FontAwesome;
+    color: $white;
+    position: absolute;
 }

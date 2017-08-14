@@ -43,7 +43,7 @@ export default {
     return {
       name : 'Jude Ademilo',
       // imgProfil : '',
-      description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Lorem ipsum dolor sit amet, consectetur adipiscing.',
+      description : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique modi necessitatibus perspiciatis dicta.',
       numberEvents : '12',
       numberFriends : '33',
     }    

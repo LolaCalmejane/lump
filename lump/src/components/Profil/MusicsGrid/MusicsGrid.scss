@@ -1,0 +1,140 @@
+.musics-grid table {
+  background-color : transparent;
+  border-radius: 3px;
+  width: 100%;
+}
+
+//intitulé des colonnes
+.musics-grid th {
+  color: $gold;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.musics-grid th, td {
+  padding: 10px 0px;
+  background-color : transparent;
+  cursor : pointer;
+}
+
+.musics-grid td:nth-child(1), .musics-grid th:nth-child(1) {
+  padding-left : 90px;
+  //Pour que au hover il y ait du vide gris clair à gauche
+}
+
+.musics-grid td:nth-child(3), .musics-grid th:nth-child(3) {
+  width : 160px; // pour que la 3ème colonne se place tout à droite, avec le texte aligné à gauche. 
+  padding-right : 90px;
+  //Pour que au hover il y ait du vide gris clair à droite
+}
+
+.musics-grid th.active {
+
+}
+
+.musics-grid th.active .arrow {
+  opacity: 1;
+}
+
+.musics-grid .arrow {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0;
+  height: 0;
+  margin-left: 5px;
+  opacity: 0.66;
+}
+
+.musics-grid .arrow.asc {
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid $gold;
+}
+
+.musics-grid .arrow.dsc {
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid $gold;
+}
+
+//placement des icons par rapport au premier td de chaque tr
+.musics-grid tbody tr td:first-child{
+  position: relative
+}
+  
+.musics-grid tbody tr td:nth-child(n+2) span{
+  display : none;
+}
+
+.musics-grid tbody tr td .iconLike:hover  {
+  color:red;
+}
+
+.musics-grid tbody tr td .iconPlay:hover  {
+  font-size : 1.1em;
+}
+
+.musics-grid tbody tr td .iconOther:hover  {
+  font-size : 1.1em;
+}
+
+.musics-grid tbody tr td .iconPlay{
+  position : absolute;
+  top : 0px;
+  left : 10px;
+  display : none;
+}
+
+.musics-grid tbody tr td .iconOther{
+  position : absolute;
+  top : 8px;
+  right : 20%;
+  display : none;
+}
+
+.musics-grid tbody tr td .iconLike{
+  position : absolute;
+  top : 8px;
+  left : 50px;
+  display : none;
+}
+
+.musics-grid tbody tr td .iconLike:before{
+  content: "\f004";  
+  font-family : FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  font-size : 1.3em;
+}
+
+
+.musics-grid tbody tr td .iconOther:before{
+  content: "\f141";  
+  font-family : FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  font-size : 1.3em;
+}
+  
+//Icon play
+.musics-grid tbody tr td .iconPlay:before{
+  content: "\f144";  
+  font-family : FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  font-size : 2em;
+  
+}
+
+// HOVER D'UN SON 
+
+.musics-grid tbody tr:hover {
+  background: rgba(255,255,255,0.10);
+}
+
+.musics-grid tbody tr:hover span  {
+  display: block;
+}

@@ -4,12 +4,16 @@ import jQuery from 'jquery'
 window.jQuery = window.$ = jQuery
 require('bootstrap-sass')
 
+ 
+Vue.use(VueLodash, lodash)
 
 // On importe Vue
 import Vue from 'vue'
 
 // On importe Vue Router
 import VueRouter from 'vue-router'
+import lodash from 'lodash'
+import VueLodash from 'vue-lodash/dist/vue-lodash.min'
 
 
 // On importe les composants Vue
@@ -30,6 +34,7 @@ Vue.config.productionTip = false
 // On importe les composants Vue
 import Create from './components/Create/Create.vue'
 import Events from './components/Events/Events.vue'
+import Event from './components/Events/Event/Event.vue'
 import Login from './components/Login/Login.vue'
 import Profil from './components/Profil/Profil.vue'
 import Search from './components/Search/Search.vue'
@@ -50,6 +55,11 @@ const routes = [
     path: '/Events/',
     component: Events,
     name: 'events',
+  },
+    {
+    path: '/Event/:comingEventId',
+    component: Event,
+    name: 'event',
   },
   {
     path: '/Login/',

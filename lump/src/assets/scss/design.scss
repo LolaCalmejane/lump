@@ -5,9 +5,10 @@
 body {
 	background: linear-gradient(to bottom, #11152d 0%,#070912 100%); 
 	margin : 0;
-	color : white;
+	color : $white;
 	font-family : 'Open Sans', sans-serif;
 	font-weight : light; 
+	letter-spacing: 0.91px;
 }
 
 @font-face {
@@ -25,22 +26,29 @@ body {
 	src:url(/src/assets/font-gotham/Gotham-Book.otf) format ('otf');
 }
 
+
+
 // Fonts Class
 .big-title {
 	font-family : 'gotham-bold', sans-serif;
 	font-size : 60px;
-	color : white;
+	color : $white;
 }
 
 .title {
-	font-family : 'gotham-bold', sans-serif;
+	font-family : 'gotham-medium', sans-serif;
 	font-size : 1em;
-	color : white;
+	color : $white;
 	line-height : 1;
+	letter-spacing: 0.91px;
+}
+
+.title:hover {
+	font-family : 'gotham-bold', sans-serif;
 }
 
 .subtitle-gold {
-	font-family : 'gotham-medium';
+	font-family : 'gotham-book';
 	font-size : 0.9em;
 	color : $gold;
 	text-transform : uppercase;
@@ -62,7 +70,7 @@ body {
 
 .body-text {
 	font-family : 'Open Sans', sans-serif;
-	font-weight : 400;
+	font-weight : 100;
 	font-size : 1em;
 	color : $white;
 }
@@ -70,8 +78,12 @@ body {
 .detail {
 	font-family : 'Open Sans', sans-serif;
 	font-weight : 300;
-	font-size : 0.9em;
-	color : $white;
+	font-size : 0.85em;
+	color : #8D909A;
+}
+
+.detail:hover {
+	font-weight : 400;
 }
 
 .button-text{

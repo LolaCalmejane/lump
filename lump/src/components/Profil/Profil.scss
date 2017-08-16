@@ -1,87 +1,75 @@
 // CONTENU MES EVENEMENTS
 
-.profil {
+.events {
 	padding-bottom: 60px;
 }
 
-.profil .event{
+.events .event{
 	cursor : pointer;
-	width: 20%;
-	margin: 0 2% 0 2%;
+	width: 25%;
+	//pour des colonnes de 25%;
 	float : left;
+	padding : 0 2% 0 2%;
 }
 
-.profil .top-events .detail{
-	color : grey;
-	font-size : 0.8em;
+.events .top-events .detail{
 	display : inline-block;
 	cursor : pointer;
 }
 
-.profil .top-events .detail:hover {
-	font-weight : 400;
-}
-
-.profil .body-text {
-	font-weight : 100;
+.events .body-text {
 	line-height: 1.2;
 	margin-top : 5px;
 }
 
-.profil .top-events {
+.events .top-events {
 	margin-top : 30px;
 	margin-bottom: 20px;
 }
 
-.profil .block-mini-image {
-	width: 18%;
+//Miniature photo de profil
+.events .block-mini-image {
+	width: 2.3em;
 	display : inline-block;
 	vertical-align : top;
+	
 }
 
-.profil .mini-image{
-	display : inline-block;
-	width: 2.3em;
+.events .mini-image{
+	width: 100%;
 	border-radius : 30px;
-	margin-right : 0;
 }
 
-.profil .mini-image:after {
+.events .mini-image:after {
 	content: "";
 	display: block;
 	padding-bottom: 100%;
 }
 
-.profil .event-context{
+.events .event-context{
 	margin-right : 0;
 	display : inline-block;
-	max-width : 70%;
+	max-width : 65%;
 	vertical-align : top;
 }
 
-
-.profil .event span {
+//Mettre les "..."
+.events .event span {
 	width: 100%;
 	white-space: nowrap;
 	overflow : hidden;
 	text-overflow: ellipsis;
 }
 
-.profil .event span:hover {
-	font-weight : 600;
-}
-
-.profil .title {
-	font-family : 'Gotham-Medium', sans-serif;
-	font-weight : medium;
+.events .title {
 	display : block;
 }
 
-.profil h2{
+.events h2{
 	display : inline-block;
 }
 
-.profil .img-event {
+.events .img-event {
 	width : 100%;
 	border-radius : 3px;
 	margin-bottom : 5px;
@@ -90,18 +78,18 @@
 	box-shadow: -2px 2px 3px 0 rgba(0, 0, 0, 0.5);
 }
 
-.profil .img-event:after {
+.events .img-event:after {
 	content: "";
 	display: block;
 }
 
-.profil .img-event img {
+.events .img-event img {
 	width : 100%;
 	height : auto;
 }
 
 //EVENTS COMING
-.profil .events-coming .img-event span {
+.events .events-coming .img-event span {
 	position :absolute;
 	top : 50%;
 	left : 50%;
@@ -111,7 +99,7 @@
 	width : auto;
 }
 
-.profil .img-event:hover span{
+.events .img-event:hover span{
 	display : block;
 }
 
@@ -119,7 +107,7 @@
 //EVENTS PASSED
 
 // Icon play
-.profil .events-passed .img-event .icon-play:before { 
+.events .events-passed .img-event .icon-play:before { 
 	content: "\f144";	 
 	font-family : FontAwesome;
 	font-style: normal;
@@ -132,7 +120,7 @@
 	
 }
 
-.profil  .events-passed .img-event .icon-pause:before {
+.events  .events-passed .img-event .icon-pause:before {
 	content : "\f28b";
 	font-family: FontAwesome;
 	position : absolute;
@@ -141,20 +129,20 @@
 	font-size : 2em;
 }
 
-.profil .events-passed .img-event:hover .icon-play:before{
+.events .events-passed .img-event:hover .icon-play:before{
 	display : block;
 }
 
-.profil .events-passed .img-event:hover .icon-play:hover:before{
+.events .events-passed .img-event:hover .icon-play:hover:before{
 	font-size: 2.2em;
 }
 
-.profil .img-event:hover img {
+.events .img-event:hover img {
 	opacity: 0.2;
 }
 
 //Icon other
-.profil  .events-passed .img-event .icon-other:before {
+.events  .events-passed .img-event .icon-other:before {
 	content: "\f141";	 
 	font-family : FontAwesome;
 	font-style: normal;
@@ -193,7 +181,7 @@
 	top: 0px;
 }
 
-.profil .img-event:hover button{
+.events .img-event:hover button{
 	display : block;
 }
 
@@ -202,34 +190,34 @@
 	position: absolute;
 	left: 0;
 	top: 50px;
-	width : 100%;
+	width: 240px;
 }
 
 //stars ranking
-.profil .events-passed .img-event .rating {
+.events .events-passed .img-event .rating {
   unicode-bidi: bidi-override;
   direction: rtl;
   position : absolute;
-  width : 55%;
+  width : 90%;
   top : 50%;
-  left : 50%;
+  left :0;
   transform: translate(-50%, -50%);
   display : none;
 }
 
-.profil .img-event:hover .rating{
+.events .img-event:hover .rating{
 	display : block;
 	color : white;
 }
 
-.profil .events-passed .img-event .rating > span {
+.events .events-passed .img-event .rating > span {
   display: inline-block;
   position: relative;
   width: 1.2em;
   font-size : 1.2em;
 }
-.profil .events-passed .img-event .rating > span:hover:before,
-.profil .events-passed .img-event .rating > span:hover ~ span:before {
+.events .events-passed .img-event .rating > span:hover:before,
+.events .events-passed .img-event .rating > span:hover ~ span:before {
    content: "\2605";
    position: absolute;
    color : $red;

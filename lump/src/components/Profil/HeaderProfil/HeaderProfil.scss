@@ -7,26 +7,7 @@
 
 .header-profil .content {
 	position : relative;
-}
-
-.header-profil .infos-profil {
-	width: 80%;
-    margin: auto;
-    padding-top: 40px;
-}
-
-@media only screen and (max-width: 1100px) {
-    .header-profil .infos-profil {
-        width : 100%;
-    }
-
-    .header-profil .datas-profil {
-    	margin-top : 20px;
-    }
-
-    .header-profil .datas-profil div {
-		margin-top: 10px;
-    }
+	padding-top : 30px;
 }
 
  @media only screen and (max-width: 970px) {
@@ -42,19 +23,21 @@
 	vertical-align : top;
 	border-radius : 3px;
 	position : relative;
-	
+	margin-left : 15px;
 }
 
-// .header-profil .img-profil:after {
-// 	content: "";
-// 	display: block;
-// }
+//Pour le responsive de l'image
+.header-profil .img-profil:after {
+	content: "";
+	display: block;
+}
 
 .header-profil .img-profil img{
 	width : 100%;
 	height : auto;
 }
 
+//Points rouge derrrière l'image
 .header-profil .img-profil .circles-red {
 	position : absolute;
 	left : -15px;
@@ -70,54 +53,80 @@
 	padding-bottom: 100%;
 }
 
+// Tout le contenu sauf image
 .header-profil .datas-profil{
 	display : inline-block;
-	width: 70%;
 	margin-left : 20px;
-	margin-top : 30px;
 	vertical-align : top;
 }
 
-.header-profil .subtitle-gold {
-	margin : 0;
-	font-size : 0.9em;
+//datas-left ( name + button)
+
+.header-profil .data-left {
+	float: left;
 }
 
-.header-profil .title {
-	font-size : 1.2em;
+.header-profil .data-left .big-title {
+	font-size : 24px;
+	color : $white;
 }
 
-.header-profil .datas-profil div {
-	display : inline-block;
-	margin-right : 10%;
-	text-align : center;
-	margin-top : 20px;
-}
-
-.header-profil .subnav {
-	text-align : left;
-	margin-bottom : 20px;
-	margin-top : 30px;
-}
-
-.header-profil .subnav a {
-	margin-right: 7%;
-	font-size : 1em;
-}
-
-.header-profil .datas-profil button {
+.header-profil button {
 	background: rgba(255,255,255,0.10);
 	border-radius: 3px;
 	border-color : transparent;
 	vertical-align: text-bottom;
+	padding : 5px 15px 5px 15px;
+	text-transform : uppercase;
 } 
 
-button img {
+.header-profil button:active{
+	border: none;
+}
+
+//data-right : numbers datas
+.header-profil .data-right {
+	position : absolute;
+	right : 140px;
+	top : 60px;
+}
+
+.header-profil .data-right h2{
+	display : block;
+	margin : 0;
+}
+
+.header-profil .data-right div span,p {
 	display : inline-block;
 }
 
-button p {
-	display : inline-block;
-	color : $red;
-	margin : 5px 15px 5px 15px;
+.header-profil .data-right div:last-child {
+	margin-top : 15px;
+}
+
+
+//subnav
+.header-profil .subnav {
+	text-align : left;
+	margin-bottom : 20px;
+	margin-top: 12px;
+	width : 100%;
+}
+
+.header-profil .subnav li{
+	width : 19%;
+	
+	margin : 0;
+}
+
+.header-profil .subnav li a{
+	color: $white;
+}
+
+.header-profil .subnav li:hover a{
+	color: $white;
+}
+
+.header-profil .subnav li:last-child {
+	margin-right: 0;
 }

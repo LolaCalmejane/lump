@@ -6,7 +6,7 @@
     <div id="profil" class="profil">
         <header-profil></header-profil>
         <!-- Grid events -->
-        <section class="events">
+       <section class="events">
             <div class="content">
                 <!-- Events Coming -->
                 <div class="top-events">
@@ -15,20 +15,22 @@
                 </div>
                 <div class="events-coming">
                     <div class="event" v-for='comingEvent in comingEvents'>
-                            <div class="block-mini-image"><img class="mini-image" v-bind:src="comingEvent.imgProfil" alt=""></div>
-                            <div class="event-context">
-                                <span class="title ">{{comingEvent.organizer}}</span>
-                                <p class="detail">organise</p>
-                            </div>
-                            <router-link :to="{ name: 'event', params: { comingEventId: comingEvent.id } } ">
+                        <div class="block-mini-image">
+                            <img class="mini-image" v-bind:src="comingEvent.imgProfil" alt="">
+                        </div>
+                        <div class="event-context">
+                            <span class="title ">{{comingEvent.organizer}}</span>
+                            <p class="detail">organise</p>
+                        </div>
+                         <router-link :to="{ name: 'event', params: { comingEventId: comingEvent.id } } ">
                                 <div class="img-event">
                                     <img v-bind:src="comingEvent.imgEvent" alt="">
                                     <span>J-12</span>
                                 </div>
                             </router-link>
-                            <span class="title">{{comingEvent.title}}</span>
-                            <span class="bottom-context detail">
-                            {{comingEvent.guestsNumber}} invités | {{comingEvent.date}}</span>
+                        <span class="title">{{comingEvent.title}}</span>
+                        <span class="bottom-context detail">
+                        {{comingEvent.guestsNumber}} invités | {{comingEvent.date}}</span>
                     </div>
                 </div>
             </div>

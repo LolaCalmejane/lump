@@ -132,12 +132,12 @@ export default {
 			musicInWaits: [
 			{
 				id: 1,
-				musicTitleInWait: 'I know after laughter...',
+				musicTitleInWait: 'I know after laughter - Mounika',
 				imgMusicInWait: require('images/imgMusicInWait-1.jpg')
 			},
 			{
 				id: 2,
-				musicTitleInWait: 'Bossa Muffin - Flavia...',
+				musicTitleInWait: 'Bossa Muffin - Flavia Coelho',
 				imgMusicInWait: require('images/imgMusicInWait-2.jpg')
 			},
 			{

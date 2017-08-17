@@ -39,6 +39,7 @@ import Login from './components/Login/Login.vue'
 import Profil from './components/Profil/Profil.vue'
 import Search from './components/Search/Search.vue'
 import Musics from './components/Profil/Musics/Musics.vue'
+import Playlists from './components/Profil/Playlists/Playlists.vue'
 
 // On utilise Vue Router
 Vue.use(VueRouter);
@@ -75,6 +76,11 @@ const routes = [
     path: '/Musics/',
     component: Musics,
     name: 'musics',
+  },
+  {
+    path: '/Playlists/',
+    component: Playlists,
+    name: 'playlists',
   },
     {
     path: '/Search/',

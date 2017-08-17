@@ -35,7 +35,7 @@
 
             <li><router-link to="musics" class="subtitle-white">Musiques</router-link></li>
             <li><router-link to ="/" class="subtitle-white">Etoiles</router-link></li>
-            <li><a class="subtitle-white" href="">Playlists</a></li>
+            <li><router-link to="playlists" class="subtitle-white">Playlists</router-link></li>
             <li><a class="subtitle-white" href="">Agenda</a></li>
           </ul>
         </nav>

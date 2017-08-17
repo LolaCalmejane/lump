@@ -102,7 +102,7 @@
   display : none;
 }
 
-.musics-grid tbody tr td .iconLike:before{
+.iconLike:before{
   content: "\f004";  
   font-family : FontAwesome;
   font-style: normal;
@@ -111,7 +111,7 @@
 }
 
 
-.musics-grid tbody tr td .iconOther:before{
+.iconOther:before{
   content: "\f141";  
   font-family : FontAwesome;
   font-style: normal;
@@ -120,7 +120,7 @@
 }
   
 //Icon play
-.musics-grid tbody tr td .iconPlay:before{
+.iconPlay:before{
   content: "\f144";  
   font-family : FontAwesome;
   font-style: normal;

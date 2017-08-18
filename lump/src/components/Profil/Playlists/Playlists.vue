@@ -15,7 +15,7 @@
 
 		<!-- context playlist -->
 		<div class="content">
-		<div class="playlist" v-for='playlist in playlists'>
+		<div class="playlist" v-for='(playlist,index) in playlists'>
 			<div class="event-context"> <!-- A RENOMMER CETTE CLASSE -->
 				<div :style="{ backgroundImage: 'url(' + playlist.imgProfil + ')' }" class="block-mini-image"> 
 			    </div>
@@ -28,15 +28,19 @@
 		            <span class="title ">{{playlist.dateCreation}}</span>
 		         </div>
 	        </div>
-	        <div class="img-playlist" :style="{ backgroundImage: 'url(' + playlist.imgPlaylist + ')' }" > <div class="iconPlay"></div></div>
+	        <div class="img-playlist" :style="{ backgroundImage: 'url(' + playlist.imgPlaylist + ')' }" > 
+	        	<div class="iconPlay"></div>
+	        </div>
 	        <span class="playlist-name title">{{playlist.playlistName}}</span>
 	        <div class="preview-playlist">
 		        <div class="songs">
-		        	<ul class="song" v-for ='song in playlist.songs'>
-		        		<li class="mini-like-button iconLike"></li>
-		        		<li class="mini-play-button iconPlay"></li>
-		        		<li class="body-text song-title">{{song.title}}</li>
-		        		<li class="mini-other-button iconOther"></li>
+		        	<ul v-for ='(song,index) in playlist.songs' class="song">
+		        		<div class="mini-like-button iconLike"></div>
+		        		<div class="mini-play-button iconPlay "
+		        				v-on:click="myFilter"
+    							v-bind:class="{ active: isActive }"></div>
+		        		<span class="body-text song-title" v-bind:class="{ active: isActive }" >{{song.title}}</span>
+		        		<div class="mini-other-button iconOther"></div>
 		        	</ul>
 		        </div>
 	        </div>
@@ -54,8 +58,16 @@ export default {
 	components: {
     	'header-profil': HeaderProfil,
   	},
+  	methods: {
+        myFilter: function(){
+            this.isActive = !this.isActive;
+            this.$emit('newactive', this.index);
+        }
+      },
+    props: ['index'],
   	data: function () {
 	    return {
+	    	isActive : false,
 		    searchQuery: '',
 		    playlists: [
 		    	{

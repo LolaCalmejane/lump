@@ -235,7 +235,7 @@ nav .dropdown a span.caret {
 // Search bar animation 
 ///////
 
-input[type=text] {
+.global-nav input[type=text] {
     width: 90px;
     background-color : transparent;
     color : white;
@@ -245,21 +245,16 @@ input[type=text] {
     transition: width 0.4s ease-in-out;
 }
 
-input[type=text]::placeholder {
+.global-nav input[type=text]::placeholder {
     color : $white;
 }
 
-input[type=text]:focus::placeholder {
+.global-nav input[type=text]:focus::placeholder {
     color : $gold;
 }
 
-input[type=text]:focus {
+.global-nav input[type=text]:focus {
     width: 200px;
     outline : none;
     border-bottom : 1px solid white;
 }
-
-
-
-
-

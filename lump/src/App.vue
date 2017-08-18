@@ -6,7 +6,7 @@
 <!-- HTML -->
 <template>
     <div id="app">
-        <nav class="circleBehind">
+        <nav class="global-nav circleBehind">
             <div class="content">
             <ul>
                 <li id="brand" class="subtitle-white">Lump</li>

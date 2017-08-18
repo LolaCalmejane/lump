@@ -1,0 +1,139 @@
+.header-create{
+	background-color : $black-blue;
+	padding: 20px 0px;
+    z-index: 0;
+    -webkit-box-shadow: -2px 2px 3px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: -2px 2px 3px 0 rgba(0, 0, 0, 0.5);
+}
+
+// A SUPPRIMER 
+.header-create h2 {
+	font-size : 24px; 
+	margin-bottom : 0;
+}
+
+.create {
+	height : 780px;
+}
+
+.create .create-content {
+	display : flex;
+	justify-content : space-between;
+	
+}
+
+.create .left-side, .right-side {
+	width: 48%;
+}
+
+.create h3{
+	margin-top : 30px;
+}
+
+.create .description {
+	padding : 20px 20px;
+	background: rgba(255,255,255,0.05);
+	margin-bottom : 20px;
+	border-radius : 3px;
+	cursor : pointer;
+	box-shadow: -2px 2px 3px 0 rgba(0, 0, 0, 0.5);
+}
+
+.create .description:first-child {
+	margin-top : 15px;
+}
+
+
+.create .description div:first-child {
+	display : flex;
+	align-items : flex-start;
+	flex-direction : column;
+	padding-left: 20px;
+}
+
+.create .description div:first-child p {
+	margin-bottom : 0;
+}
+
+.create .description:before{
+	content:'\f06b';
+	font-family: FontAwesome;
+	color : $white;
+	font-size : 4.5em;
+	float : left;
+	margin-top: -20px;
+}
+
+.create .description:nth-child(3) span,input {
+	display : block;
+}
+
+.create .active{
+	border : solid 1px red;
+}
+
+//FORMULAIRE 
+#create form label, input, textarea,select{
+	display : block;
+	width : 100%;
+	background-color: transparent;
+	border : inherit;
+}
+
+#create form label{
+	margin-top : 30px;
+	font-weight : inherit;
+}
+
+#create form input, select{
+	border-bottom : 1px solid $white;
+	cursor : pointer;
+}
+
+//select = pays
+#create form select {
+	border-radius : 0px;
+}
+
+
+//textarea = description
+#create form textarea {
+	border : 1px solid $white;
+	padding : 5px;
+	border-radius : 3px;
+}
+
+#create form textarea:focus {
+	border : 1px solid rgba(255,255,255,0.30);
+
+}
+
+#create form textarea:focus, select:focus {
+	outline : none;
+}
+
+#create form textarea::placeholder {
+    color : $white;
+}
+
+#create form textarea:focus::placeholder {
+    color : rgba(255,255,255,0.30);
+}
+
+//inputs
+#create input {
+	padding-bottom: 5px;
+}
+
+#create input[type=text]::placeholder {
+    color : $white;
+}
+
+#create input[type=text]:focus::placeholder {
+    color : rgba(255,255,255,0.30);
+}
+
+#create input[type=text]:focus {
+    outline : none;
+    border-bottom : 1px rgba(255,255,255,0.30) solid;
+}

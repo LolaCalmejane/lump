@@ -187,18 +187,15 @@
 
 // SIDEBAR - PLAYER CONTENT - WAITING LIST - CONTENT - MUSIC IN WAIT
 
-#sidebar .scroll .waitingListContent .listMusicInWait .musicInWait {
+#sidebar .scroll .waitingListContent .listMusicInWait .musicInWait div {
      margin-bottom: 10px;
+     display: inline-block;
+     vertical-align: middle;
 }
 
 #sidebar .scroll .waitingListContent .listMusicInWait .musicInWait:hover {
      background: rgba(255,255,255,0.10);
      cursor: pointer;
-}
-
-#sidebar .scroll .waitingListContent .listMusicInWait .musicInWait .imgMusicInWait,.musicTitleInWait,.deleteIcon {
-     display: inline-block;
-     vertical-align: middle;
 }
 
 #sidebar .scroll .waitingListContent .listMusicInWait .musicInWait .imgMusicInWait {
@@ -233,7 +230,7 @@
 
 #sidebar .scroll .waitingListContent .listMusicInWait .musicInWait .musicTitleInWait {
      margin-left: 8px;
-     width: 50%;
+     width: 55%;
      //Mettre les "..."
      white-space: nowrap;
      overflow : hidden;
@@ -253,8 +250,7 @@
 }
 
 #sidebar .scroll .waitingListContent .listMusicInWait .musicInWait .deleteIcon {
-    text-align: right;
-  
+    margin-left: 15px; 
 }
 
 // SIDEBAR - PLAYER CONTENT - BOTTOM SIDEBAR

@@ -1,3 +1,317 @@
+
+//RESPONSIVE A FAIRE SUR LE HEAEEEEEEEEEER 
 ////////
-// Event
+// Event 
 ///////
+
+// EVENT IMAGE BACKGROUND
+#event .event-image {
+	margin-right: 250px;
+    background-size: cover;
+    width: auto;
+    position: relative;
+    overflow: auto;
+    height: 480px;
+ } 
+
+ // EVENT GLOBAL CONENT
+#event .event-image .content-event {
+     padding-left : 140px;
+     padding-right : 140px;
+     width: auto;
+     position: relative;
+     overflow: auto;
+     z-index: 0;
+}
+
+ @media only screen and (max-width: 970px) {
+    .content-event {
+    padding-left : 60px;
+    padding-right : 60px;
+	}
+}
+
+
+// EVENT FILTER IMAGE BACKGROUND
+
+#event .event-image .filter-bg {
+	background-image: linear-gradient(-180deg, rgba(16,20,40,0.55) 0%, rgba(16,20,40,0.81) 61%, #101428 73%);
+	width: 100%;
+	height: 480px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0.6;
+}
+
+// EVENT PREVIOUS BUTTON 
+
+#event .event-image .content-event .previousButton {
+	margin-top: 20px;
+	color: $white;
+	border: none; 
+	font-size: 12px;
+	text-transform: uppercase;
+	width: 20%;
+    height: 32px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.1); 
+    outline:none;
+}
+
+#event .event-image .content-event .timer {
+	float: right;
+	font-family : 'gotham-medium', sans-serif;
+	font-size : 25px;
+	color : $gold;
+	line-height : 1;
+	letter-spacing: 0.91px;
+	margin-top:30px;
+}
+
+// EVENT CONTENT HEADER
+
+// EVENT CONTENT HEADER TIMER 
+
+#event .event-image .content-event .timer p {
+	display: inline-block;
+}
+
+#event .event-image .content-event .timer p:nth-child(1) {
+	font-family : 'gotham-medium', sans-serif;
+	font-size : 30px;
+	color : $gold;
+	line-height : 1;
+	letter-spacing: 0.91px;
+}
+
+#event .event-image .content-event .timer p:nth-child(2) {
+	width: 20px;
+	font-size : 14px;
+}
+
+// EVENT CONTENT HEADER COMPOSANTS (ORGANIZER NAME, DESCRIPTION, EVENT-TITLE...)
+
+#event .event-image .content-event .event-composants {
+    margin-top: 35px;
+}
+
+#event .event-image .content-event .event-composants .event-organizer p {
+	font-size: 0.9em;
+}
+
+#event .event-image .content-event .event-composants .event-title p {
+	font-size: 1.7em;
+}
+
+#event .event-image .content-event .event-composants .event-description {
+	margin-top: 20px;
+}
+
+
+#event .event-image .content-event .event-composants .event-description p:nth-child(2) {
+	margin-left: 2%;
+}
+
+// EVENT CONTENT HEADER COMPOSANTS DETAILS (PARTICIPANTS, GUESTS, PLACE, HOUR...)
+
+#event .event-image .content-event .event-composants .event-details-content .eventMoreDetails {
+	display: inline-block;
+    margin-top: 30px;
+    margin-right: 10%;
+}
+
+#event .event-image .content-event .event-composants .event-details-content .eventMoreDetails p {
+	display: block;
+	line-height: 1;
+}
+
+#event .event-image .content-event .event-composants .event-details-content .eventMoreDetails p:last-child {
+    margin-top: 4px;
+}
+
+#event .event-image .content-event .event-composants .event-details-content .eventMoreDetails:nth-child(5) {
+    margin-left: 2%;
+}
+
+
+//--------------------------------------------------------------
+
+// EVENT CONTENT FLUX MUSIC PROPOSITIONS
+
+ ////////
+// Search bar 
+///////
+
+#event .content #search {
+    margin: 20px 0px;
+}
+
+#event .content #search input.bar {
+    margin-top: 6px;
+    width: 100%;
+    background-color : transparent;
+    color : white;
+    border : none;
+    text-transform: lowercase;
+    border-bottom : 1px solid #393D4F;
+    outline : none;
+    position: relative;
+}
+
+#event .content #search .iconSearch:before {
+    content: "\f002";
+    font-size: 1.2em;
+    font-family: FontAwesome;
+    color: $white;
+    position: absolute;
+}
+
+ ////////
+// FLUX - PROPOSITIONS 
+///////
+
+#event .content .flux-prop .flux-content {
+	width : 100%;
+	max-width : inherit;
+	display : block;
+	margin-right:0;
+}
+
+#event .content .flux-prop .flux-content .left-content {
+	display : inline-block;
+	vertical-align : top;
+}
+
+#event .content .flux-prop .flux-content .left-content p {
+	display : block;
+}
+
+#event .content .flux-prop .flux-content .block-mini-image {
+	width: 2.3em;
+	height : 2.3em;
+	display : inline-block;
+	vertical-align : top;
+	background-size: cover;
+	border-radius: 50px;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+}
+
+
+// PROPOSITION DETAILS (SONG IMAGE, DATE D'AJOUT, MOYENNE, SONG PROPOSED...)
+
+// PROPOSITION DETAILS IMAGE
+#event .content .flux-prop .imgSong {
+	width : 5.5em;
+	height : 5.5em;
+	float : left;
+	vertical-align : top;
+	background-size: cover;
+	margin-right : 15px;
+	position : relative;
+}
+
+#event .content .flux-prop .imgSong .iconPlay {
+	width : 100%;
+	height : 100%;
+	background: rgba(12,16,32,0.65);
+	display : none;
+}
+
+#event .content .flux-prop .imgSong .iconPlay:before{
+	content: "\f144";
+	font-family : FontAwesome;
+	font-size : 2.5em;
+	position :absolute;
+	top : 50%;
+	left : 50%;
+	transform: translate(-50%, -50%);
+	cursor : pointer;
+}
+
+#event .content .flux-prop .imgSong:hover .iconPlay{
+	display : block;	
+}
+
+#event .content .flux-prop .imgSong .iconPlay:hover::before {
+	font-size : 3em;
+}
+
+// PROPOSITION DETAILS PROPOSAL
+
+// PROPOSITION DETAILS PROPOSAL FIRST WHITH RANKING
+#event .content .flux-prop .proposal-details .proposal-first div {
+	display : inline-block;
+	vertical-align : middle; 
+}
+
+#event .content .flux-prop .proposal-details .proposal-first .rating {
+	unicode-bidi: bidi-override;
+	direction: rtl;
+	float : right;
+}
+
+#event .content .flux-prop .proposal-details .proposal-first .rating > span:hover:before,
+#event .content .flux-prop .proposal-details .proposal-first .rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+   color : $red;
+}
+
+// PROPOSITION DETAILS PROPOSAL SECOND
+#event .content .flux-prop .proposal-details .proposal-second div {
+	display : inline-block;
+	vertical-align : middle; 
+}
+
+// PROPOSITION DETAILS PROPOSAL THIRD
+#event .content .flux-prop .proposal-details .proposal-third li {
+	display : inline-block;
+	vertical-align : middle;
+}
+
+#event .content .flux-prop .proposal-details .proposal-third li:nth-child(1) {
+    margin-right: 10px;
+}
+
+#event .content .flux-prop .proposal-details .proposal-third .iconOther {
+	font-size: 0.8em;
+}
+
+#event .content .flux-prop .proposal-details .proposal-third .iconLike {
+	font-size : 0.7em;
+}
+
+#event .content .flux-prop .proposal-details .proposal-third .iconLike:hover {
+	color : $red;
+}
+
+// PROPOSITION DETAILS PROPOSAL ALL
+#event .content .flux-prop .proposal-details .proposal-first div:nth-child(2),.proposal-second div:nth-child(2) {
+	float: right;
+}
+
+#event .content .flux-prop .proposal-details,.proposal-first,.proposal-second,.proposal-third {
+	margin-top: 5px;
+}
+
+#event .content .flux-prop .iconPlay:hover,.iconOther:hover,.rating:hover {
+	font-size: 0.9em;
+}
+
+// PROPOSITION DETAILS BUTTON IM-GOING TO THE PARTY
+
+.imGoingButton {
+	float: right;
+	background:$red;
+	width: 20%;
+	height: 32px;
+	border-radius: 3px;
+	border: none; 
+	outline:none;
+	font-size: 12px;
+	text-transform: uppercase;
+	margin: 0;
+}
+

@@ -52,12 +52,12 @@
 			<div class="waitingListContent" v-if="showId === 'player'">
 			<!-- SIDEBAR - PLAYER CONTENT - WAITING LIST - CONTENT - MUSIC IN WAIT -->
 				<div class="listMusicInWait">
-					<div class="musicInWait"v-for='musicInWait in musicInWaits'>
+					<div class="musicInWait" v-for='musicInWait in musicInWaits'>
 						<div class="imgMusicInWait">
 							<img v-bind:src="musicInWait.imgMusicInWait" alt="">
 							<div class="musicInWaitIconPlay"></div>
 						</div>
-						<p class="musicTitleInWait body-text">{{musicInWait.musicTitleInWait}}</p>
+						<div class="musicTitleInWait body-text">{{musicInWait.musicTitleInWait}}</div>
 						<div class="deleteIcon" @click="deletemusicInWaits"></div>
 					</div>
 				</div>

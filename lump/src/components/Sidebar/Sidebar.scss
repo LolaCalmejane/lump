@@ -362,15 +362,15 @@
 }
 
 #sidebar .scroll .notification-bottom-sidebar .sidebar-content .notification-interaction div {
-     text-align: center;
+     vertical-align: middle;
      display: inline-block; 
      cursor: pointer;
      color: $white;    
 }
 
-#sidebar .scroll .notification-bottom-sidebar .sidebar-content .notification-interaction div p {
-     margin-left: 10px;
-     margin-right: 10px;
+#sidebar .scroll .notification-bottom-sidebar .sidebar-content .notification-interaction div {
+     margin-left: 3px;
+     margin-right: 3px;
 }
 
 

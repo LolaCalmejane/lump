@@ -292,8 +292,12 @@
 	float: right;
 }
 
-#event .content .flux-prop .proposal-details,.proposal-first,.proposal-second,.proposal-third {
+#event .content .flux-prop .proposal-details,.proposal-first,.proposal-second {
 	margin-top: 5px;
+}
+
+#event .content .flux-prop .proposal-details .proposal-third {
+	margin-top: 6px;
 }
 
 #event .content .flux-prop .iconPlay:hover,.iconOther:hover,.rating:hover {

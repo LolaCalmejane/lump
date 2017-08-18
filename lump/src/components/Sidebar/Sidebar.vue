@@ -94,7 +94,7 @@
 					<div class="sidebar-content">
 						<div class="notification-interaction">
 							<div class="notificationlikeIcon"></div>
-							<div class="body-text"><p>{{songTitle}}</p></div>
+							<div class="body-text">{{songTitle}}</div>
 							<div class="notification-otherIcon"></div>
 						</div>
 					</div>

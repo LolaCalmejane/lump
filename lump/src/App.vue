@@ -9,7 +9,7 @@
         <nav class="global-nav circleBehind">
             <div class="content">
             <ul>
-                <li id="brand" class="subtitle-white">Lump</li>
+                <li id="brand" class="subtitle-white"><img src="./assets/images/img-logo.png" alt="Logo"></li>
                 <input type="text" name="search" class="subtitle-white" placeholder="Rechercher">
                 <li><router-link to ="/create" class="subtitle-white">Créer</router-link></li>
                 <li><router-link to ="/events" class="subtitle-white">A venir</router-link></li>

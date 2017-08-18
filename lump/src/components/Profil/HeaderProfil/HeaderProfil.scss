@@ -32,26 +32,43 @@
 	display: block;
 }
 
-.header-profil .img-profil img{
+.header-profil .img-profil img:nth-child(1){
 	width : 100%;
 	height : auto;
 }
 
 //Points rouge derrrière l'image
-.header-profil .img-profil .circles-red {
-	position : absolute;
-	left : -15px;
-	bottom : -15px;
+// .header-profil .img-profil .circles-red {
+// 	position : absolute;
+// 	left : -15px;
+// 	bottom : -15px;
+// 	width : 100%;
+// 	background-color : $red;
+// 	z-index : -3;
+// }
+
+
+.header-profil .img-profil img:nth-child(2){
 	width : 100%;
-	background-color : $red;
-	z-index : -3;
+	height : auto;
+	position : absolute;
+ 	left : -15px;
+ 	bottom : -20px;
+ 	z-index : -3;
+
 }
 
-.header-profil .img-profil .circles-red:after {
-	content: "";
-	display: block;
-	padding-bottom: 100%;
+.header-profil .img-profil img:nth-child(2):after{
+ 	content: "";
+ 	display: block;
+ 	padding-bottom: 100%;
 }
+
+// .header-profil .img-profil .circles-red:after {
+// 	content: "";
+// 	display: block;
+// 	padding-bottom: 100%;
+// }
 
 // Tout le contenu sauf image
 .header-profil .datas-profil{

@@ -9,7 +9,8 @@
       <div class="content-header">
         <div class="img-profil">
           <img src="../../../assets/images/profil-img.png" alt="Jude Ademilo">
-          <div class="circles-red"></div>
+          <!--div class="circles-red"></div-->
+          <img src="../../../assets/images/img-pointsRouges.png" alt="Points-Rouges">
         </div>
         <div class="datas-profil">
           <div class="data-left">

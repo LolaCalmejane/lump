@@ -1,0 +1,122 @@
+li { // A METTRE DANS DESIGN.SCSS 
+    list-style: none;
+}
+
+#search {
+    position : relative;
+}
+// .fieldset {
+//     width: 100%;
+//     height : 1px;
+//     background-color: $gold;
+// }
+
+#search .category-search {
+    border-top : 1px solid $gold;
+    padding : 10px;
+    position : relative;
+}
+
+#search .label-search {
+    background-color: #171B2E;
+    position: absolute;
+    top: -8px;
+    left: 20px;
+    width: 80px;
+    text-align: center;
+}
+
+#search ul {
+    position : absolute;
+    top :20px;
+    left :0;
+    padding : 30px;
+    height : 400px;
+    overflow: scroll;
+    background-color : #171B2E;
+    text-align: left;
+    width : 500px;
+}
+
+#search li {
+    margin : 15px 0px;
+}
+
+#search input[type=text] {
+    width: 95px;
+    background-color : transparent;
+    color : white;
+    text-transform: uppercase;
+    border : none;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    display: inline-block;
+}
+
+#search input[type=text]::placeholder {
+    color : $white;
+}
+
+#search input[type=text]:focus::placeholder {
+    color : $white;
+}
+
+#search input[type=text]:focus {
+    width: 200px;
+    outline : none;
+    border-bottom : 1px solid white;
+}
+
+//////
+#search .imgSong { // CODE REPETEEE
+    width : 2.5em;
+    height : 2.5em;
+    float : left;
+    vertical-align : top;
+    background-size: cover;
+}
+
+#search .block-detail{
+    display: flex;
+    flex-direction : column;
+    margin-left: 10px;
+}
+
+// music detail : title + duration
+#search .block-detail .music-details {
+    display : flex;
+    flex-direction : row;
+    align-items : top;
+    justify-content: space-between;
+
+}
+
+#search p{
+    margin-bottom:0;
+}
+
+
+//buttons 
+#search .button-interaction {
+    display : flex;
+    flex-direction : row;
+    align-items : top;
+}
+
+#search .button-interaction .iconLike:before {
+    font-size: 1em;
+    margin-right : 10px;
+}
+
+#search .iconPlay {
+    float: left;
+    margin: 0 10px;
+}
+
+#search .user-details {
+    display : flex;
+    flex-direction : column;
+    align-items : top;
+    justify-content: space-between;
+    margin-left : 50px;
+}

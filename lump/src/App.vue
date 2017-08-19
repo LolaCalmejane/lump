@@ -1,4 +1,4 @@
-// Code à rajouter dans le fichier "App.vue"
+
 <style lang="scss">@import '/assets/scss/main.scss';</style>
 
 <!-- CSS -->
@@ -10,7 +10,8 @@
             <div class="content">
             <ul>
                 <li id="brand" class="subtitle-white"><img src="./assets/images/img-logo.png" alt="Logo"></li>
-                <input type="text" name="search" class="subtitle-white" placeholder="Rechercher">
+                <search></search>
+                <!-- <input type="text" name="search" class="subtitle-white" placeholder="Rechercher"> -->
                 <li><router-link to ="/create" class="subtitle-white">Créer</router-link></li>
                 <li><router-link to ="/events" class="subtitle-white">A venir</router-link></li>
                 <li><router-link to ="/profil" class="subtitle-white">Jude Ademilo</router-link></li>
@@ -36,11 +37,13 @@
 <!-- SCRIPT -->
 <script>
 import Sidebar from './components/Sidebar/Sidebar.vue'
+import Search from './components/Search/Search.vue'
 
 export default {
     name: 'app', 
     components: {
-        'sidebar': Sidebar
+        'sidebar': Sidebar,
+        'search' : Search
     }
 }
 

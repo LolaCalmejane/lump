@@ -279,7 +279,10 @@
                     <label class="subtitle-gold" for="code-postal">Code postal</label>
                     <input class="body-text" type="text" placeholder="00000" id="adresse" />
                 </form>
+                <router-link to ="/addfriends"><button type="button" class="nextButton name-title">Suivant</button></router-link>
+
             </div>
+            
         </div>
         </div>
 

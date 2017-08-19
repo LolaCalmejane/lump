@@ -1,0 +1,134 @@
+.header-addfriends{
+	background-color : $black-blue;
+	padding: 20px 0px;
+    z-index: 0;
+    -webkit-box-shadow: -2px 2px 3px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: -2px 2px 3px 0 rgba(0, 0, 0, 0.5);
+}
+
+.addfriends {
+	height : 780px;
+}
+
+.addfriends .addfriends-content {
+	display : flex;
+	justify-content : space-between;	
+}
+
+.addfriends  .left-side, .right-side {
+	width: 47%;
+}
+
+.addfriends  h3 {
+	margin-top : 50px;
+}
+
+.guestImg img {
+     border-radius: 30px;
+     width: 40px;
+     height: 40px;
+}
+
+.guestImg {
+	margin-right: 20px;
+}
+
+.iconCheck:before {
+    content: "\F00C";
+    font-size: 1.4em;
+    font-family: FontAwesome;
+    color: $red;
+    margin-left: 125PX;
+    cursor: pointer;
+}
+
+.iconAdd:before {
+    content: "\f067";
+    font-size: 1.4em;
+    font-family: FontAwesome;
+    color: $white;
+    margin-left: 125PX;
+    cursor: pointer;
+}
+
+
+
+.list {
+	margin-top: 70px;
+}
+
+.listing div {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.line {
+    width: 1px;
+    height: 300px;
+    background-color: $white;
+    position: relative;
+    margin-top: 13%;
+}
+.listing {
+	margin-top: 10px;
+}
+
+#addfriends .header-addfriends .content .previousButton {
+	margin-top: 20px;
+	color: $red;
+	border: none; 
+	font-size: 12px;
+	text-transform: uppercase;
+    border-radius: 3px;
+    background: none; 
+    outline:none;
+}
+
+
+#search {
+    margin: 20px 0px;
+    margin-left: 30px;
+}
+
+#search input.bar {
+    margin-top: 6px;
+    padding-left : 30px;
+    width: 100%;
+    background-color : transparent;
+    color : white;
+    border : none;
+    text-transform: lowercase;
+    border-bottom : 1px solid #393D4F;
+    outline : none;
+    position: relative;
+}
+
+#search .iconSearch:before {
+    content: "\f002";
+    font-size: 1.2em;
+    font-family: FontAwesome;
+    color: $white;
+    position: absolute;
+}
+
+.right-side #search {
+	margin-left:70px;
+}
+
+.right-side .list {
+	margin-left: 70px;
+}
+
+.nextButton {
+    background: $red;
+    width: 20%;
+    height: 37px;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin: 0;
+    margin-top: 40px;
+    float: right;
+}

@@ -48,6 +48,8 @@ import Profil from './components/Profil/Profil.vue'
 import Search from './components/Search/Search.vue'
 import Musics from './components/Profil/Musics/Musics.vue'
 import Playlists from './components/Profil/Playlists/Playlists.vue'
+import FetchData from './components/FetchData/FetchData.vue'
+
 
 // On utilise Vue Router
 Vue.use(VueRouter);
@@ -76,6 +78,12 @@ const routes = [
     component: Create,
     name: 'create',
   },
+    {
+    path: '/FetchData/',
+    component: FetchData,
+    name: 'fetchdata',
+  },
+
   {
     path: '/AddFriends/',
     component: AddFriends,

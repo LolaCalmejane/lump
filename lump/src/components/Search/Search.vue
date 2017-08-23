@@ -4,7 +4,7 @@
 <!-- HTML -->
 <template>
 	<li id="search" v-cloak>
-    	<input type="text" v-model="searchString" placeholder="Rechercher" v-on:click="seen = !seen"/>
+    	<input type="text"  placeholder="Rechercher" v-on:click="seen = !seen"/>
 	    <ul v-if="seen">
 	    	<div class="category-search">
 	    	<span class="subtitle-gold label-search">Musics</span>
@@ -18,7 +18,17 @@
 			            </div>	
 			        	<div class="button-interaction">
 			      			<span class="mini-like-button iconLike"></span>
-			      			<span class="mini-other-button iconOther"></span>
+		      				<div class="dropdown"> <!-- icon other on hover -->
+	                            <span data-toggle="dropdown" class="mini-other-button iconOther icon-other dropdown-toggle" type="button"></span>
+	                            <ul role="menu" class="dropdown-menu dropdown-menu-right">
+	                                <li><a class="subtitle-white" href="#">Ajouter à mes playlists</a></li>
+	                                <li><a class="subtitle-white" href="#">Ajouter à mes musiques</a></li>
+	                                <li><a class="subtitle-white" href="#">Partager</a></li>
+	                                <li role="separator" class="divider"></li>
+	                                <li><a class="subtitle-white" href="#">Autre</a></li>
+	                            </ul>
+                            </div>
+			      			
 			        	</div>
 		        	</div>		        	
 		        </li>
@@ -41,10 +51,12 @@
 </template>
 
 <script>
+import axios from 'axios'
 
 export default {
 	name: 'search', 
 	computed: {
+
         // A computed property that holds only those articles that match the searchString.
         filteredMusics: function () {
             var musics_array = this.musics,

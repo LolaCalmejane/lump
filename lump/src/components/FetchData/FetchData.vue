@@ -11,14 +11,19 @@
 </template>
 
 <script>
-
 export default {
 	name: 'fetchdata', 
 	data (){
 		return {
 		}
 	},
-	methods : {
+	computed: {
+		searchMusic: function () {
+			axios.get('http://localhost:3000/api/1.0/music/search')
+		}
+	},
+	methods: {
+	
 	}
 }
 </script>

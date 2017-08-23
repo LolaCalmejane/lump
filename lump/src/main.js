@@ -7,6 +7,9 @@ require('bootstrap-sass')
  
 Vue.use(VueLodash, lodash)
 
+
+
+
 // On importe Vue
 import Vue from 'vue'
 
@@ -14,6 +17,10 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import lodash from 'lodash'
 import VueLodash from 'vue-lodash/dist/vue-lodash.min'
+
+// On importe axios
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 
 
 // On importe les composants Vue
@@ -44,7 +51,23 @@ import Playlists from './components/Profil/Playlists/Playlists.vue'
 
 // On utilise Vue Router
 Vue.use(VueRouter);
+Vue.use(VueAxios, axios);
 
+// AXIOS HEADER Authorization
+axios.defaults.baseURL = 'http://localhost:8080/api/1.0/';
+axios.defaults.headers.common['Authorization'] = 'Basic dGhvbWFzOnRlc3Q='
+console.log(axios.defaults.headers.common)
+
+
+
+
+
+// Permet de récuprer la clé de l'api
+  var btoa = require('btoa')
+    , bin = "thomas:test"
+    , b64 = btoa(bin)
+
+    console.log(b64); // "
 
 // On configure nos routes
 const routes = [
@@ -99,6 +122,15 @@ const routes = [
 const router = new VueRouter({
   routes
 })
+
+methods : {
+
+
+    
+}
+  
+
+
 
 // On initialise l'application
 new Vue({

@@ -57,8 +57,6 @@ Vue.use(VueAxios, axios);
 
 // AXIOS HEADER Authorization
 axios.defaults.baseURL = 'http://localhost:8080/api/1.0/';
-axios.defaults.headers.common['Authorization'] = 'Basic dGhvbWFzOnRlc3Q='
-console.log(axios.defaults.headers.common)
 
 
 
@@ -66,7 +64,7 @@ console.log(axios.defaults.headers.common)
 
 // Permet de récuprer la clé de l'api
   var btoa = require('btoa')
-    , bin = "thomas:test"
+    , bin = "thomas3:test"
     , b64 = btoa(bin)
 
     console.log(b64); // "

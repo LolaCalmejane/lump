@@ -3,27 +3,39 @@
 
 <!-- HTML -->
 <template>
-	<li id="fetchdata">
-    	<input type="text"  placeholder="Rechercher"/>
-    	<div class="results">
+	<div id="fetchdata">
+		<form action="#" v-on:submit.prevent="getMusics()">
+    		<input type="text"  placeholder="Rechercher" v-model="query"/>
+    	</form> 
+    	<div class="results" v-if="Result"></div>
+    	<div v-for="(result,index) in Result">
+    		<p>{{result.title}}</p>
+    		<!-- <div class="imgSong" :style="{ backgroundImage: 'url(' + result.image+ ')' }"></div> -->
     	</div>
-	</li>
+	</div>
 </template>
 
 <script>
+import axios from 'axios'
 export default {
+
 	name: 'fetchdata', 
 	data (){
 		return {
+			Result: [],
+			query:'',
+
 		}
 	},
-	computed: {
-		searchMusic: function () {
-			axios.get('http://localhost:3000/api/1.0/music/search')
+	methods:{
+		getMusics(){
+			axios.get('http://localhost:3000/api/1.0/music/search?authorization=dGhvbWFzMzp0ZXN0&search=' + this.query )
+		.then((response) =>{
+			console.log(response.data);
+			 this.Result = response.data.result;
+		})
+
 		}
 	},
-	methods: {
-	
-	}
 }
 </script>

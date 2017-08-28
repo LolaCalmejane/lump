@@ -5,63 +5,18 @@
 <template>
 	<div id="login" class="login">
 		<div class="content">
-			<h2>Log In</h2>
-			<div class="form-group">
-		        <input 
-		          type="text" 
-		          class="form-control"
-		          placeholder="Enter your username"
-		          v-model="credentials.username"
-		        >
+			<img src="../../assets/images/login-logo.png" alt="Logo-lump">
+			<h2 class="subtitle-white title-connexion">Connexion</h2>
+			<div class="form-connexion">
+		        <input type="text" class="pseudo" placeholder="Pseudo">
+		        <input type="password" class="mdp" placeholder="Mot de passe">
+		        <button class="buttonConnexion subtitle-white">Se connecter</button>
       		</div>
-		    <div class="form-group">
-		        <input
-		          type="password"
-		          class="form-control"
-		          placeholder="Enter your password"
-		          v-model="credentials.password"
-		        >
-		    </div>
-      <button class="btn btn-primary" @click="submit()">Se connecter</button>
-		</div>
-		<div class="content">
-			<h2>Sign up</h2>
-			<div class="form-group">
-		        <input 
-		          type="text" 
-		          class="form-control"
-		          placeholder="Enter your username"
-		          v-model="credentials.username"
-		        >
-		        <input 
-		          type="mail" 
-		          class="form-control"
-		          placeholder="Enter your mail"
-		          v-model="credentials.mail"
-		        >
-		        <input 
-		          type="mail" 
-		          class="form-control"
-		          placeholder="Confirm your mail"
-		          v-model="credentials.mail"
-		        >		        
+      		<div class="ifNot">
+	      		<p class="body-text">Vous n’êtes pas encore inscrit ?</p>
+	      		<router-link to ="/inscription"><p class="body-text">S’inscrire</p></router-link>
       		</div>
-		    <div class="form-group">
-		        <input
-		          type="password"
-		          class="form-control"
-		          placeholder="Enter your password"
-		          v-model="credentials.password"
-		        >
-		        <input
-		          type="password"
-		          class="form-control"
-		          placeholder="Confirm your password"
-		          v-model="credentials.password"
-		        >		        
-		    </div>
-      <button class="btn btn-primary" @click="submit()">S'inscrire</button>
-		</div>
+      </div>
 	</div>
 </template>
 
@@ -71,32 +26,14 @@
 <!-- SCRIPT -->
 <script>
 	export default {
-
 		data() {
-		  return {
-		    credentials: {
-		      username: '',
-		      password: '',
-		      mail:''
-		    },
-		    error: ''
-		  }
+			return {
+			}
 		},
 
 		methods: {
 
-		  submit() {
-
-		    var credentials = {
-		      username: this.credentials.username,
-		      password: this.credentials.password,
-		      mail: this.credentials.mail
-		    }
-
-		    auth.login(this, credentials, 'secretquote')
-
-		  }
 		}
 
-}
+	}
 </script>

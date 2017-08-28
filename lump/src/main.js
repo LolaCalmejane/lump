@@ -44,6 +44,7 @@ import AddFriends from './components/Create/AddFriends/AddFriends.vue'
 import Events from './components/Events/Events.vue'
 import Event from './components/Events/Event/Event.vue'
 import Login from './components/Login/Login.vue'
+import Inscription from './components/Login/Inscription.vue'
 import Profil from './components/Profil/Profil.vue'
 import Search from './components/Search/Search.vue'
 import Musics from './components/Profil/Musics/Musics.vue'
@@ -64,7 +65,7 @@ axios.defaults.baseURL = 'http://localhost:8080/api/1.0/';
 
 // Permet de récuprer la clé de l'api
   var btoa = require('btoa')
-    , bin = "thomas3:test"
+    , bin = "thomas:test"
     , b64 = btoa(bin)
 
     console.log(b64); // "
@@ -101,6 +102,11 @@ const routes = [
     path: '/Login/',
     component: Login,
     name: 'login',
+  },
+    {
+    path: '/Inscription',
+    component: Inscription,
+    name: 'inscription',
   },
     {
     path: '/Profil/',

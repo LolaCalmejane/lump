@@ -1,0 +1,70 @@
+
+.login {
+	height : 780px;
+}
+
+#login .content img {
+	display: block;
+	margin: 0 auto;
+}
+
+#login .content .title-subscribe {
+	text-transform: none;
+	text-align: center;
+	margin-top: 40px;
+	font-size: 2em;
+}
+
+#login .content .form-connexion input[type=text] {
+    width: 45%;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    margin-left: 30%;
+    margin-top: 3%;
+}
+
+#login .content .form-connexion input[type=password] {
+    width: 45%;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    margin-left: 30%;
+    margin-top: 3%;
+}
+
+
+#login .content .form-connexion input, textarea {
+    color : $white;
+	line-height: 2;
+}
+
+#login .content .form-connexion .buttonConnexion {
+    width: 18%;
+    height: 33px;
+    border-radius: 3px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    outline: none;
+    margin: 0 auto;
+    display: block;
+    margin-top: 5%;
+}
+
+
+#login .content .ifNot {
+	float: right;
+}
+
+#login .content .ifNot p {
+	display: inline-block;
+}
+
+#login .content .ifNot p:nth-child(2):hover {
+	font-weight: 700;
+	cursor: pointer;
+}

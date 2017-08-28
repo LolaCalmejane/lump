@@ -14,15 +14,15 @@
 		            <div class="block-detail">
 						<div class="music-details">
 							<p>{{result.title}}</p>
+							<p>{{result.videoId}}</p>
 			            	<p class="detail">3:20</p>
 			            </div>	
 			        	<div class="button-interaction">
-			      			<span class="mini-like-button iconLike"></span>
+			      			<span class="mini-like-button iconLike" v-model.trim='title' v-on:click.prevent="saveSong()"></span>
 		      				<div class="dropdown"> <!-- icon other on hover -->
 	                            <span data-toggle="dropdown" class="mini-other-button iconOther icon-other dropdown-toggle" type="button"></span>
 	                            <ul role="menu" class="dropdown-menu dropdown-menu-right">
 	                                <li><a class="subtitle-white" href="#">Ajouter à mes playlists</a></li>
-	                                <li><a class="subtitle-white" href="#">Ajouter à mes musiques</a></li>
 	                                <li><a class="subtitle-white" href="#">Partager</a></li>
 	                                <li role="separator" class="divider"></li>
 	                                <li><a class="subtitle-white" href="#">Autre</a></li>
@@ -59,17 +59,29 @@ export default {
 		return {
 			Result: [],
 			query:'',
-			seen : false
+			seen : false,
+			title :'',
+
 
 		}
 	},
 	methods:{
 		getMusics(){
-			axios.get('http://localhost:3000/api/1.0/music/search?authorization=dGhvbWFzOnRlc3Q=&search=' + this.query )
-			.then((response, event) =>{
+			axios.get('http://localhost:3000/api/1.0/music/search?authorization=dGhvbWFzMzp0ZXN0&search=' + this.query )
+			.then((response) =>{
 				console.log(response.data);
 				this.Result = response.data.result;
 			})
+		},
+		saveSong(){
+			axios.post('http://localhost:3000/api/1.0/music/add/music', {
+				title: this.title
+			})
+			.then((response)=>{
+				console.log(response.data);
+				this.Result= response.data.result._id;
+			})
+
 		}
 		
 	}

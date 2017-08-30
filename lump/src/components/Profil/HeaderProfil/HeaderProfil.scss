@@ -10,6 +10,10 @@
 	padding-top : 30px;
 }
 
+.content-header {
+	padding-top : 80px;
+}
+
  @media only screen and (max-width: 970px) {
     .content {
     padding-left : 60px;
@@ -105,7 +109,7 @@
 .header-profil .data-right {
 	position : absolute;
 	right : 140px;
-	top : 60px;
+	top : 120px;
 }
 
 .header-profil .data-right h2{
@@ -123,10 +127,16 @@
 
 
 //subnav
+
+.header-profil nav {
+	position : inherit;
+	background-color: inherit;
+}
+
 .header-profil .subnav {
 	text-align : left;
 	margin-bottom : 20px;
-	margin-top: 12px;
+	margin-top: 52px;
 	width : 100%;
 }
 

@@ -23,6 +23,7 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 
 
+
 // On importe les composants Vue
 import App from './App.vue'
 
@@ -65,7 +66,7 @@ axios.defaults.baseURL = 'http://localhost:8080/api/1.0/';
 
 // Permet de récuprer la clé de l'api
   var btoa = require('btoa')
-    , bin = "thomas:test"
+    , bin = "Coco:coraline"
     , b64 = btoa(bin)
 
     console.log(b64); // "
@@ -130,9 +131,12 @@ const routes = [
   }
 ]
 
+
+
 // On initialise le router
 const router = new VueRouter({
-  routes
+  routes,
+  mode:'history'
 })
 
 methods : {

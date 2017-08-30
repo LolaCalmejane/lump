@@ -10,6 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "auth": "0.0.9",
     "axios": "^0.16.2",
     "bootstrap-sass": "^3.3.7",
     "btoa": "^1.1.2",

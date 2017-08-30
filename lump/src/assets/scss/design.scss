@@ -128,9 +128,11 @@ body {
 }
 
 nav {
-    position: relative;
+    position: fixed;
+    width : 100%;
     text-align: right;
-    padding-top: 20px;
+    background-color: $dark-blue;
+    z-index: 20;
 }
 
  nav .content {

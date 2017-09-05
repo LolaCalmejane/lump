@@ -9,13 +9,13 @@
 	    	<!-- <div class="category-search"> -->
 	    	<!-- <span class="subtitle-gold label-search">Musics</span> -->
 		        <li v-for="(result,index) in Result">
-		            <div class="imgSong"></div>
+		            <div class="imgSong" :style="{ backgroundImage: 'url(' + result.thumbnail + ')'}">
+		            	
+		            </div>
 		            <div class="iconPlay"></div>
 		            <div class="block-detail">
 						<div class="music-details">
 							<p>{{result.title}}</p>
-							<p>{{result.videoId}}</p>
-			            	<p class="detail">3:20</p>
 			            </div>	
 			        	<div class="button-interaction">
 			      			<span class="mini-like-button iconLike" v-model.trim='title' @click.prevent="saveSong()"></span>
@@ -67,7 +67,7 @@ export default {
 	},
 	methods:{
 		getMusics(){
-			axios.get('http://localhost:3000/api/1.0/music/search?authorization=dGhvbWFzMzp0ZXN0&search=' + this.query )
+			axios.get('http://localhost:3000/api/1.0/music/search?authorization=Q29jbzpjb3JhbGluZQ==&search=' + this.query )
 			.then((response) =>{
 				console.log(response.data);
 				this.Result = response.data.result;

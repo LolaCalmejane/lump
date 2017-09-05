@@ -32,6 +32,7 @@ import axios from 'axios'
 	export default {
 		data() {
 			return {
+				Result: [],
 				loginIt : {
 					login:'',
 					password:''
@@ -39,17 +40,15 @@ import axios from 'axios'
 			}
 		},
 
-		 methods: {
+		methods: {
             connexion() {
-                axios.get('http://localhost:3000/api/1.0/user/login/?authorization=btoa',this.loginIt)
+                axios.get('http://localhost:3000/api/1.0/user/login/',this.loginIt)
             	.then((response) =>{ 
-					console.log(response.data);
-				 	this.Result = response.data.result;
-				 	//ajouter le localstorage
-				})
-				
-            }
+            		console.log(response.data);
+					this.Result = response.data.result;
+				});
+			}
+		
         }
-
-	}
+    }
 </script>

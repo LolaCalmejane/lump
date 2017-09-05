@@ -60,17 +60,6 @@ Vue.use(VueAxios, axios);
 // AXIOS HEADER Authorization
 axios.defaults.baseURL = 'http://localhost:8080/api/1.0/';
 
-
-
-
-
-// Permet de récuprer la clé de l'api
-  var btoa = require('btoa')
-    , bin = "Coco:coraline"
-    , b64 = btoa(bin)
-
-    console.log(b64); // "
-
 // On configure nos routes
 const routes = [
   {

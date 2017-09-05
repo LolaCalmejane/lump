@@ -42,10 +42,16 @@ import axios from 'axios'
 
 		methods: {
             connexion() {
-                axios.get('http://localhost:3000/api/1.0/user/login/',this.loginIt)
+                axios.get('http://localhost:3000/api/1.0/user/login/?authorization='+localStorage.getItem('cid'),this.loginIt)
             	.then((response) =>{ 
             		console.log(response.data);
 					this.Result = response.data.result;
+					var btoa = require('btoa')
+					    , bin = this.loginIt.login+':'+this.loginIt.password
+					    , b64 = btoa(bin)
+					    console.log(b64)
+					window.localStorage.setItem('cid',b64);
+					
 				});
 			}
 		

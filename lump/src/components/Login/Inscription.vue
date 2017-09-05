@@ -29,7 +29,6 @@
 <!-- SCRIPT -->
 <script>
 import axios from 'axios'
-
 	export default {
 		data() {
 			return {
@@ -47,8 +46,6 @@ import axios from 'axios'
 				.then((response) =>{
 					console.log(response.data);
 			 		this.Result = response.data.result;
-
-			 		//ajouter le localstorage
 				})
 			}
 		}	

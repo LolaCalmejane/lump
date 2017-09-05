@@ -67,7 +67,7 @@ export default {
 	},
 	methods:{
 		getMusics(){
-			axios.get('http://localhost:3000/api/1.0/music/search?authorization=Q29jbzpjb3JhbGluZQ==&search=' + this.query )
+			axios.get('http://localhost:3000/api/1.0/music/search?authorization=bG9sYWE6bWRw&search=' + this.query )
 			.then((response) =>{
 				console.log(response.data);
 				this.Result = response.data.result;

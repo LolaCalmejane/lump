@@ -18,7 +18,7 @@
 							<p>{{result.title}}</p>
 			            </div>	
 			        	<div class="button-interaction">
-			      			<span class="mini-like-button iconLike" v-model.trim='title' @click.prevent="saveSong()"></span>
+			      			<span class="mini-like-button iconLike" v-model.trim='Result' @click.prevent="saveSong()"></span>
 		      				<div class="dropdown"> <!-- icon other on hover -->
 	                            <span data-toggle="dropdown" class="mini-other-button iconOther icon-other dropdown-toggle" type="button"></span>
 	                            <ul role="menu" class="dropdown-menu dropdown-menu-right">
@@ -74,10 +74,10 @@ export default {
 			})
 		},
 		saveSong(){
-			axios.post('http://localhost:3000/api/1.0/music/add/music', {
-				videoId : params.body.videoId,
-                title : 'title music',
-                channel : 'this.channel',
+			axios.post('http://localhost:3000/api/1.0/music/add/music?authorization=bG9sYWE6bWRw', {
+				videoId : this.videoId,
+                title : this.music,
+                channel : this.channel,
                 thumbnails : this.thumbnails
 			})
 			.then((response)=>{

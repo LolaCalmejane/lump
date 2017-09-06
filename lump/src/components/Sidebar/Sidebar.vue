@@ -18,29 +18,31 @@
 
 				<!-- SIDEBAR - PLAYER CONTENT -->
 				<div class="player-content" v-if="showId === 'player'">
-				<!-- SIDEBAR - PLAYER CONTENT - TITLE PLAYER -->
+				<!-- TITLE PLAYER -->
 					<div class="inListening">
 						<div class="inListeningIconPlay"></div>
 						<p class="inListening-text subtitle-gold">{{inListeningText}}</p>
 					</div>
 				</div>
 			</div>
-			<!-- SIDEBAR - PLAYER CONTENT - VIDEO-PLAYER -->
-			<div class="video-player" v-if="showId === 'player'"></div>	
+			<!-- VIDEO-PLAYER -->
+				<div class="video-player" v-if="showId === 'player'">
+				 <iframe :src="'http://www.youtube.com/embed/' + 'HL1UzIK-flA'" frameborder="0" allowfullscreen></iframe>
+			</div>
 			<div class="sidebar-content">
-				<!-- SIDEBAR - PLAYER CONTENT - SONG-INFORMATIONS -->
+				<!-- SONG-INFORMATIONS -->
 				<div class="player-content" v-if="showId === 'player'">
 					<div class="songInfos">
 						<p class="songTitle body-text">{{songTitle}}</p>
 						<p class="musicPlace detail">{{songPlace}}</p>
 					</div>
-					<!-- SIDEBAR - PLAYER CONTENT - LIKE/OTHER/STARS -->
+					<!-- LIKE/OTHER/STARS -->
 					<div class="interaction">
 						<div class="likeIcon"></div>
 						<div class="otherIcon"></div>
 						<div class="starsIcon"></div>
 					</div>
-					<!-- SIDEBAR - PLAYER CONTENT - WAITING LIST -->
+					<!-- WAITING LIST -->
 					<div class="waitingList">
 						<div class="waitingListIconWait"></div>
 						<p class="waitingList-text subtitle-gold">{{waitingListText}}</p>
@@ -48,9 +50,9 @@
 				</div>
 			</div>
 
-			<!-- SIDEBAR - PLAYER CONTENT - WAITING LIST - CONTENT -->
+			<!-- WAITING LIST - CONTENT -->
 			<div class="waitingListContent" v-if="showId === 'player'">
-			<!-- SIDEBAR - PLAYER CONTENT - WAITING LIST - CONTENT - MUSIC IN WAIT -->
+			<!-- WAITING LIST - MUSIC IN WAIT -->
 				<div class="listMusicInWait">
 					<div class="musicInWait" v-for='musicInWait in musicInWaits'>
 						<div class="imgMusicInWait">
@@ -63,10 +65,10 @@
 				</div>
 			</div>
 
-			<!-- SIDEBAR - PLAYER CONTENT - BOTTOM SIDEBAR -->		
+			<!-- BOTTOM SIDEBAR -->		
 			<div class="player-content" v-if="showId === 'player'">
 				<div class="bottom-sidebar">
-					<!-- SIDEBAR - PLAYER CONTENT - WAITING LIST - CONTENT - BUTTON -->
+					<!-- BUTTON ADD MUSIC IN WAITING LIST -->
 					<div class="sidebar-content">
 						<button class="waitingListButton subtitle-white"  type="button">{{buttonAddMusic}}</button>
 					</div>

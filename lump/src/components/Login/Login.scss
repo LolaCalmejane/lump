@@ -1,6 +1,7 @@
 
 .login {
 	height : 780px;
+    padding-top: 100px;
 }
 
 #login .content img {
@@ -22,7 +23,7 @@
     border: none;
     border-bottom: 1px solid white;
     outline: none;
-    margin-left: 30%;
+    margin:auto;
     margin-top: 3%;
 }
 
@@ -33,10 +34,9 @@
     border: none;
     border-bottom: 1px solid white;
     outline: none;
-    margin-left: 30%;
+    margin: auto;
     margin-top: 3%;
 }
-
 
 #login .content .form-connexion input, textarea {
     color : $white;
@@ -55,13 +55,9 @@
     margin-top: 5%;
 }
 
-
-#login .content .ifNot {
-	float: right;
-}
-
-#login .content .ifNot p {
-	display: inline-block;
+#login .ifNot {
+    margin-top : 30px;
+    text-align : center;
 }
 
 #login .content .ifNot p:nth-child(2):hover {

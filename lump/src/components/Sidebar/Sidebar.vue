@@ -37,8 +37,8 @@
 					<!-- SONG-INFORMATIONS -->
 					<div class="player-content">
 						<div class="songInfos">
-							<!-- <p class="songTitle body-text">{{playingItem.title}}</p> -->
-							<p class="musicPlace detail">{{songPlace}}</p>
+							<p v-if="playingItem" class="songTitle body-text">{{playingItem.title}}</p>
+							<p v-else class="songTitle body-text"> Titre - Artiste </p>
 						</div>
 						<!-- LIKE/OTHER/STARS -->
 						<div class="interaction">

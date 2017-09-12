@@ -13,66 +13,67 @@
 					<div class="chatIcon" @click="showId='chat'"></div>
 					<!-- SIDEBAR - NAVBAR CONTENT - LINE -->
 					<div class="line"></div>
-
 				</div>
-
 				<!-- SIDEBAR - PLAYER CONTENT -->
-				<div class="player-content" v-if="showId === 'player'">
-				<!-- TITLE PLAYER -->
+				<div v-if="showId === 'player'">
+					<!-- TITLE PLAYER -->
 					<div class="inListening">
 						<div class="inListeningIconPlay"></div>
 						<p class="inListening-text subtitle-gold">{{inListeningText}}</p>
 					</div>
-				</div>
-			</div>
-			<!-- VIDEO-PLAYER -->
-				<div class="video-player" v-if="showId === 'player'">
-				<div>
-				 	<iframe :src="'http://www.youtube.com/embed/' + playingItem.videoId + '?modestbranding=0&autohide=1&showinfo=0&rel=0&autoplay=1'" frameborder="0" allowfullscreen></iframe>	
-				 </div>
-			</div>
-			<div class="sidebar-content">
-				<!-- SONG-INFORMATIONS -->
-				<div class="player-content" v-if="showId === 'player'">
-					<div class="songInfos">
-						<p class="songTitle body-text">{{playingItem.title}}</p>
-						<p class="musicPlace detail">{{songPlace}}</p>
-					</div>
-					<!-- LIKE/OTHER/STARS -->
-					<div class="interaction">
-						<div class="likeIcon"></div>
-						<div class="otherIcon"></div>
-						<div class="starsIcon"></div>
-					</div>
-					<!-- WAITING LIST -->
-					<div class="waitingList">
-						<div class="waitingListIconWait"></div>
-						<p class="waitingList-text subtitle-gold">{{waitingListText}}</p>
-					</div>
-				</div>
-			</div>
-
-			<!-- WAITING LIST - CONTENT -->
-			<div class="waitingListContent" v-if="showId === 'player'">
-			<!-- WAITING LIST - MUSIC IN WAIT -->
-				<div class="listMusicInWait">
-					<div class="musicInWait" v-for='musicInWait in musicInWaits'>
-						<div class="imgMusicInWait">
-							<img v-bind:src="musicInWait.imgMusicInWait" alt="">
-							<div class="musicInWaitIconPlay"></div>
+					<!-- VIDEO-PLAYER -->
+					<div class="video-player">
+						<div v-if="playingItem">
+						 	<iframe :src="'http://www.youtube.com/embed/' + playingItem.videoId + '?modestbranding=0&autohide=1&showinfo=0&rel=0&autoplay=1'" frameborder="0" allowfullscreen></iframe>	
 						</div>
-						<div class="musicTitleInWait body-text">{{musicInWait.musicTitleInWait}}</div>
-						<div class="deleteIcon" @click="deletemusicInWaits"></div>
-					</div>
-				</div>
-			</div>
+						<div v-else>
+						 	<iframe :src="'http://www.youtube.com/embed/' +src+ '?modestbranding=0&autohide=1&showinfo=0&rel=0&autoplay=1'" frameborder="0" allowfullscreen></iframe>	
+						</div>
+						
 
-			<!-- BOTTOM SIDEBAR -->		
-			<div class="player-content" v-if="showId === 'player'">
-				<div class="bottom-sidebar">
-					<!-- BUTTON ADD MUSIC IN WAITING LIST -->
-					<div class="sidebar-content">
-						<button class="waitingListButton subtitle-white"  type="button">{{buttonAddMusic}}</button>
+						
+
+					</div>
+					<!-- SONG-INFORMATIONS -->
+					<div class="player-content">
+						<div class="songInfos">
+							<!-- <p class="songTitle body-text">{{playingItem.title}}</p> -->
+							<p class="musicPlace detail">{{songPlace}}</p>
+						</div>
+						<!-- LIKE/OTHER/STARS -->
+						<div class="interaction">
+							<div class="likeIcon"></div>
+							<div class="otherIcon"></div>
+							<div class="starsIcon"></div>
+						</div>
+						<!-- WAITING LIST -->
+						<div class="waitingList">
+							<div class="waitingListIconWait"></div>
+							<p class="waitingList-text subtitle-gold">{{waitingListText}}</p>
+						</div>
+					</div>
+					<!-- WAITING LIST - CONTENT -->
+					<div class="waitingListContent">
+					<!-- WAITING LIST - MUSIC IN WAIT -->
+						<div class="listMusicInWait">
+							<div class="musicInWait" v-for='musicInWait in musicInWaits'>
+								<div class="imgMusicInWait">
+									<img v-bind:src="musicInWait.imgMusicInWait" alt="">
+									<div class="musicInWaitIconPlay"></div>
+								</div>
+								<div class="musicTitleInWait body-text">{{musicInWait.musicTitleInWait}}</div>
+								<div class="deleteIcon" @click="deletemusicInWaits"></div>
+							</div>
+						</div>
+					</div>
+					<!-- BOTTOM SIDEBAR -->		
+					<div class="player-content">
+						<div class="bottom-sidebar">
+							<!-- BUTTON ADD MUSIC IN WAITING LIST -->
+							<div class="sidebar-content">
+								<button class="waitingListButton subtitle-white"  type="button">{{buttonAddMusic}}</button>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -80,20 +81,19 @@
 
 			<!-- SIDEBAR - NOTIFICATIONS CONTENT -->
  			<div class="notifications-content" v-if="showId === 'notifications'">
- 				<div class="listNotifications">
- 					<div class="notification" v-for='notification in notifications'>
- 						<div class="imgNotification">
-							<img v-bind:src="notification.imgNotificationSender" alt="">
-						</div>
-						<div class="dataNotification">
-							<p class="notificationSenderName title">{{notification.notificationSenderName}}</p>
-							<p class="notificationType detail">{{notification.notificationType}} {{notification.notificationEventConcerned}}</p>
+	 				<div class="listNotifications">
+	 					<div class="notification" v-for='notification in notifications'>
+	 						<div class="imgNotification">
+								<img v-bind:src="notification.imgNotificationSender" alt="">
+							</div>
+							<div class="dataNotification">
+								<p class="notificationSenderName title">{{notification.notificationSenderName}}</p>
+								<p class="notificationType detail">{{notification.notificationType}} {{notification.notificationEventConcerned}}</p>
+							</div>
 						</div>
 					</div>
-				</div>
-			</div>
-			<div class="notification-bottom-sidebar" v-if="showId === 'notifications'">
-					<!-- SIDEBAR - NOTIFICATION CONTENT - VIDEO-PLAYER -->
+				<div class="notification-bottom-sidebar">
+						<!-- SIDEBAR - NOTIFICATION CONTENT - VIDEO-PLAYER -->
 				<div class="notification-video-player"></div>
 					<div class="sidebar-content">
 						<div class="notification-interaction">
@@ -102,6 +102,7 @@
 							<div class="notification-otherIcon"></div>
 						</div>
 					</div>
+				</div>
 			</div>
 
 			<!------------------------------------------------------------------->
@@ -115,7 +116,7 @@
 
 		</div><!-- END OF THE SCROLL -->
 	</div><!-- END OF THE SIDEBAR -->				
-</template><!-- END OF THE TEMPLATE -->	
+</template><!-- END OF THE TEMPLATE -->
 
 <!-- SCRIPT -->
 <script>
@@ -126,12 +127,13 @@ export default {
 	data: function () {
 		// sidebar-player-datas
 		return {
-			showId:false,
+			showId:true,
 			inListeningText: 'En écoute',
 			songTitle:'Roméo Elvis - J\'ai vu',
 			songPlace:'Dans la playlist « let\’s goo »',
 			waitingListText:'À écouter plus tard',
 			buttonAddMusic:'Ajouter des musiques',
+			videoPlayer: false,
 
 
 			// sidebar-player-datas -waiting list part

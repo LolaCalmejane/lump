@@ -12,12 +12,6 @@
      z-index: 30;
  }
 
- .sidebar-content
- {
-     padding-left: 10%;
-     padding-right: 10%;
- }
-
 .scroll {
      overflow: scroll;
      width: 100%;
@@ -77,18 +71,20 @@
 
 // SIDEBAR - PLAYER CONTENT - TITLE PLAYER
 
-#sidebar .scroll .player-content .inListening {
+#sidebar .scroll .inListening {
      margin-top: 20px;
+     padding-left: 10%;
+     padding-right: 10%;
 }
 
-#sidebar .scroll .player-content .inListening .inListeningIconPlay:before {
+#sidebar .scroll .inListening .inListeningIconPlay:before {
      content: "\f01d";
      font-size: 1.2em;
      font-family: FontAwesome;
      color: $gold;
 }
 
-#sidebar .scroll .player-content .inListening .inListeningIconPlay,p {
+#sidebar .scroll .inListening .inListeningIconPlay,p {
      display: inline-block;   
 }
 
@@ -170,6 +166,8 @@
 
 #sidebar .scroll .player-content .waitingList {
      margin-top: 20px;
+     padding-left: 10%;
+     padding-right: 10%;
 }
 
 #sidebar .scroll .player-content .waitingList .waitingListIconWait,p {
@@ -359,14 +357,16 @@
 
 #sidebar .scroll .notification-bottom-sidebar .sidebar-content .notification-interaction {
      margin-top: 12px;
-     margin-bottom: 10px; 
+     margin-bottom: 10px;
+     padding-left: 10%;
+     padding-right: 10%; 
 }
 
 #sidebar .scroll .notification-bottom-sidebar .sidebar-content .notification-interaction div {
      vertical-align: middle;
      display: inline-block; 
      cursor: pointer;
-     color: $white;    
+     color: $white;
 }
 
 #sidebar .scroll .notification-bottom-sidebar .sidebar-content .notification-interaction div {

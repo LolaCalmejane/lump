@@ -66,7 +66,7 @@ export default {
 			query:'',
 			seen : false,
 			videoPlayer: false
-					}
+		}
 	},
 	methods:{
 		getMusics(){

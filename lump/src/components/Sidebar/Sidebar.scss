@@ -107,7 +107,11 @@
 }
 
 #sidebar .scroll .sidebar-content .player-content .songInfos .songTitle {
-     width: 100%;    
+     width: 80%;
+     margin: auto;
+     white-space: nowrap;
+     overflow : hidden;
+     text-overflow: ellipsis;    
 }
 
 #sidebar .scroll .sidebar-content .player-content .songInfos .musicPlace {

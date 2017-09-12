@@ -12,7 +12,7 @@
 		            <div class="imgSong" :style="{ backgroundImage: 'url(' + result.thumbnail + ')'}">
 		            	
 		            </div>
-		            <div class="iconPlay" v-if="Result" @click="playVideo"></div>
+		            <div class="iconPlay" v-if="Result" @click="playingItem(result)"></div>
 		            <div class="block-detail">
 						<div class="music-details">
 							<p>{{result.title}}</p>
@@ -31,9 +31,9 @@
 			      			
 			        	</div>
 		        	</div>
-		        		        	     <div v-if="videoPlayer">
-		        	<iframe :src="'http://www.youtube.com/embed/' + result.videoId + '?modestbranding=0&autohide=1&showinfo=0&rel=0&autoplay=1'" frameborder="0" allowfullscreen></iframe>		
-			</div>	  	
+		        	<!-- <div v-if="videoPlayer">
+		        	<iframe :src="'http://www.youtube.com/embed/' + result.videoId + '?modestbranding=0&autohide=1&showinfo=0&rel=0'" frameborder="0" allowfullscreen></iframe>		
+			</div>	 -->  	
 		        </li>
  			        	
 
@@ -65,21 +65,25 @@ export default {
 			Result: [],
 			query:'',
 			seen : false,
-			videoPlayer: false,
-		}
+			videoPlayer: false
+					}
 	},
 	methods:{
 		getMusics(){
-			axios.get('http://localhost:3000/api/1.0/music/search?authorization=bGFzdDpsYXN0bGFzdA==&search=' + this.query )
+			axios.get('http://localhost:3000/api/1.0/music/search?authorization=bG9sYWE6bWRw&search=' + this.query )
 			.then((response) =>{
 				console.log(response.data);
 				this.Result = response.data.result;
 			})
 		},
 
-		playVideo(result) {
-		this.videoPlayer = true;
+		playingItem(result) {
+			this.$store.commit('SET_PLAYING_ITEM', result)
+			console.log(result);
+			this.videoPlayer= true;
+
 		},
+
 
 					
 	

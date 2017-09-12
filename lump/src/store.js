@@ -16,12 +16,12 @@ const state = {
   this.$store.commit('SET_PLAYING_ITEM', video)
 
   "SET_PLAYING_ITEM" correspond au nom de votre mutation.
-  "video" correspond à la variable que vous récupérer dans votre composant de recherche.
+  "video" ( changé en result ) correspond à la variable que vous récupérer dans votre composant de recherche.
 
 */
 const mutations = {
-  SET_PLAYING_ITEM (state, video) {
-    state.playingItem = video
+  SET_PLAYING_ITEM (state, result) {
+    state.playingItem = result
   }
 }
 

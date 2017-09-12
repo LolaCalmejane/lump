@@ -27,13 +27,15 @@
 			</div>
 			<!-- VIDEO-PLAYER -->
 				<div class="video-player" v-if="showId === 'player'">
-				 <iframe :src="'http://www.youtube.com/embed/' + 'HL1UzIK-flA'" frameborder="0" allowfullscreen></iframe>
+				<div>
+				 	<iframe :src="'http://www.youtube.com/embed/' + playingItem.videoId + '?modestbranding=0&autohide=1&showinfo=0&rel=0&autoplay=1'" frameborder="0" allowfullscreen></iframe>	
+				 </div>
 			</div>
 			<div class="sidebar-content">
 				<!-- SONG-INFORMATIONS -->
 				<div class="player-content" v-if="showId === 'player'">
 					<div class="songInfos">
-						<p class="songTitle body-text">{{songTitle}}</p>
+						<p class="songTitle body-text">{{playingItem.title}}</p>
 						<p class="musicPlace detail">{{songPlace}}</p>
 					</div>
 					<!-- LIKE/OTHER/STARS -->
@@ -117,6 +119,8 @@
 
 <!-- SCRIPT -->
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
 	name: 'sidebar',
 	data: function () {
@@ -194,6 +198,11 @@ export default {
 			]
 		}    
 	},
+	computed: {
+      ...mapGetters([
+        'playingItem'
+      ])
+    },
 	// function remove element in waiting music list
     methods: {
     	deletemusicInWaits: function(musicInWaitId) {

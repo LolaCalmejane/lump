@@ -7,9 +7,6 @@ require('bootstrap-sass')
  
 Vue.use(VueLodash, lodash)
 
-
-
-
 // On importe Vue
 import Vue from 'vue'
 
@@ -26,6 +23,8 @@ import VueAxios from 'vue-axios'
 
 // On importe les composants Vue
 import App from './App.vue'
+
+
 
 // Importer Font-Awesome
 // import all icons if you don't care about bundle size
@@ -52,6 +51,16 @@ import Musics from './components/Profil/Musics/Musics.vue'
 import Playlists from './components/Profil/Playlists/Playlists.vue'
 import FetchData from './components/FetchData/FetchData.vue'
 
+// On importe Vuex
+import store from './store';
+
+  
+  var btoa = require('btoa')
+    , bin = "last:lastlast"
+    , b64 = btoa(bin)
+    ;
+
+  console.log(b64); // "SGVsbG8sIBZM"
 
 // On utilise Vue Router
 Vue.use(VueRouter);
@@ -128,20 +137,15 @@ const router = new VueRouter({
   mode:'history'
 })
 
-methods : {
-
-
-    
-}
-  
-
 
 
 // On initialise l'application
 new Vue({
   el: '#app',
+  store, 
   template: '<App/>',
   components: { App },
-  router, 
+  router,
+  
 })
 

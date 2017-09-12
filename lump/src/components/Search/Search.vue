@@ -12,7 +12,7 @@
 		            <div class="imgSong" :style="{ backgroundImage: 'url(' + result.thumbnail + ')'}">
 		            	
 		            </div>
-		            <div class="iconPlay"></div>
+		            <div class="iconPlay" v-if="Result" @click="playVideo"></div>
 		            <div class="block-detail">
 						<div class="music-details">
 							<p>{{result.title}}</p>
@@ -30,8 +30,13 @@
                             </div>
 			      			
 			        	</div>
-		        	</div>		        	
+		        	</div>
+		        		        	     <div v-if="videoPlayer">
+		        	<iframe :src="'http://www.youtube.com/embed/' + result.videoId + '?modestbranding=0&autohide=1&showinfo=0&rel=0&autoplay=1'" frameborder="0" allowfullscreen></iframe>		
+			</div>	  	
 		        </li>
+ 			        	
+
 	        <!-- </div> -->
 	        <!-- <div class="category-search">
 		        <span class="subtitle-gold">Users</span>
@@ -60,32 +65,37 @@ export default {
 			Result: [],
 			query:'',
 			seen : false,
-			title :'',
-
-
+			videoPlayer: false,
 		}
 	},
 	methods:{
 		getMusics(){
-			axios.get('http://localhost:3000/api/1.0/music/search?authorization=bG9sYWE6bWRw&search=' + this.query )
+			axios.get('http://localhost:3000/api/1.0/music/search?authorization=bGFzdDpsYXN0bGFzdA==&search=' + this.query )
 			.then((response) =>{
 				console.log(response.data);
 				this.Result = response.data.result;
 			})
 		},
-		saveSong(){
-			axios.post('http://localhost:3000/api/1.0/music/add/music?authorization=bG9sYWE6bWRw', {
-				videoId : this.videoId,
-                title : this.music,
-                channel : this.channel,
-                thumbnails : this.thumbnails
-			})
-			.then((response)=>{
-				console.log(response.data);
-				this.Result= response.data.result;
-			})
 
-		}
+		playVideo(result) {
+		this.videoPlayer = true;
+		},
+
+					
+	
+		// saveSong(){
+		// 	axios.post('http://localhost:3000/api/1.0/music/add/music?authorization=bG9sYWE6bWRw', {
+		// 		videoId : this.videoId,
+  //               title : this.music,
+  //               channel : this.channel,
+  //               thumbnails : this.thumbnails
+		// 	})
+		// 	.then((response)=>{
+		// 		console.log(response.data);
+		// 		this.Result= response.data.result;
+		// 	})
+
+		// }
 		
 	}
 	

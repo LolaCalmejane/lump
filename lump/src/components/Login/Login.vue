@@ -11,7 +11,7 @@
 				<div class="form-connexion">
 			        <input type="text" v-model.trim="loginIt.login" class="pseudo" placeholder="Pseudo" required>
 			        <input type="password" class="mdp" v-model.trim="loginIt.password" placeholder="Mot de passe" required>
-			        <button class="buttonConnexion subtitle-white" @click.prevent="connexion()">Se connecter</button>
+			        <button class="buttonConnexion subtitle-white" @click.prevent="connexion(Result)">Se connecter</button>
 	      		</div>
 	      		<div class="ifNot">
 		      		<p class="detail">Vous n’êtes pas encore inscrit ?</p>
@@ -22,13 +22,9 @@
 	</div>
 </template>
 
-
-
-
 <!-- SCRIPT -->
 <script>
 import axios from 'axios'
-
 
 	export default {
 		data() {
@@ -40,15 +36,13 @@ import axios from 'axios'
 				}
 			}
 		},
-
 		methods: {
-            connexion() {
+            connexion(Result) {
                 axios.get("http://localhost:3000/api/1.0/user/login?authorization="+ btoa(this.loginIt.login+':'+this.loginIt.password))
             	.then((response) =>{ 
             		console.log(response.data);
 					this.Result = response.data.result;
-					
-					
+					this.$store.commit('SET_PROFIL_DATAS', this.Result)
 				});
 			}
 		

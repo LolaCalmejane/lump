@@ -127,7 +127,7 @@ export default {
 	data: function () {
 		// sidebar-player-datas
 		return {
-			showId:true,
+			showId: 'player',
 			inListeningText: 'En écoute',
 			songTitle:'Roméo Elvis - J\'ai vu',
 			songPlace:'Dans la playlist « let\’s goo »',

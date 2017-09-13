@@ -18,7 +18,7 @@
 							<p>{{result.title}}</p>
 			            </div>	
 			        	<div class="button-interaction">
-			      			<span class="mini-like-button iconLike" v-model.trim='Result' @click.prevent="saveSong()"></span>
+			      			<span class="mini-like-button iconLike" @click.prevent="saveSong(Result)"></span>
 		      				<div class="dropdown"> <!-- icon other on hover -->
 	                            <span data-toggle="dropdown" class="mini-other-button iconOther icon-other dropdown-toggle" type="button"></span>
 	                            <ul role="menu" class="dropdown-menu dropdown-menu-right">
@@ -57,6 +57,7 @@
 
 <script>
 import axios from 'axios'
+import { mapGetters } from 'vuex'
 
 export default {
 	name: 'search', 
@@ -68,9 +69,14 @@ export default {
 			videoPlayer: false
 		}
 	},
+	computed: {
+      ...mapGetters([
+        'connexion'
+      ])
+    },
 	methods:{
 		getMusics(){
-			axios.get('http://localhost:3000/api/1.0/music/search?authorization=bG9sYWE6bWRw&search=' + this.query )
+			axios.get('http://localhost:3000/api/1.0/music/search?authorization='+ btoa(this.connexion.login+':'+'mdp')+'&search=' + this.query )
 			.then((response) =>{
 				console.log(response.data);
 				this.Result = response.data.result;
@@ -83,23 +89,16 @@ export default {
 			this.videoPlayer= true;
 
 		},
-
-
-					
 	
-		// saveSong(){
-		// 	axios.post('http://localhost:3000/api/1.0/music/add/music?authorization=bG9sYWE6bWRw', {
-		// 		videoId : this.videoId,
-  //               title : this.music,
-  //               channel : this.channel,
-  //               thumbnails : this.thumbnails
-		// 	})
-		// 	.then((response)=>{
-		// 		console.log(response.data);
-		// 		this.Result= response.data.result;
-		// 	})
+		saveSong(){
+			axios.post('http://localhost:3000/api/1.0/music/add/music/'+this.connexion._id+'?authorization='+ btoa(this.connexion.login+':'+'mdp'))
+			.then((response)=>{
+				console.log(response.data);
+				this.Result= response.data.result;
+				this.$store.commit('ADD_MUSIC', this.Result)
+			})
 
-		// }
+		}
 		
 	}
 	

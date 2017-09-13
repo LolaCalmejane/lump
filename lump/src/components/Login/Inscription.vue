@@ -4,7 +4,7 @@
 <!-- HTML -->
 <template>
 	<div id="inscription" class="inscription">
-		<div class="content">
+		<div class="">
 			<img src="../../assets/images/login-logo.png" alt="Logo-lump">
 			<h2 class="subtitle-white title-subscribe">Inscription</h2>
 			<form action="#" v-on:submit.prevent="createUser()">
@@ -15,9 +15,9 @@
 			        <button class="buttonSubscribe subtitle-white">S'inscrire</button>
 	      		</div>
 	      		<div class="ifNot">
-		      		<p class="body-text">Vous avez déjà un compte ?</p>
+		      		<p class="detail">Vous avez déjà un compte ?</p>
 		      		<router-link to ="/login"><p class="body-text">Se connecter</p></router-link>
-	      		</div>
+	      		</div>      		
 	      	</form>
       </div>
 	</div>

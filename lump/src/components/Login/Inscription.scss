@@ -1,59 +1,60 @@
 
 .inscription {
 	height : 780px;
+    padding-top : 100px;
 }
 
-#inscription .content img {
+#inscription img {
 	display: block;
 	margin: 0 auto;
 }
 
-#inscription .content .title-subscribe {
+#inscription .title-subscribe {
 	text-transform: none;
 	text-align: center;
 	margin-top: 40px;
 	font-size: 2em;
 }
 
-#inscription .content .form-inscription input[type=text]  {
+#inscription .form-inscription input[type=text]  {
     width: 45%;
     background-color: transparent;
     color: white;
     border: none;
     border-bottom: 1px solid white;
     outline: none;
-    margin-left: 30%;
+    margin: auto;
     margin-top: 3%;
 }
 
-#inscription .content .form-inscription input[type=email] {
+#inscription .form-inscription input[type=email] {
     width: 45%;
     background-color: transparent;
     color: white;
     border: none;
     border-bottom: 1px solid white;
     outline: none;
-    margin-left: 30%;
+    margin: auto;
     margin-top: 3%;
 }
 
-#inscription .content .form-inscription input[type=password]  {
+#inscription .form-inscription input[type=password]  {
     width: 45%;
     background-color: transparent;
     color: white;
     border: none;
     border-bottom: 1px solid white;
     outline: none;
-    margin-left: 30%;
+    margin: auto;
     margin-top: 3%;
 }
 
-#inscription .content .form-inscription input, textarea {
+#inscription .form-inscription input, textarea {
     color : $white;
 	line-height: 2;
 }
 
-#inscription .content .form-inscription .buttonSubscribe {
+#inscription .form-inscription .buttonSubscribe {
     width: 18%;
     height: 33px;
     border-radius: 3px;
@@ -65,16 +66,12 @@
     margin-top: 5%;
 }
 
-
-#inscription .content .ifNot {
-	float: right;
+#inscription .ifNot {
+    margin-top : 30px;
+    text-align : center;
 }
 
-#inscription .content .ifNot p {
-	display: inline-block;
-}
-
-#inscription .content .ifNot p:nth-child(2):hover {
+#inscription .ifNot p:nth-child(2):hover {
 	font-weight: 700;
 	cursor: pointer;
 

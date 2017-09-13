@@ -4,6 +4,7 @@
 <!-- HTML -->
 <template>
 	<div id="playlists" class="playlists events"> 
+		<static></static> 
 		<header-profil></header-profil>
 		<div class="content">
 			<form id="search">
@@ -50,13 +51,14 @@
 </template>
 
 <script>
-
 import HeaderProfil from '../HeaderProfil/HeaderProfil.vue'
+import Static from '../../Static/Static.vue'
 
 export default {
 	name: 'playlists', 
 	components: {
     	'header-profil': HeaderProfil,
+    	'static' : Static
   	},
   	methods: {
         myFilter: function(){

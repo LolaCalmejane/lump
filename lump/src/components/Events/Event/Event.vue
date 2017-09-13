@@ -4,6 +4,7 @@
 <!-- HTML -->
 <template>
 	<div id="event" class="event" v-if="comingEvents = comingEvent ">
+        <static></static> 
 		<!-- EVENT - IMAGE BACKGROUND-->
 		<div class="event-image" :style="{ backgroundImage: 'url(' + comingEvent.imgEvent + ')'}">
 		<div class="filter-bg"></div>
@@ -91,8 +92,13 @@
 <!-- SCRIPT -->
 <script>
 
+import Static from '../../Static/Static.vue'
+
 export default {
 	name: 'event',
+    components: {
+        'static' : Static
+    },    
 	methods: {
         getEvent() {
             (`Event/${this.$route.params.comingEventId}`)

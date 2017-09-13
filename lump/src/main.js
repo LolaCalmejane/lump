@@ -4,7 +4,6 @@ import jQuery from 'jquery'
 window.jQuery = window.$ = jQuery
 require('bootstrap-sass')
 
- 
 Vue.use(VueLodash, lodash)
 
 // On importe Vue
@@ -19,12 +18,8 @@ import VueLodash from 'vue-lodash/dist/vue-lodash.min'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
-
-
 // On importe les composants Vue
 import App from './App.vue'
-
-
 
 // Importer Font-Awesome
 // import all icons if you don't care about bundle size
@@ -36,7 +31,6 @@ require('font-awesome/css/font-awesome.css');
 Vue.component('icon', Icon)
 
 Vue.config.productionTip = false
-
 
 // On importe les composants Vue
 import Create from './components/Create/Create.vue'
@@ -50,6 +44,7 @@ import Search from './components/Search/Search.vue'
 import Musics from './components/Profil/Musics/Musics.vue'
 import Playlists from './components/Profil/Playlists/Playlists.vue'
 import FetchData from './components/FetchData/FetchData.vue'
+import Static from './components/Static/Static.vue'
 
 // On importe Vuex
 import store from './store';
@@ -71,65 +66,20 @@ axios.defaults.baseURL = 'http://localhost:8080/api/1.0/';
 
 // On configure nos routes
 const routes = [
-  {
-    path: '/Create/',
-    component: Create,
-    name: 'create',
-  },
-    {
-    path: '/FetchData/',
-    component: FetchData,
-    name: 'fetchdata',
-  },
-
-  {
-    path: '/AddFriends/',
-    component: AddFriends,
-    name: 'addfriends',
-  },
-  {
-    path: '/Events/',
-    component: Events,
-    name: 'events',
-  },
-    {
-    path: '/Event/:comingEventId',
-    component: Event,
-    name: 'event',
-  },
-  {
-    path: '/Login/',
-    component: Login,
-    name: 'login',
-  },
-    {
-    path: '/Inscription',
-    component: Inscription,
-    name: 'inscription',
-  },
-    {
-    path: '/Profil/',
-    component: Profil,
-    name: 'profil',
-  },
-  {
-    path: '/Musics/',
-    component: Musics,
-    name: 'musics',
-  },
-  {
-    path: '/Playlists/',
-    component: Playlists,
-    name: 'playlists',
-  },
-    {
-    path: '/Search/',
-    component: Search,
-    name: 'search',
-  }
+  { path: '/Create/', component: Create, name: 'create' },
+  { path: '/FetchData/', component: FetchData, name: 'fetchdata' },
+  { path: '/AddFriends/', component: AddFriends, name: 'addfriends' },
+  { path: '/Events/',component: Events, name: 'events' },
+  { path: '/Event/:comingEventId', component: Event, name: 'event' },
+  { path: '/Login/', component: Login, name: 'login' },
+  { path: '/Inscription', component: Inscription, name: 'inscription' },
+  { path: '/Profil/', component: Profil, name: 'profil' },
+  { path: '/Musics/', component: Musics, name: 'musics' },
+  { path: '/Playlists/', component: Playlists, name: 'playlists' },
+  { path: '/Search/', component: Search, name: 'search' },
+  { path: '/Static/', component: Static, name: 'static' },  
+  { path: '*', redirect: 'Login' }
 ]
-
-
 
 // On initialise le router
 const router = new VueRouter({
@@ -137,14 +87,12 @@ const router = new VueRouter({
   mode:'history'
 })
 
-
-
 // On initialise l'application
 new Vue({
   el: '#app',
   store, 
   template: '<App/>',
-  components: { App },
+  components: { App},
   router,
   
 })

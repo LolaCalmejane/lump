@@ -4,6 +4,7 @@
 <!-- HTML -->
 <template>
     <div id="create" class="create">
+         <static></static> 
         <div class="header-create">
             <div class="content">
                 <h2 class="big-title">Créer un événement</h2>
@@ -280,21 +281,22 @@
                     <input class="body-text" type="text" placeholder="00000" id="adresse" />
                 </form>
                 <router-link to ="/addfriends"><button type="button" class="nextButton name-title">Suivant</button></router-link>
-
-            </div>
-            
+            </div> 
         </div>
         </div>
-
-      
     </div> <!-- end profil -->
 </template>
 
 <!-- SCRIPT -->
 <script>
+import Static from '../Static/Static.vue'
 
 export default {
     name: 'create',
+    components: {
+        'static' : Static
+    },
+
     methods: {
         toggleActive: function (){
             this.isActive = !this.isActive;

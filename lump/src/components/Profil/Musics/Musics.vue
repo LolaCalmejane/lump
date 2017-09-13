@@ -4,6 +4,7 @@
 <!-- HTML -->
 <template>
 	<div id="musics" class="profil musics">
+		<static></static> 
 		<header-profil></header-profil>
 		<div class="content">
 			<form id="search">
@@ -27,12 +28,14 @@
 
 import HeaderProfil from '../HeaderProfil/HeaderProfil.vue'
 import MusicsGrid from '../MusicsGrid/MusicsGrid.vue'
+import Static from '../../Static/Static.vue'
 
 export default {
 	name: 'musics', 
 	components: {
     	'header-profil': HeaderProfil,
-    	'musics-grid': MusicsGrid
+    	'musics-grid': MusicsGrid,
+    	'static' : Static
   	},
   	data: function () {
 	    return {

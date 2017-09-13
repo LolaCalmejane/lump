@@ -4,6 +4,7 @@
 <!-- HTML -->
 <template>
     <div id="profil" class="profil">
+        <static></static>
         <header-profil></header-profil>
         <!-- Grid events -->
        <section class="events">
@@ -77,12 +78,14 @@
 <!-- SCRIPT -->
 <script>
 import HeaderProfil from './HeaderProfil/HeaderProfil.vue'
+import Static from '../Static/Static.vue'
 
 export default {
     props: ['event'],
     name: 'profil',
     components: {
         'header-profil': HeaderProfil,
+        'static' : Static
     },
     
     data() {

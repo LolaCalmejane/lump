@@ -8,7 +8,7 @@
 	cursor : pointer;
 	width: 25%;
 	//pour des colonnes de 25%;
-	float : left;
+	display : inline-block;
 	padding : 0 2% 0 2%;
 }
 
@@ -94,129 +94,148 @@
 	width : auto;
 }
 
-.events .img-event:hover span{
+.events .events-coming .img-event:hover span{
 	display : block;
 }
 
 
 //EVENTS PASSED
 
+.events .events-passed .img-event .whenHover {
+	display : none;
+	position :absolute;
+	top: 0;
+	left: 0;
+	font-size : 2em;
+	width : 100%;
+	height : 100%;
+}
+
+.events .events-passed .img-event:hover .whenHover{
+	display : block;
+}
+
 // Icon play
-.events .events-passed .img-event .icon-play:before { 
+.events .events-passed .img-event .whenHover .icon-play:before { 
 	content: "\f144";	 
 	font-family : FontAwesome;
 	font-style: normal;
     font-weight: normal;
-    font-size : 2em;
-	display : none;
+    font-size : 1em;
 	position : absolute;
-	top: 0px;
-	right:10px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 	
 }
 
-.events  .events-passed .img-event .icon-pause:before {
+.events  .events-passed .img-event .whenHover .icon-pause:before {
 	content : "\f28b";
 	font-family: FontAwesome;
 	position : absolute;
 	top : 0px;
 	right :10px;
 	font-size : 2em;
+	width : auto;
 }
 
-.events .events-passed .img-event:hover .icon-play:before{
-	display : block;
-}
+// .events .events-passed .img-event:hover .icon-play:hover:before{
+// 	font-size: 2.2em;
+// }
 
-.events .events-passed .img-event:hover .icon-play:hover:before{
-	font-size: 2.2em;
-}
 
 .events .img-event:hover img {
 	opacity: 0.2;
 }
 
 //Icon other
-.events  .events-passed .img-event .icon-other:before {
+
+.events  .events-passed .img-event .whenHover .icon-other {
+	position : absolute;
+	top : 0px;
+	left: 0px;
+	display : block;
+}
+
+.events  .events-passed .img-event .whenHover .dropdown{
+	left : 20px;
+}
+
+.events  .events-passed .img-event .whenHover .dropdown button:before {
 	content: "\f141";	 
 	font-family : FontAwesome;
 	font-style: normal;
     font-weight: normal;
-    font-size : 2em;
-	position : inherit;
-	top : 0px;
-	right :10px;
+    font-size : 1em;
+	width : auto;
+	position: absolute;
+    left: 0;
 }
 
-.img-event ul {
+.events  .events-passed .img-event .whenHover ul {
 	position : absolute;
 	top : 2px;
 	right: 40px;
 	list-style-type: none;
 	}
 
-.img-event ul li a {
+.events  .events-passed .img-event .whenHover ul li a {
 	position : relative;
 	text-decoration: none;
 }
 
-.img-event ul li a:hover {
+.events  .events-passed .img-event .whenHover ul li a:hover {
 	text-decoration: none;
 }
 
-.img-event button {
+.events  .events-passed .img-event .whenHover button {
 	background-color : transparent;
 	border : none;
-	display : none;
 }
 
-.img-event .dropdown {
+.events  .events-passed .img-event .whenHover .dropdown {
 	position: absolute;
 	right: 40px;
 	top: 0px;
 }
 
-.events .img-event:hover button{
-	display : block;
-}
 
-
-.img-event .dropdown-menu {
+.events  .events-passed .img-event .whenHover .dropdown-menu {
 	position: absolute;
 	left: 0;
 	top: 50px;
 	width: 240px;
 }
 
-//stars ranking
-.events .events-passed .img-event .rating {
-  unicode-bidi: bidi-override;
-  direction: rtl;
-  position : absolute;
-  width : 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display : block;
-  text-align: center;
-  margin: 0 auto;
-}
+// //stars ranking
+// .events .events-passed .img-event .rating {
+//   unicode-bidi: bidi-override;
+//   direction: rtl;
+//   position : absolute;
+//   width : 100%;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   display : block;
+//   text-align: center;
+//   margin: 0 auto;
+// }
 
-.events .img-event:hover .rating{
-	display : block;
-	color : white;
-}
+// .events .img-event:hover .rating{
+// 	display : block;
+// 	color : white;
+// }
 
-.events .events-passed .img-event .rating > span {
-  display: inline-block;
-  position: relative;
-  width: 1.2em;
-  font-size : 1.2em;
-}
-.events .events-passed .img-event .rating > span:hover:before,
-.events .events-passed .img-event .rating > span:hover ~ span:before {
-   content: "\2605";
-   position: absolute;
-   color : $red;
-}
+// .events .events-passed .img-event .rating > span {
+//   display: inline-block;
+//   position: relative;
+//   width: 1.2em;
+//   font-size : 1.2em;
+// }
+// .events .events-passed .img-event .rating > span:hover:before,
+// .events .events-passed .img-event .rating > span:hover ~ span:before {
+//    content: "\2605";
+//    position: absolute;
+//    color : $red;
+// }
 

@@ -35,7 +35,8 @@ Vue.config.productionTip = false
 // On importe les composants Vue
 import Create from './components/Create/Create.vue'
 import AddFriends from './components/Create/AddFriends/AddFriends.vue'
-import Events from './components/Events/Events.vue'
+import allComingEvents from './components/Events/AllComingEvents/allComingEvents.vue'
+import allPassedEvents from './components/Events/AllPassedEvents/allPassedEvents.vue'
 import Event from './components/Events/Event/Event.vue'
 import Login from './components/Login/Login.vue'
 import Inscription from './components/Login/Inscription.vue'
@@ -69,7 +70,8 @@ const routes = [
   { path: '/Create/', component: Create, name: 'create' },
   { path: '/FetchData/', component: FetchData, name: 'fetchdata' },
   { path: '/AddFriends/', component: AddFriends, name: 'addfriends' },
-  { path: '/Events/',component: Events, name: 'events' },
+  { path: '/Futurs-evenements/',component: allComingEvents, name: 'allComingEvents' },
+  { path: '/Anciens-evenements/',component: allPassedEvents, name: 'allPassedEvents' },
   { path: '/Event/:comingEventId', component: Event, name: 'event' },
   { path: '/Login/', component: Login, name: 'login' },
   { path: '/Inscription', component: Inscription, name: 'inscription' },

@@ -1,10 +1,9 @@
-
 // CSS NAVBAR
 
 #brand {
-	float : left;
-	margin : 0;
-	//color : red;
+    float : left;
+    margin : 0;
+    //color : red;
 }
 
 nav {
@@ -56,28 +55,28 @@ nav ul li a:hover:after
 }
 
 nav ul {
-	display : inline-block;
-	width : 100%;
-	padding : 0;
+    display : inline-block;
+    width : 100%;
+    padding : 0;
 }
 
 nav ul li {
-	display : inline-block;
-	margin-left : 40px;
+    display : inline-block;
+    margin-left : 40px;
 }
 
 nav ul li a {
-	position : relative;
-	text-decoration: none;
+    position : relative;
+    text-decoration: none;
 }
 
 nav ul li a:hover {
-	text-decoration: none;
+    text-decoration: none;
 }
 
 nav ul li a:focus {
-	color: $gold;
-	text-decoration : none;
+    color: $gold;
+    text-decoration : none;
 }
 
 nav .dropdown {
@@ -99,9 +98,9 @@ nav .dropdown a span.caret {
 	padding : 10px 0;
 }
 
-.dropdown-menu .divider {
-	background-color : $black-blue;
-}
+// .dropdown-menu .divider {
+// 	background-color : $black-blue;
+// }
 
 .open > .dropdown-menu {
     background-color: #171B2E
@@ -113,6 +112,13 @@ nav .dropdown a span.caret {
 	padding : 8px 15px;
 
 }
+
+.dropdown-menu > li > a:hover {
+     background: rgba(255,255,255,0.10);
+     cursor: pointer;
+     color: $white;
+}
+
 ////////
 // Search bar animation 
 ///////
@@ -150,6 +156,5 @@ nav .dropdown a span.caret {
      padding-right : 140px;
      width: auto;
      position: relative;
-     overflow: auto;
      z-index: 0;
  }

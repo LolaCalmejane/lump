@@ -3,7 +3,7 @@
 
 <!-- HTML -->
 <template>
-	<div id="playlists" class="playlists events"> 
+	<div id="playlists" class="playlists"> 
 		<static></static> 
 		<header-profil></header-profil>
 		<div class="content">

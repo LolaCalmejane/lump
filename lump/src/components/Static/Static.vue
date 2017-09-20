@@ -10,7 +10,6 @@
                 <ul>
                     <router-link to ="/profil" class="subtitle-white"><img id="brand" src="../../assets/images/img-logo.png" alt="Logo"></router-link>
                     <search></search>
-                    <!-- <input type="text" name="search" class="subtitle-white" placeholder="Rechercher"> -->
                     <li><router-link to ="/create" class="subtitle-white">Créer</router-link></li>
                     <li><router-link to ="/events" class="subtitle-white">Événements</router-link></li>
                     <li><router-link to ="/profil" class="subtitle-white">Jude Ademilo</router-link></li>

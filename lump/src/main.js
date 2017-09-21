@@ -1,4 +1,3 @@
-
 // Importer jQuery
 import jQuery from 'jquery'
 window.jQuery = window.$ = jQuery
@@ -43,6 +42,9 @@ import Inscription from './components/Login/Inscription.vue'
 import Profil from './components/Profil/Profil.vue'
 import Search from './components/Search/Search.vue'
 import Musics from './components/Profil/Musics/Musics.vue'
+import Stars from './components/Profil/Stars/Stars.vue'
+import Calendar from './components/Profil/Calendar/Calendar.vue'
+import Friends from './components/Profil/Friends/Friends.vue'
 import Playlists from './components/Profil/Playlists/Playlists.vue'
 import FetchData from './components/FetchData/FetchData.vue'
 import Static from './components/Static/Static.vue'
@@ -78,6 +80,9 @@ const routes = [
   { path: '/Profil/', component: Profil, name: 'profil' },
   { path: '/Musics/', component: Musics, name: 'musics' },
   { path: '/Playlists/', component: Playlists, name: 'playlists' },
+  { path: '/Stars/', component: Stars, name: 'stars' },
+  { path: '/Calendar/', component: Calendar, name: 'calendar' },
+  { path: '/Friends/', component: Friends, name: 'friends' },      
   { path: '/Search/', component: Search, name: 'search' },
   { path: '/Static/', component: Static, name: 'static' },  
   { path: '*', redirect: 'Login' }

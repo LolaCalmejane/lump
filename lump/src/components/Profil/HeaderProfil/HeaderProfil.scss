@@ -99,6 +99,7 @@
 	vertical-align: text-bottom;
 	padding : 5px 15px 5px 15px;
 	text-transform : uppercase;
+	outline:none;
 } 
 
 .header-profil button:active{
@@ -125,6 +126,9 @@
 	margin-top : 15px;
 }
 
+.header-profil .data-right .data-right-element {
+	line-height: 2.3;
+}
 
 //subnav
 
@@ -141,8 +145,7 @@
 }
 
 .header-profil .subnav li{
-	width : 19%;
-	
+	width : 16%;
 	margin : 0;
 }
 

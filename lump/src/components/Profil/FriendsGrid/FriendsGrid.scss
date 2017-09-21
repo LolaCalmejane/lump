@@ -1,0 +1,78 @@
+.friends-grid table {
+  background-color : transparent;
+  border-radius: 3px;
+  width: 100%;
+}
+
+//intitulé des colonnes
+.friends-grid th {
+  color: $gold;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.friends-grid th, td {
+  padding: 10px 0px;
+  background-color : transparent;
+  cursor : pointer;
+}
+
+.friends-grid td:nth-child(1), .friends-grid th:nth-child(1) {
+  padding-left : 90px;
+  //Pour que au hover il y ait du vide gris clair à gauche
+}
+
+.friends-grid th.active .arrow {
+  opacity: 1;
+}
+
+.friends-grid .arrow {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0;
+  height: 0;
+  margin-left: 5px;
+  opacity: 0.66;
+}
+
+.friends-grid .arrow.asc {
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid $gold;
+}
+
+.friends-grid .arrow.dsc {
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid $gold;
+}
+  
+//placement des icons par rapport au premier td de chaque tr
+.friends-grid tbody tr td:first-child{
+  position: relative;
+  width: 80%;
+}
+
+#friends .deleteIcon:before {
+  content: "\f00d";
+  font-size: 1.2em;
+  font-family: FontAwesome;
+  color: white;
+  cursor: pointer;
+  text-align: right;
+
+}
+
+#friends .deleteIcon:hover {  
+  font-size: 1.1em;
+}
+
+// HOVER D'UN AMI
+
+.friends-grid tbody tr:hover {
+  background: rgba(255,255,255,0.10);
+}
+

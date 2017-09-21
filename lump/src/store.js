@@ -6,7 +6,8 @@ Vue.use(Vuex)
 const state = {
   playingItem: null,
   connexion: null,
-  saveSong: null
+  saveSong: null,
+  deletemyfriend: null
 }
 
 // On stocke les données grâce aux mutations
@@ -30,13 +31,18 @@ const mutations = {
   },
   ADD_MUSIC (state, Result) {
     state.saveSong = Result
+  },
+  SET_FRIEND (state, gridData) {
+  state.deletemyfriend = gridData
   }
 }
 
 // On récupère les données grâce aux getters, qui seront accessibles depuis les composants
 const getters = {
   playingItem: state => state.playingItem,
-  connexion: state => state.connexion
+  connexion: state => state.connexion,
+  deletemyfriend: state => state.deletemyfriend
+
 }
 
 // On initialise le store de Vuex afin que les composants aient accès aux données

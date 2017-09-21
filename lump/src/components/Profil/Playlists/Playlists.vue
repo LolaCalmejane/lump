@@ -9,43 +9,39 @@
 		<div class="content">
 			<form id="search">
 				<span class="iconSearch"></span>
-				<input class="
-      			bar iconSearch body-text" type ="text" name="query" v-model="searchQuery">
+				<input class="bar iconSearch body-text" type ="text" name="query" v-model="searchQuery">
 			</form>
-		</div>
-
-		<!-- context playlist -->
-		<div class="content">
-		<div class="playlist" v-for='(playlist,index) in playlists'>
-			<div class="event-context"> <!-- A RENOMMER CETTE CLASSE -->
-				<div :style="{ backgroundImage: 'url(' + playlist.imgProfil + ')' }" class="block-mini-image"> 
-			    </div>
-		        <div class="left-context">
-		            <span class="title ">{{playlist.playlistCreator}}</span>
-		            <p class="detail">organise</p>
-		         </div>
-		         <div class="right-context">
-		         	<p class="detail">ajouté le</p>
-		            <span class="title ">{{playlist.dateCreation}}</span>
-		         </div>
-	        </div>
-	        <div class="img-playlist" :style="{ backgroundImage: 'url(' + playlist.imgPlaylist + ')' }" > 
-	        	<div class="iconPlay"></div>
-	        </div>
-	        <span class="playlist-name title">{{playlist.playlistName}}</span>
-	        <div class="preview-playlist">
-		        <div class="songs">
-		        	<ul v-for ='(song,index) in playlist.songs' class="song">
-		        		<div class="mini-like-button iconLike"></div>
-		        		<div class="mini-play-button iconPlay "
-		        				v-on:click="myFilter"
-    							v-bind:class="{ active: isActive }"></div>
-		        		<span class="body-text song-title" v-bind:class="{ active: isActive }" >{{song.title}}</span>
-		        		<div class="mini-other-button iconOther"></div>
-		        	</ul>
+			<!-- context playlist -->
+			<div class="playlist" v-for='(playlist,index) in playlists'>
+				<div class="event-context"> <!-- A RENOMMER CETTE CLASSE -->
+					<div :style="{ backgroundImage: 'url(' + playlist.imgProfil + ')' }" class="block-mini-image"> 
+				    </div>
+			        <div class="left-context">
+			            <span class="title ">{{playlist.playlistCreator}}</span>
+			            <p class="detail">organise</p>
+			         </div>
+			         <div class="right-context">
+			         	<p class="detail">ajouté le</p>
+			            <span class="title ">{{playlist.dateCreation}}</span>
+			         </div>
 		        </div>
-	        </div>
-		</div> <!-- end playlist -->
+		        <div class="img-playlist" :style="{ backgroundImage: 'url(' + playlist.imgPlaylist + ')' }" > 
+		        	<div class="iconPlay"></div>
+		        </div>
+		        <span class="playlist-name title">{{playlist.playlistName}}</span>
+		        <div class="preview-playlist">
+			        <div class="songs">
+			        	<ul v-for ='(song,index) in playlist.songs' class="song">
+			        		<div class="mini-like-button iconLike"></div>
+			        		<div class="mini-play-button iconPlay "
+			        				v-on:click="myFilter"
+	    							v-bind:class="{ active: isActive }"></div>
+			        		<span class="body-text song-title" v-bind:class="{ active: isActive }" >{{song.title}}</span>
+			        		<div class="mini-other-button iconOther"></div>
+			        	</ul>
+			        </div>
+	        	</div>
+			</div><!-- end playlist -->
 		</div>
 	</div>
 </template>

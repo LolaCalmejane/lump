@@ -1,23 +1,25 @@
 // CSS NAVBAR
 
-#brand {
-    float : left;
-    margin : 0;
-    //color : red;
-}
-
-nav {
+nav  {
     position: fixed;
     width : 100%;
-    text-align: right;
     background-color: $dark-blue;
     z-index: 20;
 }
 
- nav .content {
-     z-index: 1;
-     overflow : inherit;
- }
+#static nav.global-nav div ul:first-child {
+    display : inline-flex;
+    align-items : center;
+    width : 100%;
+    padding-left : 0px;
+    margin-bottom: 0px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#static nav ul div {
+    text-align: right;
+}
 
 nav ul li a:before, nav ul li a:after
 {
@@ -54,12 +56,6 @@ nav ul li a:hover:after
     transform: translateX(-50%) translateY(-50%) scale(1.3);
 }
 
-nav ul {
-    display : inline-block;
-    width : 100%;
-    padding : 0;
-}
-
 nav ul li {
     display : inline-block;
     margin-left : 40px;
@@ -74,33 +70,33 @@ nav ul li a:hover {
     text-decoration: none;
 }
 
-nav ul li a:focus {
-    color: $gold;
-    text-decoration : none;
-}
+// nav ul li a:focus {
+//     color: $gold;
+//     text-decoration : none;
+// }
 
-nav .dropdown {
-	display : inline-block;
-	margin-left : 40px;
-	position : relative;
-}
+// nav .dropdown {
+// 	display : inline-block;
+// 	margin-left : 40px;
+// 	position : relative;
+// }
 
-nav .dropdown ul li {
-	display : block;
-	margin : 0;
-}
+// nav .dropdown ul li {
+// 	display : block;
+// 	margin : 0;
+// }
 
-nav .dropdown a span.caret {
-	color : white;
-}
+// nav .dropdown a span.caret {
+// 	color : white;
+// }
 
 .dropdown-menu {
 	padding : 10px 0;
 }
 
-// .dropdown-menu .divider {
-// 	background-color : $black-blue;
-// }
+.dropdown-menu .divider {
+	background-color : $black-blue;
+}
 
 .open > .dropdown-menu {
     background-color: #171B2E

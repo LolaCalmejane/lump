@@ -9,10 +9,12 @@
             <div class="content">
                 <ul>
                     <router-link to ="/profil" class="subtitle-white"><img id="brand" src="../../assets/images/img-logo.png" alt="Logo"></router-link>
-                    <search></search>
-                    <li><router-link to ="/create" class="subtitle-white">Créer</router-link></li>
-                    <li><router-link to ="/events" class="subtitle-white">Événements</router-link></li>
-                    <li><router-link to ="/profil" class="subtitle-white">Jude Ademilo</router-link></li>
+                    <div>
+                        <search></search>
+                        <li><router-link to ="/create" class="subtitle-white">Créer</router-link></li>
+                        <li><router-link to ="/futurs-evenements" class="subtitle-white">Événements</router-link></li>
+                        <li><router-link to ="/profil" class="subtitle-white">Jude Ademilo</router-link></li>
+                    </div>
                     <!--li class="dropdown subtitle-white">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="caret"></span></a>
                     <!--ul class="dropdown-menu dropdown-menu-right">

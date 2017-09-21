@@ -12,7 +12,7 @@
                 <!-- Events Coming -->
                 <div class="top-events">
                     <h2 class="subtitle-gold"> Événement à venir </h2>
-                    <p class="detail"> | Voir tout</p>
+                    <router-link to="futurs-evenements" class="detail">| Voir tout</router-link>
                 </div>
                 <div class="events-coming">
                     <div class="event" v-for='comingEvent in comingEvents'>
@@ -40,7 +40,7 @@
             <!-- <div class="content"> -->
                 <div class="top-events">
                     <h2 class="subtitle-gold"> Événement passés </h2>
-                    <p class="detail"> | Voir tout</p>
+                    <router-link to="anciens-evenements" class="detail">| Voir tout</router-link>
                 </div>
                 <div class="events-passed">
                     <div class="event" v-for='passedEvent in passedEvents'>

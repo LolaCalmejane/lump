@@ -18,7 +18,7 @@ li { // A METTRE DANS DESIGN.SCSS
     position : relative;
 }
 
-#search ul {
+#search > ul {
     position: absolute;
     top: 50px;
     left: 0;

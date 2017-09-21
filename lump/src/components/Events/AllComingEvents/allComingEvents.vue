@@ -3,12 +3,15 @@
 
 <!-- HTML -->
 <template>
-    <div id="allComingEvents" class="events">
+    <div id="allComingEvents">
         <static></static>
         <!-- Grid events coming -->
-        <div class="content allComingEvents-content">
+        <section class="events">
+            <div class="content all-coming-events">
+                <!-- Events Coming -->
                 <div class="top-events">
                     <h2 class="subtitle-gold"> Événement à venir </h2>
+                    <p class="detail"> | Voir tout</p>
                 </div>
                 <div class="events-coming">
                     <div class="event" v-for='comingEvent in comingEvents'>
@@ -31,8 +34,8 @@
                     </div>
                 </div>
             </div>
-       
-    </div> <!-- end profil -->
+        </section>
+    </div> <!-- end -->
 </template>
 
 <!-- SCRIPT -->

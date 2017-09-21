@@ -209,7 +209,7 @@ export default {
     methods: {
     	deletemusicInWaits: function(musicInWaitId) {
       	this.musicInWaits.splice(musicInWaitId, 1)
-    }
+    	}
     }   	
 }
 </script>

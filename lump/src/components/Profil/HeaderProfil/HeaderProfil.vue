@@ -15,15 +15,15 @@
         <div class="datas-profil">
           <div class="data-left">
             <h1 class="big-title">{{name}}</h1>
-            <button type="button" class="subtitle-white">Modifier le profil</button>
+            <button type="button" class="subtitle-white">Déconnexion</button>
           </div>
           <div class="data-right">
-            <div>
+            <div class="data-right-element">
               <h2 class="subtitle-gold">Événements</h2>
               <span class="title">{{numberEvents}}</span>
               <p class="body-text">Événements</p>
             </div>
-            <div>
+            <div class="data-right-element">
               <h2 class="subtitle-gold">Amis</h2>
               <span class="title">{{numberFriends}}</span>
               <p class="body-text">Amis</p>
@@ -32,12 +32,12 @@
         </div>
         <nav class="subnav">
           <ul>
-            <li><router-link to ="/profil" class="subtitle-white">Evenements</router-link></li>
-
-            <li><router-link to="musics" class="subtitle-white">Musiques</router-link></li>
-            <li><router-link to ="/" class="subtitle-white">Etoiles</router-link></li>
-            <li><router-link to="playlists" class="subtitle-white">Playlists</router-link></li>
-            <li><a class="subtitle-white" href="">Agenda</a></li>
+            <li><router-link to ="/profil" class="subtitle-white">Événements</router-link></li>
+            <li><router-link to="/musics" class="subtitle-white">Musiques</router-link></li>
+            <li><router-link to ="/stars" class="subtitle-white">Étoiles</router-link></li>
+            <li><router-link to="/playlists" class="subtitle-white">Playlists</router-link></li>
+            <li><router-link to="/calendar" class="subtitle-white">Agenda</router-link></li>
+            <li><router-link to="/friends" class="subtitle-white">Amis</router-link></li>
           </ul>
         </nav>
       </div>

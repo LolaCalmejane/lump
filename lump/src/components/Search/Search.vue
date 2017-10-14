@@ -76,7 +76,7 @@ export default {
     },
 	methods:{
 		getMusics(){
-			axios.get('http://localhost:3000/api/1.0/music/search?authorization='+ btoa(this.result.login+':'+'mdp')+'&search=' + this.query )
+			axios.get('http://localhost:3000/api/1.0/music/search?authorization='+ btoa('lolaa:mdp')+'&search=' + this.query )
 			.then((response) =>{
 				console.log(response.data);
 				this.Result = response.data.result;

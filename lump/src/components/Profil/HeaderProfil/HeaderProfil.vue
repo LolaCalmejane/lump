@@ -14,7 +14,7 @@
         </div>
         <div class="datas-profil">
           <div class="data-left">
-            <h1 class="big-title">{{name}}</h1>
+            <h1 class="big-title">{{Result.login}}</h1>
             <button type="button" class="subtitle-white">Déconnexion</button>
           </div>
           <div class="data-right">
@@ -47,12 +47,20 @@
 
 <!-- SCRIPT -->
 <script>
+import axios from 'axios'
+
+axios.get("http://localhost:3000/api/1.0/user/login?authorization="+ localStorage.getItem('authUser'), this.Result)
+.then((response) =>{ 
+                    console.log(response.data);
+                    this.Result = response.data.result;
+                });
 
 export default {
-  
   name: 'header-profil',
   data: function () {
     return {
+      Result:[],
+      login:'',
       name : 'Jude Ademilo',
       // imgProfil : '',
       description : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique modi necessitatibus perspiciatis dicta.',

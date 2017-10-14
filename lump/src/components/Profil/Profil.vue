@@ -8,6 +8,7 @@
         <header-profil></header-profil>
         <!-- Grid events -->
        <section class="events">
+        <h2>{{Result.login}}</h2>
             <div class="content">
                 <!-- Events Coming -->
                 <div class="top-events">
@@ -80,8 +81,11 @@
 
 <!-- SCRIPT -->
 <script>
+import axios from 'axios'
 import HeaderProfil from './HeaderProfil/HeaderProfil.vue'
 import Static from '../Static/Static.vue'
+
+ console.log(this.Result);
 
 export default {
     props: ['event'],
@@ -93,6 +97,7 @@ export default {
     
     data() {
         return {
+            Result: [],
             pauseShow: false,
             comingEvents: [
                 {

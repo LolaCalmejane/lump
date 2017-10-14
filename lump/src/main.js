@@ -77,7 +77,7 @@ const routes = [
   { path: '/Event/:comingEventId', component: Event, name: 'event' },
   { path: '/Login/', component: Login, name: 'login' },
   { path: '/Inscription', component: Inscription, name: 'inscription' },
-  { path: '/Profil/', component: Profil, name: 'profil' },
+  { path: '/Profil/', component: Profil, name: 'profil', meta : { requiresAuth: true}},
   { path: '/Musics/', component: Musics, name: 'musics' },
   { path: '/Playlists/', component: Playlists, name: 'playlists' },
   { path: '/Stars/', component: Stars, name: 'stars' },
@@ -85,13 +85,26 @@ const routes = [
   { path: '/Friends/', component: Friends, name: 'friends' },      
   { path: '/Search/', component: Search, name: 'search' },
   { path: '/Static/', component: Static, name: 'static' },  
-  { path: '*', redirect: 'Login' }
+  { path: '*', redirect: 'Profil' }
 ]
 
 // On initialise le router
 const router = new VueRouter({
   routes,
   mode:'history'
+})
+
+router.beforeEach((to,from,next) => {
+  if (to.meta.requiresAuth)
+  {
+    const authUser = localStorage.getItem('authUser');
+    if (authUser){
+      next()
+    } else{
+      next({name: 'login'})
+    }
+  }
+  next()
 })
 
 // On initialise l'application

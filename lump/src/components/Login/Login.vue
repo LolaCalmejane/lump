@@ -26,7 +26,6 @@
 <!-- SCRIPT -->
 <script>
 import axios from 'axios'
-
 	export default {
 		data() {
 			return {
@@ -39,11 +38,19 @@ import axios from 'axios'
 		},
 		methods: {
             connexion(Result) {
-                axios.get("http://localhost:3000/api/1.0/user/login?authorization="+ btoa(this.loginIt.login+':'+this.loginIt.password), this.Result)
+            	var authUser = btoa(this.loginIt.login+':'+this.loginIt.password);
+                axios.get("http://localhost:3000/api/1.0/user/login?authorization="+ authUser, this.Result)
             	.then((response) =>{ 
             		console.log(response.data);
-					this.Result = response.data.result;
-					this.$store.commit('SET_PROFIL_DATAS', this.Result)
+            		this.Result = response.data.result;
+            		if (response.data.success === true) {
+		          		localStorage.setItem('authUser', authUser);
+		          		// on stock la clé d'autho dans le local storage. 
+		          		 this.$router.push({ path: '/profil'});
+		        	} 
+		        	else {
+		          		return this.error = response.data.result
+		        	}
 				});
 			}
 		

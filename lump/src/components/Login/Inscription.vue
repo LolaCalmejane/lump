@@ -37,6 +37,7 @@ import axios from 'axios'
 					password:'',
 					login: '',
 					email:'',
+					
 				}
 			}
 		},
@@ -46,6 +47,7 @@ import axios from 'axios'
 				.then((response) =>{
 					console.log(response.data);
 			 		this.Result = response.data.result;
+			 		
 				})
 			}
 		}	

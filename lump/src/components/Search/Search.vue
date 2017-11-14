@@ -16,7 +16,7 @@
 							<p>{{result.title}}</p>
 			            </div>	
 			        	<div class="button-interaction">
-			      			<span class="mini-like-button iconLike" @click.prevent="addMusics()"></span>
+			      			<span class="mini-like-button iconLike" @click.prevent="saveSong(result)"></span>
 		      				<div class="dropdown"> <!-- icon other on hover -->
 	                            <span data-toggle="dropdown" class="mini-other-button iconOther icon-other dropdown-toggle" type="button">
 	                            </span>
@@ -63,16 +63,15 @@ export default {
 		return {
 			Result: [],
 			Success: [],
+			AddMusics:[],
+			videoId:'',
+			channel:'',
+			thumbnails:'',
+			title:'',
 			query:'',
 			seen : false,
 			videoPlayer: false,
-            imgUser: require('images/profil-img-5.jpg'),
-            musicAdd: {
-				videoId: '',
-				title: '',
-				channel: '',
-				thumbnails: ''  
-			}         
+            imgUser: require('images/profil-img-5.jpg'),  
 		}
 	},
 	computed: {
@@ -98,6 +97,25 @@ export default {
 			this.$store.commit('SET_PLAYING_ITEM', result)
 			console.log(result);
 			this.videoPlayer= true;
+
+		},
+
+		saveSong(result){
+		axios({
+		  method: 'post',
+		  url: 'http://localhost:3000/api/1.0/music/add/music', 
+		  data: { 
+		    authorization: localStorage.getItem('authUser'),
+		    videoId: result.videoId,
+		    title: result.title,
+		    channel: result.channel,
+		    thumbnails: result.thumbnail
+		  }, 
+		})
+		.then((response) =>{ 
+            this.AddMusics = response.data.result;
+            console.log(this.AddMusics)
+			});
 
 		}
 		

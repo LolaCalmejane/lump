@@ -16,7 +16,7 @@
 
 		<div class="musics-content">
 			<musics-grid
-				:data="gridData"
+				:data="gridMusics"
 				:columns="gridColumns"
 				:filter-key="searchQuery">
 			</musics-grid>
@@ -25,7 +25,7 @@
 </template>
 
 <script>
-
+import axios from 'axios'
 import HeaderProfil from '../HeaderProfil/HeaderProfil.vue'
 import MusicsGrid from '../MusicsGrid/MusicsGrid.vue'
 import Static from '../../Static/Static.vue'
@@ -40,20 +40,18 @@ export default {
   	data: function () {
 	    return {
 		    searchQuery: '',
-		    gridColumns: ['titre', 'date', 'durée'],
-		    gridData: [
-		      { titre: 'Pluie fine - Corine (Polo and Pan remix) ', date: '17/05/2016', durée : '3:00' },
-		      { titre: 'Bossa Muffin - Flavia Cohelo', date: '17/05/2016', durée : '3:00' },
-		      { titre: 'Good together - honne', date: '17/05/2016', durée : '3:00' },
-		      { titre: 'I know after laugther - Mounika.', date: '17/05/2016', durée : '3:00' },
-		      { titre: 'Porcelain - Moby', date: '17/05/2016', durée : '3:00' },
-		      { titre: 'Sunset lover - Petit biscuit', date: '17/05/2016', durée : '3:00' },
-		      { titre: 'J\’ai vu - Romeo Elvis', date: '17/05/2016', durée : '3:00' },
-		      { titre: 'Got Me (Official Lyric Video) - St. South', date: '17/05/2016', durée : '3:00' },
-		      { titre: 'Easy - Son Lux', date: '17/05/2016', durée : '3:00' },
-		      { titre: 'Alek Lee - Sfarot', date: '17/05/2016', durée : '3:00' }
-		    ]
+		    gridColumns: ['title', 'channel'],
+		    gridMusics: [
+		    	{title:'', channel:''}
+		    ],
 		}
+	},
+	mounted() {
+		axios.get("http://localhost:3000/api/1.0/user/login?authorization="+ localStorage.getItem('authUser'), this.gridMusics)
+		.then((response) =>{ 
+	   		console.log(response.data);
+			this.gridMusics = response.data.result.musics;
+        });
 	}	
 }
 

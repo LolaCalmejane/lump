@@ -89,16 +89,7 @@ export default {
 	    sortBy: function (key) {
 		    this.sortKey = key
 		    this.sortOrders[key] = this.sortOrders[key] * -1
-	    },
-
-	mounted() {
-		axios.get("http://localhost:3000/api/1.0/user/login?authorization="+ localStorage.getItem('authUser'), this.Result)
-		.then((response) =>{ 
-	   		console.log(response.data);
-			this.Result = response.data.result;
-        });
-	}
-	    	    	    
+	    }	    	    
   	}  	
 }
 </script>

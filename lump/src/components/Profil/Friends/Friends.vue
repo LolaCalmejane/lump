@@ -17,7 +17,7 @@
 		<div class="friends-content">
 		<span class="deleteIcon" @click="deletemy"></span>
 			<friends-grid
-				:data="gridData"
+				:data="gridFriend"
 				:columns="gridColumns"
 				:filter-key="searchQuery">
 			</friends-grid>
@@ -44,20 +44,10 @@ export default {
   	data: function () {
 	    return {
 	    	Result:[],
-      		friend:'',
 		    searchQuery: '',
-		    gridColumns: ['amis'], 
-		    gridData: [
-		      { id: 1, amis: 'Coraline LodiLo' },
-		      { id: 2, amis: 'Lola CalmeCalme' },
-		      { id: 3, amis: 'Enzo Mama' },
-		      { id: 4, amis: 'Coraline LodiLo' },
-		      { id: 5, amis: 'Lola CalmeCalme' },
-		      { id: 6, amis: 'Enzo Mama' },
-		      { id: 7, amis: 'Lola CalmeCalme' },
-		      { id: 8, amis: 'Enzo Mama' },
-		      { id: 9, amis: 'Lola CalmeCalme' },
-		      { id: 10, amis: 'Enzo Mama'}
+		    gridColumns: ['ObjectId'], 
+		    gridFriend: [
+		    {ObjectId: ''}
 		    ],   	
 		}
 	},	
@@ -66,7 +56,7 @@ export default {
 		axios.get("http://localhost:3000/api/1.0/user/login?authorization="+ localStorage.getItem('authUser'), this.Result)
 		.then((response) =>{ 
 	   		console.log(response.data);
-			this.Result = response.data.result;
+			this.gridFriend = response.data.result.friend;
         });
 	}
 

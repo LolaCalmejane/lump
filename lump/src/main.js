@@ -8,6 +8,7 @@ Vue.use(VueLodash, lodash)
 // On importe Vue
 import Vue from 'vue'
 
+
 // On importe Vue Router
 import VueRouter from 'vue-router'
 import lodash from 'lodash'
@@ -28,6 +29,8 @@ import Icon from 'vue-awesome/components/Icon'
 require('font-awesome/css/font-awesome.css');
 // globally (in your main .js file)
 Vue.component('icon', Icon)
+
+
 
 Vue.config.productionTip = false
 
@@ -52,7 +55,6 @@ import Static from './components/Static/Static.vue'
 // On importe Vuex
 import store from './store';
 
-  
   var btoa = require('btoa')
     , bin = "last:lastlast"
     , b64 = btoa(bin)

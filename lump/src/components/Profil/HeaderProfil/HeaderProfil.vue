@@ -49,7 +49,6 @@
 <script>
 import axios from 'axios'
 
-
 export default {
   name: 'header-profil',
   data: function () {
@@ -63,13 +62,14 @@ export default {
       numberFriends : '33',
     }    
   },
-  mounted() {
+  
+mounted() {
     axios.get("http://localhost:3000/api/1.0/user/login?authorization="+ localStorage.getItem('authUser'), this.Result)
-    .then((response) =>{ 
-                        console.log(response.data);
-                        this.Result = response.data.result;
-                    });
-    }
+        .then((response) =>{ 
+            console.log(response.data);
+            this.Result = response.data.result;
+        });
+}
 
 }
 </script>

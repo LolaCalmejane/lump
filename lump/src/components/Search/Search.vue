@@ -4,23 +4,22 @@
 <!-- HTML -->
 <template>
 	<li id="search" v-cloak>
-		<input @input="getMusics()" v-on:click="seen = !seen"type="text"  placeholder="Rechercher" v-model="query"/>
+		<input @input="getMusics()" v-on:click="seen = !seen"type="text"  placeholder="Rechercher" v-model="query">
 	    <ul class="results" v-if="Result, seen">
-	    	<!-- <div class="category-search"> -->
-	    	<!-- <span class="subtitle-gold label-search">Musics</span> -->
+	    	<div class="category-search">
+	    	 <span class="subtitle-gold label-search">Musics</span> 
 		        <li v-for="(result,index) in Result">
-		            <div class="imgSong" :style="{ backgroundImage: 'url(' + result.thumbnail + ')'}">
-		            	
-		            </div>
+		            <div class="imgSong" :style="{ backgroundImage: 'url(' + result.thumbnail + ')'}"></div>
 		            <div class="iconPlay" v-if="Result" @click="playingItem(result)"></div>
 		            <div class="block-detail">
 						<div class="music-details">
 							<p>{{result.title}}</p>
 			            </div>	
 			        	<div class="button-interaction">
-			      			<span class="mini-like-button iconLike" @click.prevent="saveSong(Result)"></span>
+			      			<span class="mini-like-button iconLike" @click.prevent="addMusics()"></span>
 		      				<div class="dropdown"> <!-- icon other on hover -->
-	                            <span data-toggle="dropdown" class="mini-other-button iconOther icon-other dropdown-toggle" type="button"></span>
+	                            <span data-toggle="dropdown" class="mini-other-button iconOther icon-other dropdown-toggle" type="button">
+	                            </span>
 	                            <ul role="menu" class="dropdown-menu dropdown-menu-right">
 	                                <li><a class="subtitle-white" href="#">Ajouter à mes playlists</a></li>
 	                                <li><a class="subtitle-white" href="#">Partager</a></li>
@@ -28,31 +27,30 @@
 	                                <li><a class="subtitle-white" href="#">Autre</a></li>
 	                            </ul>
                             </div>
-			      			
 			        	</div>
-		        	</div>
-		        	<!-- <div v-if="videoPlayer">
-		        	<iframe :src="'http://www.youtube.com/embed/' + result.videoId + '?modestbranding=0&autohide=1&showinfo=0&rel=0'" frameborder="0" allowfullscreen></iframe>		
-			</div>	 -->  	
+		        	</div>	
 		        </li>
- 			        	
-
-	        <!-- </div> -->
-	        <!-- <div class="category-search">
+ 			</div>
+	        <div class="category-search">
 		        <span class="subtitle-gold">Users</span>
-		        <li v-for="user in filteredUsers">
-		            <div class="imgSong" :style="{ backgroundImage: 'url(' + user.img + ')' }"></div>
-		            <div class="user-details">
-						<p>{{user.pseudo}}</p>
-		            	<div class="datas-number">
-		            		<p class="detail">{{user.friendsNumber}} amis | </p>
-		            		<p class="detail">{{user.eventsNumber}} amis </p>
-		            	</div>
+		        <li v-for="(result,index) in Success">
+		            <div class="imgUser">
+		            	<img v-bind:src="imgUser" alt="">
+		            </div>
+		            <div class="block-detail">
+			            <div class="user-details">
+							<p>{{result.login}}</p>
+			            	<div class="datas-number">
+			            		<p class="detail">13 amis | </p>
+			            		<p class="detail">13 évènements </p>
+			            	</div>
+				        </div>
 			        </div>
 		        </li>
-	        </div> -->
+	        </div>
 	    </ul>
 	</li>
+
 </template>
 
 <script>
@@ -64,9 +62,17 @@ export default {
 	data (){
 		return {
 			Result: [],
+			Success: [],
 			query:'',
 			seen : false,
-			videoPlayer: false
+			videoPlayer: false,
+            imgUser: require('images/profil-img-5.jpg'),
+            musicAdd: {
+				videoId: '',
+				title: '',
+				channel: '',
+				thumbnails: ''  
+			}         
 		}
 	},
 	computed: {
@@ -76,27 +82,22 @@ export default {
     },
 	methods:{
 		getMusics(){
-			axios.get('http://localhost:3000/api/1.0/music/search?authorization='+ btoa('lolaa:mdp')+'&search=' + this.query )
-			.then((response) =>{
-				console.log(response.data);
-				this.Result = response.data.result;
-			})
+			axios.all([
+				axios.get('http://localhost:3000/api/1.0/music/search?authorization='+ localStorage.getItem('authUser')+'&search=' + this.query ),
+				axios.get('http://localhost:3000/api/1.0/user/search?authorization='+ localStorage.getItem('authUser')+'&login=' + this.query)
+			])
+			.then(axios.spread((response1, response2) => {
+  				console.log(response1.data);
+   				this.Result = response1.data.result;  				
+  				console.log(response2.data);
+				this.Success = response2.data.result;  				
+			}))
 		},
 
 		playingItem(result) {
 			this.$store.commit('SET_PLAYING_ITEM', result)
 			console.log(result);
 			this.videoPlayer= true;
-
-		},
-	
-		saveSong(){
-			axios.post('http://localhost:3000/api/1.0/music/add/music/'+this.connexion._id+'?authorization='+ btoa(this.connexion.login+':'+'mdp'))
-			.then((response)=>{
-				console.log(response.data);
-				this.Result= response.data.result;
-				this.$store.commit('ADD_MUSIC', this.Result)
-			})
 
 		}
 		

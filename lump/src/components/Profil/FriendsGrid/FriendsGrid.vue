@@ -22,7 +22,7 @@
 		        <td v-for="key in columns">
 		          {{entry[key]}}
 		        </td>
-		        <span class="deleteIcon" @click="deletemyfriend"></span>
+		        <span class="iconDelete" @click="deletemyfriend"></span>
 		      </tr>
 		    </tbody>
 		  </table>
@@ -31,8 +31,8 @@
 
 <!-- SCRIPT -->
 <script>
+import axios from 'axios'
 import { mapGetters } from 'vuex'
-
 export default {
   
 	name: 'friends-grid',
@@ -41,19 +41,17 @@ export default {
 	    columns: Array,
 	    filterKey: String
 	},
-
   	data: function () {
     	var sortOrders = {}
     	this.columns.forEach(function (key) {
       		sortOrders[key] = 1
     	})
-
 	    return {
+	    	Result: [],
 	      	sortKey: '',
 	     	sortOrders: sortOrders
 	    }
 	},
-
   	computed: {
 	    filteredData: function () {
 			var sortKey = this.sortKey
@@ -76,26 +74,31 @@ export default {
 			}
 			return data
 	    },
+
       ...mapGetters([
         'deletemyfriend'
-      ])	    
-	  },
+      ])
 
+	  },
   	filters: {
 	    capitalize: function (str) {
 	      return str.charAt(0).toUpperCase() + str.slice(1)
 	    }
   	},
-
   	methods: {
 	    sortBy: function (key) {
 		    this.sortKey = key
 		    this.sortOrders[key] = this.sortOrders[key] * -1
 	    },
-    	deletemyfriend: function(gridDataId) {
-      	this.gridData.splice(gridDataId, 1)
-    	}	    	    
+
+	mounted() {
+		axios.get("http://localhost:3000/api/1.0/user/login?authorization="+ localStorage.getItem('authUser'), this.Result)
+		.then((response) =>{ 
+	   		console.log(response.data);
+			this.Result = response.data.result;
+        });
+	}
+	    	    	    
   	}  	
 }
-
 </script>

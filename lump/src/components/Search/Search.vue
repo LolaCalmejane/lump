@@ -38,6 +38,8 @@
 		            	<img v-bind:src="imgUser" alt="">
 		            </div>
 		            <div class="block-detail">
+	                    <span class="mini-other-button iconOther icon-other" @click.prevent="saveFriend(result)">
+	                    </span>		            	
 			            <div class="user-details">
 							<p>{{result.login}}</p>
 			            	<div class="datas-number">
@@ -64,8 +66,10 @@ export default {
 			Result: [],
 			Success: [],
 			AddMusics:[],
+			AddFriends:[],
 			videoId:'',
 			channel:'',
+			friend:'',
 			thumbnails:'',
 			title:'',
 			query:'',
@@ -74,11 +78,7 @@ export default {
             imgUser: require('images/profil-img-5.jpg'),  
 		}
 	},
-	computed: {
-      ...mapGetters([
-        'connexion'
-      ])
-    },
+
 	methods:{
 		getMusics(){
 			axios.all([
@@ -99,7 +99,6 @@ export default {
 			this.videoPlayer= true;
 
 		},
-
 		saveSong(result){
 		axios({
 		  method: 'post',
@@ -115,6 +114,21 @@ export default {
 		.then((response) =>{ 
             this.AddMusics = response.data.result;
             console.log(this.AddMusics)
+			});
+
+		},
+		saveFriend(result){
+		axios({
+		  method: 'post',
+		  url: 'http://localhost:3000/api/1.0/friend/add', 
+		  data: { 
+		    authorization: localStorage.getItem('authUser'),
+		    friend: result._id
+		  }, 
+		})
+		.then((response) =>{ 
+            this.AddFriends = response.data.result;
+            console.log(this.AddFriends)
 			});
 
 		}

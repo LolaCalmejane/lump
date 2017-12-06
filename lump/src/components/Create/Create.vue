@@ -14,14 +14,14 @@
         <div class="create-content">
             <div class="left-side"> <!-- Type event select content -->
                 <h3 class="subtitle-gold">Type d'événement</h3>
-                <div class="event-type"> 
-                    <div class="description" v-on:click="toggleActive" v-bind:class="{ active: isActive }">
+                <div class="event-type" > 
+                    <div class="description" v-on:click="toggleActive" v-bind:class="{ active: isActive }" v-model.trim="eventCreate.type" required>
                         <div>
                             <span class="title">Un apéritif</span>
                             <p class="body-text">Vous organisez une soirée inférieur à 4 heures</p>
                         </div>
                     </div>
-                    <div class="description" v-on:click="toggleActive" v-bind:class="{ active: isActive }">
+<!--                     <div class="description" v-on:click="toggleActive" v-bind:class="{ active: isActive }" v-model.trim="type" required>
                         <div>
                             <span class="title">Une soirée</span>
                             <p class="body-text">Vous organisez une soirée supérieur à 4 heures</p>
@@ -30,20 +30,24 @@
                     <div class="description" v-on:click="toggleActive" v-bind:class="{ active: isActive }">
                         <div>
                              <span class="title" > Autre : {{text_content}}</span>
-                             <input class="body-text" type="text" placeholder="Écrivez ici" v-model="text_content" />
+                             <input class="body-text" type="text" placeholder="Écrivez ici" v-model="text_content" v-model.trim="type" required />
                              <span class="detail">Ex : Anniversaire, Nouvel an, Crémaillère, Barbecue, Roadtrip</span>
                          </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="right-side"><!-- formulaire content -->
-                <form action="">
+                <form action="#" v-on:submit.prevent="createEvent()">
                     <label class="subtitle-gold" for="name">Nom de l'événement</label>
-                    <input class="body-text" type="text" placeholder="Nom de l'événement" id="name" />
-                    <label class="subtitle-gold" for="description">Description</label>
-                    <textarea class="body-text" v-model="description" placeholder="Quelques mots sur votre événement" id="description"></textarea>
+                    <input class="body-text" type="text" placeholder="Nom de l'événement" id="name" v-model.trim="eventCreate.name" required>
+                    <label class="subtitle-gold" for="name">Durée</label>
+                    <input class="body-text" type="text" placeholder="Durée de l'événement" id="duration" v-model.trim="eventCreate.duration" required> 
+                    <label class="subtitle-gold" for="description">Photo</label>
+                    <input class="body-text" type="text" placeholder="Photo" id="photo" v-model.trim="eventCreate.photo" required> 
+                    <label class="subtitle-gold" for="description">Description</label>                    
+                    <textarea class="body-text" v-model="description" placeholder="Quelques mots sur votre événement" id="description" v-model.trim="eventCreate.description" required></textarea>
                     <label class="subtitle-gold" for="pays">Choisissez le pays </label>
-                    <select class="body-text" id="pays"v-model="selected">
+                    <select class="body-text" id="pays"v-model="selected" v-model.trim="eventCreate.pays" required>
                         <option disabled >Please select one</option>
                         <option>France </option>
                         <option>Afghanistan </option>
@@ -276,11 +280,12 @@
                         <option>Zimbabwe </option>
                     </select>
                     <label class="subtitle-gold" for="adresse">Adresse</label>
-                    <input class="body-text" type="text" placeholder="Adresse de l'événement" id="adresse" />
+                    <input class="body-text" type="text" placeholder="Adresse de l'événement" id="adresse" v-model.trim="eventCreate.adresse" required>
                     <label class="subtitle-gold" for="code-postal">Code postal</label>
-                    <input class="body-text" type="text" placeholder="00000" id="adresse" />
+                    <input class="body-text" type="text" placeholder="00000" id="adresse" v-model.trim="eventCreate.codePostal" required>
+                    <button type="button" class="nextButton name-title">Suivant</button>                    
                 </form>
-                <router-link to ="/addfriends"><button type="button" class="nextButton name-title">Suivant</button></router-link>
+
             </div> 
         </div>
         </div>
@@ -290,27 +295,74 @@
 <!-- SCRIPT -->
 <script>
 import Static from '../Static/Static.vue'
+import axios from 'axios'
 
 export default {
     name: 'create',
     components: {
         'static' : Static
     },
+    data() {
+        return {
+            Result:[],
+            eventCreate: {
+                description:'',
+                name:'',
+                type:'',
+                date:'',
+                photo:'',
+                duration:'',
+                userId:'',
+                pays:'',
+                adresse:'',
+                codePostal:''  
+            },
+            text_content: '',
+            description:'',
+            participants:[],
+            selected: 'France',
+            isActive : false
+        }
+    },
 
     methods: {
         toggleActive: function (){
             this.isActive = !this.isActive;
+        },
+        createEvent(){
+            axios.post('http://localhost:3000/api/1.0/event/create',this.eventCreate)
+            .then((response) =>{
+                console.log(response.data);
+                this.Result = response.data.result;
+                
+            })
         }
-    },
-    data() {
-        return {
-            text_content: '',
-            description:'',
-            selected: 'France',
-            isActive : false
-        }
-    }
-    
+
+
+    // createEvent(){
+    // axios({
+    //   method: 'post',
+    //   url: 'http://localhost:3000/api/1.0/event/create', 
+    //   data: { 
+    //     authorization: localStorage.getItem('authUser'),
+    //     userId: currentUser,
+    //     name: result.name,
+    //     date: result.date,
+    //     type: result.type,
+    //     description: result.description,
+    //     pays: result.pays,
+    //     adresse: result.adresse,
+    //     codePostal: result.codePostal,
+    //     duration: result.duration,
+    //     photo: result.photo
+    //   }, 
+    // })
+    // .then((response) =>{
+    //     console.log(response.data) 
+    //     this.Result = response.data.result;
+    //     });
+    // }
+    }   
 }   
 
 </script>

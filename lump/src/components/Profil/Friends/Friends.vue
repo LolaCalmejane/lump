@@ -13,7 +13,6 @@
       			bar iconSearch body-text" type ="text" name="query" v-model="searchQuery">
 			</form>
 		</div>
-		<p>{{Result.friend}}</p>
 		<div class="friends-content">
 		<span class="deleteIcon" @click="deletemy"></span>
 			<friends-grid

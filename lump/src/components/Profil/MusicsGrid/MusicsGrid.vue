@@ -18,12 +18,12 @@
 		      </tr>
 		    </thead>
 		    <tbody>
-		      <tr v-for="entry in filteredData">
+		      <tr v-for="entry in filteredData">	      
 		        <td v-for="key in columns">
-		          <span class="iconPlay"></span>
+		          <span class="iconPlay" v-if="entry" @click="playingItem(entry)"></span>
 		          <span class="iconLike"></span>
 		          <span class="iconOther"></span>
-		          {{entry[key]}}
+		          {{entry[key]}} 
 		        </td>
 		      </tr>
 		    </tbody>
@@ -33,6 +33,8 @@
 
 <!-- SCRIPT -->
 <script>
+import axios from 'axios'
+import { mapGetters } from 'vuex'
 
 export default {
   
@@ -50,6 +52,13 @@ export default {
     	})
 
 	    return {
+	    	Result:[],
+	    	thumbnails:'',
+	    	title:'',
+	    	musics:'',
+	    	channel:'',
+	    	videoPlayer: false,
+	    	videoId:'',
 	      	sortKey: '',
 	     	sortOrders: sortOrders
 	    }
@@ -89,8 +98,23 @@ export default {
 	    sortBy: function (key) {
 		    this.sortKey = key
 		    this.sortOrders[key] = this.sortOrders[key] * -1
-	    }
-  	}
+	    },
+
+		playingItem(result) {
+			this.$store.commit('SET_PLAYING_ITEM', result)
+			console.log(result);
+			this.videoPlayer= true;
+
+		}
+  	},
+ 	mounted() {
+		axios.get("http://localhost:3000/api/1.0/user/login?authorization="+ localStorage.getItem('authUser'), this.Result)
+		.then((response) =>{ 
+	   		console.log(response.data);
+			this.Result = response.data.result.musics;
+        });
+	}
+
 }
 
 </script>

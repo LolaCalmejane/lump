@@ -305,18 +305,17 @@ export default {
     data() {
         return {
             Result:[],
-            eventCreate: {
-                description:'',
-                name:'',
-                type:'',
-                date:'',
-                photo:'',
-                duration:'',
-                userId:'',
-                pays:'',
-                adresse:'',
-                codePostal:''  
-            },
+            description:'',
+            name:'',
+            type:'',
+            date:'',
+            photo:'',
+            duration:'',
+            userId:'',
+            pays:'',
+            adresse:'',
+            codePostal:'',  
+            CreateEvent:[],
             text_content: '',
             description:'',
             participants:[],
@@ -336,32 +335,30 @@ export default {
                 this.Result = response.data.result;
                 
             })
-        }
+        },
 
 
-    // createEvent(){
-    // axios({
-    //   method: 'post',
-    //   url: 'http://localhost:3000/api/1.0/event/create', 
-    //   data: { 
-    //     authorization: localStorage.getItem('authUser'),
-    //     userId: currentUser,
-    //     name: result.name,
-    //     date: result.date,
-    //     type: result.type,
-    //     description: result.description,
-    //     pays: result.pays,
-    //     adresse: result.adresse,
-    //     codePostal: result.codePostal,
-    //     duration: result.duration,
-    //     photo: result.photo
-    //   }, 
-    // })
-    // .then((response) =>{
-    //     console.log(response.data) 
-    //     this.Result = response.data.result;
-    //     });
-    // }
+    createEvent(result){
+    axios({
+      method: 'post',
+      url: 'http://localhost:3000/api/1.0/event/create', 
+      data: { 
+        authorization: localStorage.getItem('authUser'),
+        name: result.name,
+        date: result.date,
+        type: result.type,
+        description: result.description,
+        pays: result.pays,
+        adresse: result.adresse,
+        codePostal: result.codePostal,
+        duration: result.duration,
+      }, 
+    })
+    .then((response) =>{
+        console.log(this.CreateEvent) 
+        this.CreateEvent = response.data.result;
+        });
+    }
     }   
 }   
 

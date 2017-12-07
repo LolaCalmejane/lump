@@ -14,7 +14,6 @@
 			</form>
 		</div>
 		<div class="friends-content">
-		<span class="deleteIcon" @click="deletemy"></span>
 			<friends-grid
 				:data="gridFriend"
 				:columns="gridColumns"
@@ -44,9 +43,9 @@ export default {
 	    return {
 	    	Result:[],
 		    searchQuery: '',
-		    gridColumns: ['ObjectId'], 
+		    gridColumns: ['name'], 
 		    gridFriend: [
-		    {ObjectId: ''}
+		    {name:''}
 		    ],   	
 		}
 	},	

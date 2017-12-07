@@ -11,7 +11,7 @@
 			<!--search bar-->
 				<form id="search">
 					<span class="iconSearch"></span>
-					<input class="bar iconSearch body-text" type ="text" name="query" v-model="searchQuery">
+					<input class="bar iconSearch body-text" type ="text">
 				</form>
 			<!--future fonctionnalité-->
 				<div class="future-features">

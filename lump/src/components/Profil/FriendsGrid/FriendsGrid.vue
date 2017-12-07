@@ -21,8 +21,8 @@
 		      <tr v-for="entry in filteredData">
 		        <td v-for="key in columns">
 		          {{entry[key]}}
-		        </td>
-		        <span class="iconDelete" @click="deletemyfriend"></span>
+		        </td> 
+		        <span class="iconDelete"></span>
 		      </tr>
 		    </tbody>
 		  </table>
@@ -48,6 +48,9 @@ export default {
     	})
 	    return {
 	    	Result: [],
+	    	friend:'',
+	    	name:'',
+	    	id:'',
 	      	sortKey: '',
 	     	sortOrders: sortOrders
 	    }
@@ -89,7 +92,14 @@ export default {
 	    sortBy: function (key) {
 		    this.sortKey = key
 		    this.sortOrders[key] = this.sortOrders[key] * -1
-	    }	    	    
+	    },
+ 	mounted() {
+		axios.get("http://localhost:3000/api/1.0/user/login?authorization="+ localStorage.getItem('authUser'), this.Result)
+		.then((response) =>{ 
+	   		console.log(response.data);
+			this.Result = response.data.result.friend;
+        });
+	}	    	    
   	}  	
 }
 </script>

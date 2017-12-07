@@ -80,6 +80,7 @@ export default {
 	},
 
 	methods:{
+
 		getMusics(){
 			axios.all([
 				axios.get('http://localhost:3000/api/1.0/music/search?authorization='+ localStorage.getItem('authUser')+'&search=' + this.query ),
@@ -99,7 +100,9 @@ export default {
 			this.videoPlayer= true;
 
 		},
+
 		saveSong(result){
+			console.log(result, this.result)
 		axios({
 		  method: 'post',
 		  url: 'http://localhost:3000/api/1.0/music/add/music', 
@@ -117,21 +120,22 @@ export default {
 			});
 
 		},
+
 		saveFriend(result){
 		axios({
 		  method: 'post',
-		  url: 'http://localhost:3000/api/1.0/friend/add', 
+		  url: 'http://localhost:3000/api/1.0/friend/add/'+ result._id,
 		  data: { 
 		    authorization: localStorage.getItem('authUser'),
-		    friend: result._id
+			id: result._id,
+			name: result.login		    
 		  }, 
 		})
 		.then((response) =>{ 
             this.AddFriends = response.data.result;
             console.log(this.AddFriends)
-			});
-
-		}
+			})
+		 }
 		
 	}
 	

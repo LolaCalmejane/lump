@@ -20,8 +20,8 @@
                             <span class="title">Un apéritif</span>
                             <p class="body-text">Vous organisez une soirée inférieur à 4 heures</p>
                         </div>
-                    </div>
-<!--                     <div class="description" v-on:click="toggleActive" v-bind:class="{ active: isActive }" v-model.trim="type" required>
+                    </div> 
+                    <div class="description" v-on:click="toggleActive" v-bind:class="{ active: isActive }" v-model.trim="type" required>
                         <div>
                             <span class="title">Une soirée</span>
                             <p class="body-text">Vous organisez une soirée supérieur à 4 heures</p>
@@ -33,17 +33,19 @@
                              <input class="body-text" type="text" placeholder="Écrivez ici" v-model="text_content" v-model.trim="type" required />
                              <span class="detail">Ex : Anniversaire, Nouvel an, Crémaillère, Barbecue, Roadtrip</span>
                          </div>
-                    </div> -->
+                    </div>
                 </div>
             </div>
             <div class="right-side"><!-- formulaire content -->
-                <form action="#" v-on:submit.prevent="createEvent()">
+                <form action="#" v-on:submit.prevent="createEvent(result)">
+<!--                     <label class="subtitle-gold" for="type">Type de l'événement</label>
+                    <input class="body-text" type="text" placeholder="Type de l'événement" id="type" v-model.trim="eventCreate.type" required>  -->              
                     <label class="subtitle-gold" for="name">Nom de l'événement</label>
                     <input class="body-text" type="text" placeholder="Nom de l'événement" id="name" v-model.trim="eventCreate.name" required>
-                    <label class="subtitle-gold" for="name">Durée</label>
+                    <label class="subtitle-gold" for="duration">Durée</label>
                     <input class="body-text" type="text" placeholder="Durée de l'événement" id="duration" v-model.trim="eventCreate.duration" required> 
-                    <label class="subtitle-gold" for="description">Photo</label>
-                    <input class="body-text" type="text" placeholder="Photo" id="photo" v-model.trim="eventCreate.photo" required> 
+                    <label class="subtitle-gold" for="date">Date</label>
+                    <input class="body-text" type="date" id="date" v-model.trim="eventCreate.date" required>
                     <label class="subtitle-gold" for="description">Description</label>                    
                     <textarea class="body-text" v-model="description" placeholder="Quelques mots sur votre événement" id="description" v-model.trim="eventCreate.description" required></textarea>
                     <label class="subtitle-gold" for="pays">Choisissez le pays </label>
@@ -283,7 +285,7 @@
                     <input class="body-text" type="text" placeholder="Adresse de l'événement" id="adresse" v-model.trim="eventCreate.adresse" required>
                     <label class="subtitle-gold" for="code-postal">Code postal</label>
                     <input class="body-text" type="text" placeholder="00000" id="adresse" v-model.trim="eventCreate.codePostal" required>
-                    <button type="button" class="nextButton name-title">Suivant</button>                    
+                    <button class="nextButton name-title">Suivant</button>                    
                 </form>
 
             </div> 
@@ -305,20 +307,21 @@ export default {
     data() {
         return {
             Result:[],
-            description:'',
-            name:'',
-            type:'',
-            date:'',
-            photo:'',
-            duration:'',
-            userId:'',
-            pays:'',
-            adresse:'',
-            codePostal:'',  
+            eventCreate: {
+                description:'',
+                name:'',
+                type:'',
+                date:'',
+                duration:'',
+                pays:'',
+                adresse:'',
+                codePostal:''
+            },
+            result:'',
+            type:'',            
             CreateEvent:[],
             text_content: '',
             description:'',
-            participants:[],
             selected: 'France',
             isActive : false
         }
@@ -328,37 +331,30 @@ export default {
         toggleActive: function (){
             this.isActive = !this.isActive;
         },
-        createEvent(){
-            axios.post('http://localhost:3000/api/1.0/event/create',this.eventCreate)
-            .then((response) =>{
-                console.log(response.data);
-                this.Result = response.data.result;
-                
-            })
-        },
-
-
     createEvent(result){
     axios({
       method: 'post',
-      url: 'http://localhost:3000/api/1.0/event/create', 
+      url: 'http://localhost:3000/api/1.0/event/create',
       data: { 
         authorization: localStorage.getItem('authUser'),
-        name: result.name,
-        date: result.date,
-        type: result.type,
-        description: result.description,
-        pays: result.pays,
-        adresse: result.adresse,
-        codePostal: result.codePostal,
-        duration: result.duration,
+        name: this.eventCreate.name,
+        date: this.eventCreate.date,
+        type: this.eventCreate.type,
+        description: this.eventCreate.description,
+        pays: this.eventCreate.pays,
+        adresse: this.eventCreate.adresse,
+        codePostal: this.eventCreate.codePostal,
+        duration: this.eventCreate.duration,
       }, 
     })
     .then((response) =>{
-        console.log(this.CreateEvent) 
         this.CreateEvent = response.data.result;
-        });
-    }
+        console.log(this.CreateEvent) 
+
+        })
+    },
+
+
     }   
 }   
 

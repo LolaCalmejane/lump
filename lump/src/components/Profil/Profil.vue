@@ -99,6 +99,8 @@ export default {
         return {
             Result: [],
             pauseShow: false,
+            result:'',
+            ComingEvent:[],
             comingEvents: [
                 {
                 id: 1,
@@ -185,7 +187,28 @@ export default {
                 }
             ]
         }
+
+    },
+
+    methods: {
+
+    comingEvent(result){
+        console.log(this.playlistCreate)
+    axios({
+      method: 'get',
+      url: 'http://localhost:3000/api/1.0/event/list',
+      data: { 
+        authorization: localStorage.getItem('authUser'),
+      }, 
+    })
+    .then((response) =>{
+        this.ComingEvent = response.data.result;
+        console.log(this.ComingEvent) 
+
+        })
     }
+
+ }, 
 }
 
 </script>

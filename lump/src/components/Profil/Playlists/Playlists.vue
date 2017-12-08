@@ -7,10 +7,16 @@
 		<static></static> 
 		<header-profil></header-profil>
 		<div class="content">
+			 <form action="#" v-on:submit.prevent="createPlaylist(result)">
+				<label class="subtitle-gold" for="name">Créer une playlist</label>
+				<input class="body-text" type="text" placeholder="Choisir un nom pour la playlist" id="name" v-model.trim="playlistCreate.name" required>
+				<button class="">Ajouter</button> 
+			 </form>
 			<form id="search">
 				<span class="iconSearch"></span>
-				<input class="bar iconSearch body-text" type ="text" name="query" v-model="searchQuery">
+				<input class="bar iconSearch body-text" type ="text" name="query" v-model="searchQuery">			
 			</form>
+
 			<!-- context playlist -->
 			<div class="playlist" v-for='(playlist,index) in playlists'>
 				<div class="event-context"> <!-- A RENOMMER CETTE CLASSE -->
@@ -49,6 +55,7 @@
 <script>
 import HeaderProfil from '../HeaderProfil/HeaderProfil.vue'
 import Static from '../../Static/Static.vue'
+import axios from 'axios'
 
 export default {
 	name: 'playlists', 
@@ -56,17 +63,17 @@ export default {
     	'header-profil': HeaderProfil,
     	'static' : Static
   	},
-  	methods: {
-        myFilter: function(){
-            this.isActive = !this.isActive;
-            this.$emit('newactive', this.index);
-        }
-      },
     props: ['index'],
   	data: function () {
 	    return {
 	    	isActive : false,
 		    searchQuery: '',
+		    CreatePlaylist: [],
+		    playlistCreate: {
+		    	name:''
+		    },
+		    result:'',
+		    Result:[],
 		    playlists: [
 		    	{
 		    		id:1,
@@ -127,7 +134,31 @@ export default {
 		    ]
 
 		}
-	}	
+	},
+  	methods: {
+        myFilter: function(){
+            this.isActive = !this.isActive;
+            this.$emit('newactive', this.index);
+        },
+
+    createPlaylist(result){
+    	console.log(this.playlistCreate)
+    axios({
+      method: 'post',
+      url: 'http://localhost:3000/api/1.0/music/playlist/create',
+      data: { 
+        authorization: localStorage.getItem('authUser'),
+        name: this.playlistCreate.name
+      }, 
+    })
+    .then((response) =>{
+        this.CreatePlaylist = response.data.result;
+        console.log(this.CreatePlaylist) 
+
+        })
+    }
+
+ }
 }
 
 </script>

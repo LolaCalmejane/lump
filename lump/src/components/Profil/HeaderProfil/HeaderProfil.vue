@@ -56,6 +56,7 @@ export default {
       Result:[],
       login:'',
       name : 'Jude Ademilo',
+      EventList:[],
       // imgProfil : '',
       description : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique modi necessitatibus perspiciatis dicta.',
       numberEvents : '12',
@@ -70,6 +71,9 @@ mounted() {
             this.Result = response.data.result;
         });
 }
+
+
+
 
 }
 </script>

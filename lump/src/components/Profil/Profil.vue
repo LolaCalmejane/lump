@@ -193,7 +193,6 @@ export default {
     methods: {
 
     comingEvent(result){
-        console.log(this.playlistCreate)
     axios({
       method: 'get',
       url: 'http://localhost:3000/api/1.0/event/list',
@@ -206,7 +205,9 @@ export default {
         console.log(this.ComingEvent) 
 
         })
-    }
+    },
+
+
 
  }, 
 }

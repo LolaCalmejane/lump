@@ -14,7 +14,7 @@
         <div class="create-content">
             <div class="left-side"> <!-- Type event select content -->
                 <h3 class="subtitle-gold">Type d'événement</h3>
-                <div class="event-type" > 
+<!--                 <div class="event-type" > 
                     <div class="description" v-on:click="toggleActive" v-bind:class="{ active: isActive }" v-model.trim="eventCreate.type" required>
                         <div>
                             <span class="title">Un apéritif</span>
@@ -34,12 +34,14 @@
                              <span class="detail">Ex : Anniversaire, Nouvel an, Crémaillère, Barbecue, Roadtrip</span>
                          </div>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="right-side"><!-- formulaire content -->
                 <form action="#" v-on:submit.prevent="createEvent(result)">
 <!--                     <label class="subtitle-gold" for="type">Type de l'événement</label>
-                    <input class="body-text" type="text" placeholder="Type de l'événement" id="type" v-model.trim="eventCreate.type" required>  -->              
+                    <input class="body-text" type="text" placeholder="Type de l'événement" id="type" v-model.trim="eventCreate.type" required>  --> 
+                    <label class="subtitle-gold" for="type">Type de l'événement</label>
+                    <input class="body-text" type="text" placeholder="Type de l'événement" id="name" v-model.trim="eventCreate.type" required>                                 
                     <label class="subtitle-gold" for="name">Nom de l'événement</label>
                     <input class="body-text" type="text" placeholder="Nom de l'événement" id="name" v-model.trim="eventCreate.name" required>
                     <label class="subtitle-gold" for="duration">Durée</label>

@@ -15,13 +15,18 @@
 						<div class="music-details">
 							<p>{{result.title}}</p>
 			            </div>	
-			        	<div class="button-interaction">
+						<div class="button-interaction">
 			      			<span class="mini-like-button iconLike" @click.prevent="saveSong(result)"></span>
 		      				<div class="dropdown"> <!-- icon other on hover -->
 	                            <span data-toggle="dropdown" class="mini-other-button iconOther icon-other dropdown-toggle" type="button">
 	                            </span>
 	                            <ul role="menu" class="dropdown-menu dropdown-menu-right">
-	                                <li><a class="subtitle-white" href="#">Ajouter à mes playlists</a></li>
+									<div class="dropdown">
+									  <button class="dropbtn">Ajouter à mes playlists</button>
+									  <div class="dropdown-content">
+									    <a href="#" v-for="(playlist, index) in Playlists" v-bind:value="index" @click.prevent="musicToPlaylist(result, $event)">{{playlist.name}}</a>
+									  </div>
+									</div>
 	                                <li><a class="subtitle-white" href="#">Partager</a></li>
 	                                <li role="separator" class="divider"></li>
 	                                <li><a class="subtitle-white" href="#">Autre</a></li>
@@ -64,11 +69,16 @@ export default {
 	data (){
 		return {
 			Result: [],
+			Playlists:[],
+			Events: [],
 			Success: [],
 			AddMusics:[],
 			AddFriends:[],
+			AddtoPlaylist:[],
 			videoId:'',
+			//music:'',
 			channel:'',
+			index:'',
 			friend:'',
 			thumbnails:'',
 			title:'',
@@ -78,6 +88,19 @@ export default {
             imgUser: require('images/profil-img-5.jpg'),  
 		}
 	},
+	mounted() {
+	    axios.get("http://localhost:3000/api/1.0/music/playlist/list?authorization="+ localStorage.getItem('authUser'))
+	        .then((response) =>{ 
+	            this.Playlists = response.data;
+	            console.log(this.Playlists)
+	        });
+
+	    axios.get("http://localhost:3000/api/1.0/event/list?authorization="+ localStorage.getItem('authUser'))
+	        .then((response) =>{ 
+	            console.log(response.data);
+	            this.Events = response.data;
+	        });
+	},	
 
 	methods:{
 
@@ -135,9 +158,29 @@ export default {
             this.AddFriends = response.data.result;
             console.log(this.AddFriends)
 			})
+		 },
+
+		musicToPlaylist(result, event){
+		const i_playlist = event.target.getAttribute('value')
+		axios({
+		  method: 'post',
+		  url: 'http://localhost:3000/api/1.0/music/playlist/add',
+		  data: { 
+		    authorization: localStorage.getItem('authUser'),
+		    id: this.Playlists[i_playlist]._id,
+		    music: result.title
+		  }, 
+		})
+		.then((response) =>{ 
+            this.AddtoPlaylist = response.data.result;
+            console.log(this.AddtoPlaylist);
+            
+			})
 		 }
 		
 	}
+
+
 	
 }
 

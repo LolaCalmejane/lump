@@ -18,12 +18,12 @@
 			</form>
 
 			<!-- context playlist -->
-			<div class="playlist" v-for='(playlist,index) in playlists'>
+			<div class="playlist" v-for='playlist in Playlists'>
 				<div class="event-context"> <!-- A RENOMMER CETTE CLASSE -->
 					<div :style="{ backgroundImage: 'url(' + playlist.imgProfil + ')' }" class="block-mini-image"> 
 				    </div>
 			        <div class="left-context">
-			            <span class="title ">{{playlist.playlistCreator}}</span>
+			            <span class="title ">{{playlist.userId}}</span>
 			            <p class="detail">organise</p>
 			         </div>
 			         <div class="right-context">
@@ -34,15 +34,13 @@
 		        <div class="img-playlist" :style="{ backgroundImage: 'url(' + playlist.imgPlaylist + ')' }" > 
 		        	<div class="iconPlay"></div>
 		        </div>
-		        <span class="playlist-name title">{{playlist.playlistName}}</span>
+		        <span class="playlist-name title">{{playlist.name}}</span>
 		        <div class="preview-playlist">
 			        <div class="songs">
-			        	<ul v-for ='(song,index) in playlist.songs' class="song">
+			        	<ul v-for ='(music,index) in playlist.musics' class="song">
 			        		<div class="mini-like-button iconLike"></div>
-			        		<div class="mini-play-button iconPlay "
-			        				v-on:click="myFilter"
-	    							v-bind:class="{ active: isActive }"></div>
-			        		<span class="body-text song-title" v-bind:class="{ active: isActive }" >{{song.title}}</span>
+			        		<div class="mini-play-button iconPlay" v-if="music" @click="playingItem(music)"></div>
+			        		<span class="body-text song-title">{{music.title}}</span>
 			        		<div class="mini-other-button iconOther"></div>
 			        	</ul>
 			        </div>
@@ -56,6 +54,7 @@
 import HeaderProfil from '../HeaderProfil/HeaderProfil.vue'
 import Static from '../../Static/Static.vue'
 import axios from 'axios'
+import { mapGetters } from 'vuex'
 
 export default {
 	name: 'playlists', 
@@ -68,6 +67,17 @@ export default {
 	    return {
 	    	isActive : false,
 		    searchQuery: '',
+		    Playlists:[],
+	    	Result:[],
+	    	thumbnails:'',
+	    	title:'',
+	    	musics:[],
+	    	channel:'',
+	    	videoPlayer: false,
+	    	videoId:'',		    
+		    AddtoPlaylist:[],
+		    musics:[],
+		    music:'',
 		    CreatePlaylist: [],
 		    playlistCreate: {
 		    	name:''
@@ -156,9 +166,44 @@ export default {
         console.log(this.CreatePlaylist) 
 
         })
-    }
+    },
+		musicToPlaylist(result, event){
+		const i_playlist = event.target.getAttribute('value')
+		axios({
+		  method: 'post',
+		  url: 'http://localhost:3000/api/1.0/music/playlist/add',
+		  data: { 
+		    authorization: localStorage.getItem('authUser'),
+		    id: this.Playlists[i_playlist]._id,
+		    music: result.title,
+		    videoId: result.videoId
 
- }
+		  }, 
+		})
+		.then((response) =>{ 
+            this.AddtoPlaylist = response.data.result;
+            console.log(this.AddtoPlaylist);
+            
+			})
+		 },
+
+		playingItem(result) {
+			this.$store.commit('SET_PLAYING_ITEM', result)
+			console.log(result);
+			this.videoPlayer= true;
+
+		}
+
+ },
+
+ 	mounted() {
+	    axios.get("http://localhost:3000/api/1.0/music/playlist/list?authorization="+ localStorage.getItem('authUser'))
+	        .then((response) =>{ 
+	            this.Playlists = response.data;
+	            console.log(this.Playlists)
+	        });
+}
+
 }
 
 </script>

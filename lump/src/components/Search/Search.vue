@@ -168,7 +168,11 @@ export default {
 		  data: { 
 		    authorization: localStorage.getItem('authUser'),
 		    id: this.Playlists[i_playlist]._id,
-		    music: result.title
+		    //music: result.title,
+		    videoId: result.videoId,
+		    title: result.title,
+		    channel: result.channel,
+		    thumbnails: result.thumbnail
 		  }, 
 		})
 		.then((response) =>{ 

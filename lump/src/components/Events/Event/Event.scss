@@ -92,8 +92,10 @@
 
 // EVENT CONTENT HEADER COMPOSANTS (ORGANIZER NAME, DESCRIPTION, EVENT-TITLE...)
 
-#event .event-image .content-event .event-composants {
-    margin-top: 35px;
+.event-composants {
+	margin-left: 200px;
+	margin-top: 100px;
+
 }
 
 #event .event-image .content-event .event-composants .event-organizer p {

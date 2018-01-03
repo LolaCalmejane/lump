@@ -76,7 +76,7 @@ const routes = [
   { path: '/AddFriends/', component: AddFriends, name: 'addfriends' },
   { path: '/Futurs-evenements/',component: allComingEvents, name: 'allComingEvents' },
   { path: '/Anciens-evenements/',component: allPassedEvents, name: 'allPassedEvents' },
-  { path: '/Event/:comingEventId', component: Event, name: 'event' },
+  { path: '/Event/:eventId', component: Event, name: 'event' },
   { path: '/Login/', component: Login, name: 'login' },
   { path: '/Inscription', component: Inscription, name: 'inscription' },
   { path: '/Profil/', component: Profil, name: 'profil', meta : { requiresAuth: true}},

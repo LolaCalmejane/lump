@@ -42,6 +42,7 @@ export default {
   	data: function () {
 	    return {
 	    	Result:[],
+	    	Events: [],
 		    searchQuery: '',
 		    gridColumns: ['name'], 
 		    gridFriend: [
@@ -56,6 +57,11 @@ export default {
 	   		console.log(response.data);
 			this.gridFriend = response.data.result.friend;
         });
+        axios.get("http://localhost:3000/api/1.0/event/list?authorization="+ localStorage.getItem('authUser'))
+            .then((response) =>{ 
+                console.log(response.data);
+                this.Events = response.data;
+            });        
 	}
 
 }

@@ -300,7 +300,6 @@
 <script>
 import Static from '../Static/Static.vue'
 import axios from 'axios'
-
 export default {
     name: 'create',
     components: {
@@ -320,6 +319,7 @@ export default {
                 codePostal:''
             },
             result:'',
+            _id:'',
             type:'',            
             CreateEvent:[],
             text_content: '',
@@ -328,7 +328,6 @@ export default {
             isActive : false
         }
     },
-
     methods: {
         toggleActive: function (){
             this.isActive = !this.isActive;
@@ -352,12 +351,8 @@ export default {
     .then((response) =>{
         this.CreateEvent = response.data.result;
         console.log(this.CreateEvent) 
-
         })
     },
-
-
     }   
 }   
-
 </script>

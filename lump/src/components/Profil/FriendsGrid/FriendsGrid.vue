@@ -18,10 +18,11 @@
 		      </tr>
 		    </thead>
 		    <tbody>
-		      <tr v-for="entry in filteredData">
+		      <tr v-for="(entry, index) in filteredData" v-bind:value="index">
 		        <td v-for="key in columns">
 		          {{entry[key]}}
 		        </td> 
+		        <span class="mini-like-button iconLike" @click.prevent="AddParticipant(result, $event)"></span>
 		        <span class="iconDelete"></span>
 		      </tr>
 		    </tbody>
@@ -48,6 +49,7 @@ export default {
     	})
 	    return {
 	    	Result: [],
+	    	ParticipantToEvent:[],
 	    	friend:'',
 	    	name:'',
 	    	id:'',
@@ -93,6 +95,25 @@ export default {
 		    this.sortKey = key
 		    this.sortOrders[key] = this.sortOrders[key] * -1
 	    },
+
+		AddParticipant(result, event){
+		const i_participant = event.target.getAttribute('value')
+		axios({
+		  method: 'post',
+		  url: 'http://localhost:3000/api/1.0/event/addParticipant',
+		  data: { 
+		    authorization: localStorage.getItem('authUser'),
+		    id: this.Events[i_participant]._id,
+		    participant: '59983a2630d94842ac1a1597'
+		  }, 
+		})
+		.then((response) =>{ 
+            this.ParticipantToEvent = response.data.result;
+            console.log(this.AddtoPlaylist);
+            
+			})
+		 }
+	 },	    
  	mounted() {
 		axios.get("http://localhost:3000/api/1.0/user/login?authorization="+ localStorage.getItem('authUser'), this.Result)
 		.then((response) =>{ 
@@ -100,6 +121,6 @@ export default {
 			this.Result = response.data.result.friend;
         });
 	}	    	    
-  	}  	
+  	  	
 }
 </script>

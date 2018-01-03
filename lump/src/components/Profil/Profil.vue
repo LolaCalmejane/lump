@@ -16,23 +16,24 @@
                     <router-link to="futurs-evenements" class="detail">| Voir tout</router-link>
                 </div>
                 <div class="events-coming">
-                    <div class="event" v-for='comingEvent in comingEvents'>
+                    <div class="event" v-for='event in Events' >
                         <div class="block-mini-image">
-                            <img class="mini-image" v-bind:src="comingEvent.imgProfil" alt="">
+                            <!-- <img class="mini-image" v-bind:src="comingEvent.imgProfil" alt=""> -->
                         </div>
                         <div class="event-context">
-                            <span class="title ">{{comingEvent.organizer}}</span>
+                            <span class="title ">{{event.userId}}</span>
                             <p class="detail">organise</p>
                         </div>
-                         <router-link :to="{ name: 'event', params: { comingEventId: comingEvent.id } } ">
-                                <div class="img-event">
+                         <router-link :to="{ name: 'event', params: { eventId: event._id } } ">
+<!--                                 <div class="img-event">
                                     <img v-bind:src="comingEvent.imgEvent" alt="">
                                     <span>J-12</span>
-                                </div>
+                                </div> -->
+                                TEEEEEEEEST 
                             </router-link>
-                        <span class="title">{{comingEvent.title}}</span>
+                        <span class="title">{{event.name}}</span>
                         <span class="bottom-context detail">
-                        {{comingEvent.guestsNumber}} invités | {{comingEvent.date}}</span>
+                         {{event.date}}</span>
                     </div>
                 </div>
             <!-- </div> -->
@@ -84,9 +85,7 @@
 import axios from 'axios'
 import HeaderProfil from './HeaderProfil/HeaderProfil.vue'
 import Static from '../Static/Static.vue'
-
  console.log(this.Result);
-
 export default {
     props: ['event'],
     name: 'profil',
@@ -100,7 +99,7 @@ export default {
             Result: [],
             pauseShow: false,
             result:'',
-            ComingEvent:[],
+            Events:[],
             comingEvents: [
                 {
                 id: 1,
@@ -143,7 +142,6 @@ export default {
                 imgProfil: require('images/profil-img-4.png')
                 }
             ],
-
             passedEvents: [
                 {
                 id: 1,
@@ -187,29 +185,16 @@ export default {
                 }
             ]
         }
-
     },
-
-    methods: {
-
-    comingEvent(result){
-    axios({
-      method: 'get',
-      url: 'http://localhost:3000/api/1.0/event/list',
-      data: { 
-        authorization: localStorage.getItem('authUser'),
-      }, 
-    })
-    .then((response) =>{
-        this.ComingEvent = response.data.result;
-        console.log(this.ComingEvent) 
-
-        })
-    },
+    mounted() {
+    axios.get("http://localhost:3000/api/1.0/event/list?authorization="+ localStorage.getItem('authUser'))
+        .then((response) =>{ 
+            console.log(response.data);
+            this.Events = response.data;
+        });
+    }
 
 
-
- }, 
-}
+ } 
 
 </script>

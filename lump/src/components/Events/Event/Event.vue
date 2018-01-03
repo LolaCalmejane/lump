@@ -3,54 +3,54 @@
 
 <!-- HTML -->
 <template>
-	<div id="event" class="event" v-if="comingEvents = comingEvent ">
+	<div id="event" class="event">
         <static></static> 
 		<!-- EVENT - IMAGE BACKGROUND-->
-		<div class="event-image" :style="{ backgroundImage: 'url(' + comingEvent.imgEvent + ')'}">
+		<!-- <div class="event-image" :style="{ backgroundImage: 'url(' + comingEvent.imgEvent + ')'}"> -->
 		<div class="filter-bg"></div>
 			<!-- EVENT - HEADER CONTENT -->
 			<div class="content-event">
-			<router-link to ="/profil"><button type="button" class="previousButton subtitle-white">Retour</button></router-link>
+			<!-- <router-link to ="/profil"><button type="button" class="previousButton subtitle-white">Retour</button></router-link> -->
 				<div class="timer" > 
-					<p class="name-title">{{comingEvent.timer}}</p>
+					<!-- <p class="name-title">{{comingEvent.timer}}</p> -->
 					<p class="body-text">pour voter</p>
 				</div>	
 				<div class="event-composants">
 					<div class="event-organizer name-title " > 
-						<p>{{comingEvent.organizer}}</p>
+						<p>{{Events[2].userId}}</p>
 					</div>
 					<div class="event-title big-title"> 
-						 <p>{{comingEvent.title}}</p>
+						 <p>{{Events[2].name}}</p>
 					</div>
 					<div class="event-description"> 
 						 <p class="subtitle-gold">Description</p>
-						 <p class="body-text">{{comingEvent.description}}</p>
+						 <p class="body-text">{{Events[2].description}}</p>
 					</div>
 					<div class="event-details-content">
 						<div class="eventMoreDetails">
 							<p class="subtitle-gold">Invités</p>
-							<p class="body-text">{{comingEvent.guestsNumber}} invités</p>
+							<!-- <p class="body-text">{{comingEvent.guestsNumber}} invités</p> -->
 						</div>
 						<div class="eventMoreDetails">
 							<p class="subtitle-gold">Participants</p>
-							<p class="body-text">{{comingEvent.participants}} participants</p>
+							<!-- <p class="body-text">{{comingEvent.participants}} participants</p> -->
 						</div>
 						<div class="eventMoreDetails">
 							<p class="subtitle-gold">Lieu</p>
-							<p class="body-text">{{comingEvent.place}}</p>
+							<p class="body-text">{{Events[2].adresse}}</p>
 						</div>
 						<div class="eventMoreDetails">
 							<p class="subtitle-gold">Heure</p>
-							<p class="body-text">{{comingEvent.hour}}</p>
+							<p class="body-text">{{Events[2].duration}}</p>
 						</div>									
 						<div class="eventMoreDetails">
 							<p class="subtitle-gold">Date</p>
-							<p class="body-text">{{comingEvent.date}}</p>
+							<p class="body-text">{{Events[2].date}}</p>
 						</div>						
 					</div>
 					<button type="button" class="imGoingButton name-title">Je participe</button>
 				</div><!-- END OF THE EVENT COMPOSANTS (ORGANIZER NAME, DATE, PLACE...) -->
-			</div><!-- END OF THE EVENT CONTENT HEADER -->
+			<!-- </div>END OF THE EVENT CONTENT HEADER -->
 		</div><!-- END OF THE IMAGE BACKGROUND -->
 
 		<!-- EVENT CONTENT FLUX MUSIC PROPOSITIONS -->
@@ -59,27 +59,27 @@
 				<span class="iconSearch"></span>
 				<input class="bar iconSearch body-text" type ="text" name="query" v-model="searchQuery">
 			</form>
-			<div class="flux-prop">
+			<div class="flux-prop" v-for="event in Events[2].musics[1]">
 				<div class="flux-content">
-					<div :style="{ backgroundImage: 'url(' + comingEvent.imgProfil + ')' }" class="block-mini-image"> 
-				    </div>
+					<!-- <div :style="{ backgroundImage: 'url(' + comingEvent.imgProfil + ')' }" class="block-mini-image">  -->
+				    <!-- </div> -->
 			        <div class="left-content">
-			            <span class="title ">{{comingEvent.nameUserProposal}}</span>
+			            <span class="title ">{{Events[2].userId}}</span>
 			            <p class="detail">a proposé</p>
 			        </div>
 		        </div>
-		        <div class="imgSong" :style="{ backgroundImage: 'url(' + comingEvent.imgSong + ')' }"><div class="iconPlay"></div></div>
+		        <!-- <div class="imgSong" :style="{ backgroundImage: 'url(' + comingEvent.imgSong + ')' }"><div class="iconPlay"></div></div> -->
 				<div class="proposal-details">
 					<div class="proposal-first">
-			        	<div class="userProposalTitle">{{comingEvent.userProposal}}</div>
+			        	<div class="userProposalTitle">{{Events[2].musics[1].title}}</div>
 			        	<div class="rating"><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></div>
 					</div>
 					<div class="proposal-second">
-						<div class="body-text detail">Ajouté le {{comingEvent.date}}</div>
-						<div class="body-text detail">Moyenne : {{comingEvent.average}}</div>
+						<!-- <div class="body-text detail">Ajouté le {{comingEvent.date}}</div> -->
+						<!-- <div class="body-text detail">Moyenne : {{comingEvent.average}}</div> -->
 					</div>
 		        	<ul class="proposal-third">
-		      			<li class="mini-like-button iconLike"></li>
+		      			<li class="mini-like-button iconLike" v-if="Events[2].musics[1]" @click="playingItem(Events[2].musics[1])"></li>
 		      			<li class="mini-other-button iconOther"></li>
 		        	</ul>
 	        	</div>		        	
@@ -91,8 +91,9 @@
 
 <!-- SCRIPT -->
 <script>
-
+import axios from 'axios'
 import Static from '../../Static/Static.vue'
+import { mapGetters } from 'vuex'
 
 export default {
 	name: 'event',
@@ -101,13 +102,33 @@ export default {
     },    
 	methods: {
         getEvent() {
-            (`Event/${this.$route.params.comingEventId}`)
-        }
+            (`Event/${this.$route.params.eventId}`)
+        },
+        playingItem(result) {
+            this.$store.commit('SET_PLAYING_ITEM', result)
+            console.log(result);
+            this.videoPlayer= true;
+
+        }        
 
     },	
 
 	data() {
         return {
+            name:'',
+            adresse:'',
+            description:'',
+            date:'',
+            type:'',
+            music:'',
+            musics:'',
+            pays:'',
+            userId:'',
+            codePostal:'',
+            duration:'',
+            Result:[],
+            Events:[],
+            searchQuery:'',
         	comingEvents: [
                 {
                 id: 1,
@@ -187,10 +208,13 @@ export default {
         }
     },
 
-    created() {
-    	const eventObj = _.find(this.comingEvents, { id: this.$route.params.comingEventId })
-    	this.comingEvent = eventObj
-    },
+    mounted() {
+        axios.get("http://localhost:3000/api/1.0/event/list?authorization="+ localStorage.getItem('authUser'))
+            .then((response) =>{ 
+                console.log(response.data);
+                this.Events = response.data;
+            });
+    }
 
  
 }

@@ -27,7 +27,7 @@
 						 	<iframe :src="'http://www.youtube.com/embed/' + playingItem.videoId + '?modestbranding=0&autohide=1&showinfo=0&rel=0&autoplay=1'" frameborder="0" allowfullscreen></iframe>	
 						</div>
 						<div v-else>
-						 	<iframe :src="'http://www.youtube.com/embed/' +src+ '?modestbranding=0&autohide=1&showinfo=0&rel=0&autoplay=1'" frameborder="0" allowfullscreen></iframe>	
+						 	<iframe :src="'http://www.youtube.com/embed/' +src+ '?modestbranding=0&autohide=1&showinfo=0&rel=0&autoplay=false'" frameborder="0" allowfullscreen></iframe>	
 						</div>
 						
 
